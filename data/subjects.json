@@ -1,0 +1,52 @@
+[
+  {
+    "id": "math",
+    "title": "9th Math",
+    "subtitle": "New Book",
+    "emoji": "🧮",
+    "data": "math.json",
+    "accent": "#6ea8ff",
+    "accent2": "#8b5cf6",
+    "bg": "#0b0f17"
+  },
+  {
+    "id": "physics",
+    "title": "9th Physics",
+    "subtitle": "New Book 2025",
+    "emoji": "🧲",
+    "data": "physics.json",
+    "accent": "#42d67d",
+    "accent2": "#14945b",
+    "bg": "#07130d"
+  },
+  {
+    "id": "chemistry",
+    "title": "9th Chemistry",
+    "subtitle": "New Book 2025",
+    "emoji": "🧪",
+    "data": "chemistry.json",
+    "accent": "#49e0c2",
+    "accent2": "#0b9a78",
+    "bg": "#081112"
+  },
+  {
+    "id": "urdu",
+    "title": "9th Urdu",
+    "subtitle": "New Book 2025",
+    "emoji": "📜",
+    "data": "urdu.json",
+    "accent": "#f5c542",
+    "accent2": "#b9820d",
+    "bg": "#151103"
+  },
+  {
+    "id": "computer",
+    "title": "9th Computer",
+    "subtitle": "New Book 2026",
+    "emoji": "💻",
+    "data": "computer.json",
+    "accent": "#63d4ff",
+    "accent2": "#4067ff",
+    "bg": "#080d18"
+  }
+]

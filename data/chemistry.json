@@ -1,0 +1,1080 @@
+{
+  "id": "chemistry",
+  "title": "9th Chemistry",
+  "subtitle": "New Book 2025",
+  "kind": "chapters",
+  "chapters": [
+    {
+      "id": "ch1",
+      "number": 1,
+      "title": "Introduction to Chemistry",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "ES8zqKfxSX4",
+          "title": "Introduction All Chapters",
+          "subtitle": "",
+          "duration": "35:15",
+          "url": "https://www.youtube.com/watch?v=ES8zqKfxSX4&list=PLI-NxcTUPiPwRyLnf_Vetfk0PZFBa2PXh",
+          "thumb": "https://i.ytimg.com/vi/ES8zqKfxSX4/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 1 | Introduction All Chapters | Class 9th New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "AgyOnPz6LQM",
+          "title": "What is Chemistry? Branches of Chemistry Part 1",
+          "subtitle": "",
+          "duration": "20:13",
+          "url": "https://www.youtube.com/watch?v=AgyOnPz6LQM&list=PLI-NxcTUPiPwRyLnf_Vetfk0PZFBa2PXh",
+          "thumb": "https://i.ytimg.com/vi/AgyOnPz6LQM/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 1 | What is Chemistry Branches of Chemistry Part 1 | New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "X9-7LjRskt8",
+          "title": "What is Chemistry? Branches of Chemistry Part 2",
+          "subtitle": "",
+          "duration": "15:10",
+          "url": "https://www.youtube.com/watch?v=X9-7LjRskt8&list=PLI-NxcTUPiPwRyLnf_Vetfk0PZFBa2PXh",
+          "thumb": "https://i.ytimg.com/vi/X9-7LjRskt8/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 1 | What is Chemistry Branches of Chemistry Part 2 | New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "oxja_P7DudU",
+          "title": "State of Matter",
+          "subtitle": "",
+          "duration": "17:49",
+          "url": "https://www.youtube.com/watch?v=oxja_P7DudU&list=PLI-NxcTUPiPwRyLnf_Vetfk0PZFBa2PXh",
+          "thumb": "https://i.ytimg.com/vi/oxja_P7DudU/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 1 | State of Matter | Class 9th New Book 2025"
+        },
+        {
+          "order": 5,
+          "playlistIndex": 5,
+          "videoId": "1UTNKq58dKg",
+          "title": "State of Matter Part 2",
+          "subtitle": "",
+          "duration": "9:25",
+          "url": "https://www.youtube.com/watch?v=1UTNKq58dKg&list=PLI-NxcTUPiPwRyLnf_Vetfk0PZFBa2PXh",
+          "thumb": "https://i.ytimg.com/vi/1UTNKq58dKg/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 1 | State of Matter Part 2 |  Class 9th New Book 2025"
+        },
+        {
+          "order": 6,
+          "playlistIndex": 6,
+          "videoId": "C82nqKX2-L4",
+          "title": "Elements, Compound and Mixture",
+          "subtitle": "",
+          "duration": "14:08",
+          "url": "https://www.youtube.com/watch?v=C82nqKX2-L4&list=PLI-NxcTUPiPwRyLnf_Vetfk0PZFBa2PXh",
+          "thumb": "https://i.ytimg.com/vi/C82nqKX2-L4/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 1 | Elements, Compound and Mixture | Class 9th New Book 2025"
+        },
+        {
+          "order": 7,
+          "playlistIndex": 7,
+          "videoId": "YNtIm87Wg-Q",
+          "title": "Allotropic Forms of Substances",
+          "subtitle": "",
+          "duration": "7:48",
+          "url": "https://www.youtube.com/watch?v=YNtIm87Wg-Q&list=PLI-NxcTUPiPwRyLnf_Vetfk0PZFBa2PXh",
+          "thumb": "https://i.ytimg.com/vi/YNtIm87Wg-Q/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 1 | Allotropic Forms of Substances | Class 9th New Book 2025"
+        },
+        {
+          "order": 8,
+          "playlistIndex": 8,
+          "videoId": "Nl5CO3bZxUU",
+          "title": "Differences Between, Element Compounds Mixtures",
+          "subtitle": "",
+          "duration": "7:17",
+          "url": "https://www.youtube.com/watch?v=Nl5CO3bZxUU&list=PLI-NxcTUPiPwRyLnf_Vetfk0PZFBa2PXh",
+          "thumb": "https://i.ytimg.com/vi/Nl5CO3bZxUU/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 1 | Differences Between, Element Compounds Mixtures | New Book 2025"
+        },
+        {
+          "order": 9,
+          "playlistIndex": 9,
+          "videoId": "sYrlGnIctBI",
+          "title": "Solution, Colloidal Solution and Suspension",
+          "subtitle": "",
+          "duration": "5:54",
+          "url": "https://www.youtube.com/watch?v=sYrlGnIctBI&list=PLI-NxcTUPiPwRyLnf_Vetfk0PZFBa2PXh",
+          "thumb": "https://i.ytimg.com/vi/sYrlGnIctBI/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 1 | Solution, Colloidal Solution and Suspension |  9th New Book 2025"
+        },
+        {
+          "order": 10,
+          "playlistIndex": 10,
+          "videoId": "-5piKYfuMOI",
+          "title": "Formation of Unsaturated & Saturated Solutions",
+          "subtitle": "",
+          "duration": "16:14",
+          "url": "https://www.youtube.com/watch?v=-5piKYfuMOI&list=PLI-NxcTUPiPwRyLnf_Vetfk0PZFBa2PXh",
+          "thumb": "https://i.ytimg.com/vi/-5piKYfuMOI/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 1 | Formation of Unsaturated & Saturated Solutions | New Book 2025"
+        },
+        {
+          "order": 11,
+          "playlistIndex": 11,
+          "videoId": "tMhQmgtoTs8",
+          "title": "Effect of Temperature on Solubility of Solutes",
+          "subtitle": "",
+          "duration": "11:11",
+          "url": "https://www.youtube.com/watch?v=tMhQmgtoTs8&list=PLI-NxcTUPiPwRyLnf_Vetfk0PZFBa2PXh",
+          "thumb": "https://i.ytimg.com/vi/tMhQmgtoTs8/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 1 | Effect of Temperature on Solubility of Solutes | New Book 2025"
+        },
+        {
+          "order": 12,
+          "playlistIndex": 12,
+          "videoId": "U6YUwhdDUTQ",
+          "title": "Exercise — MCQs, Short & Long Questions",
+          "subtitle": "",
+          "duration": "20:24",
+          "url": "https://www.youtube.com/watch?v=U6YUwhdDUTQ&list=PLI-NxcTUPiPwRyLnf_Vetfk0PZFBa2PXh",
+          "thumb": "https://i.ytimg.com/vi/U6YUwhdDUTQ/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 1 | Exercise MCQ's Short and long Question | New Book 2025"
+        }
+      ],
+      "videoCount": 12
+    },
+    {
+      "id": "ch2",
+      "number": 2,
+      "title": "Structure of Atom",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "K-QVMgaubU4",
+          "title": "Structure of Atom, Discovery of Electron",
+          "subtitle": "",
+          "duration": "27:06",
+          "url": "https://www.youtube.com/watch?v=K-QVMgaubU4&list=PLI-NxcTUPiPwO9XYL8lqySIoShAy3lJV-",
+          "thumb": "https://i.ytimg.com/vi/K-QVMgaubU4/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 2 | Structure of Atom, Discovery of Electron |  Class 9th New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "R4_7vQO62dk",
+          "title": "Discovery of Nucleus & Bohr's Atomic Model",
+          "subtitle": "",
+          "duration": "21:28",
+          "url": "https://www.youtube.com/watch?v=R4_7vQO62dk&list=PLI-NxcTUPiPwO9XYL8lqySIoShAy3lJV-",
+          "thumb": "https://i.ytimg.com/vi/R4_7vQO62dk/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 2 | Discovery of Nucleus & Bohr's Atomic Model | Class 9th New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "GAid2V3q0oI",
+          "title": "Atomic Number and Mass Number",
+          "subtitle": "",
+          "duration": "25:55",
+          "url": "https://www.youtube.com/watch?v=GAid2V3q0oI&list=PLI-NxcTUPiPwO9XYL8lqySIoShAy3lJV-",
+          "thumb": "https://i.ytimg.com/vi/GAid2V3q0oI/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 2 | Atomic Number and Mass Number |  Class 9th New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "u4sV81jLG9Q",
+          "title": "Discovery of Proton and Neutron",
+          "subtitle": "",
+          "duration": "24:27",
+          "url": "https://www.youtube.com/watch?v=u4sV81jLG9Q&list=PLI-NxcTUPiPwO9XYL8lqySIoShAy3lJV-",
+          "thumb": "https://i.ytimg.com/vi/u4sV81jLG9Q/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 2 | Dicover of Proton and Neutron |  Class 9th New Book 2025"
+        },
+        {
+          "order": 5,
+          "playlistIndex": 5,
+          "videoId": "yE_CgXxiMqw",
+          "title": "Isotopes And Their Masses",
+          "subtitle": "",
+          "duration": "24:31",
+          "url": "https://www.youtube.com/watch?v=yE_CgXxiMqw&list=PLI-NxcTUPiPwO9XYL8lqySIoShAy3lJV-",
+          "thumb": "https://i.ytimg.com/vi/yE_CgXxiMqw/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 2 | Isotopes And Their Masses  |  Class 9th New Book 2025"
+        },
+        {
+          "order": 6,
+          "playlistIndex": 6,
+          "videoId": "IAIc5iuWVTE",
+          "title": "Application of Radio Active Isotopes",
+          "subtitle": "",
+          "duration": "21:54",
+          "url": "https://www.youtube.com/watch?v=IAIc5iuWVTE&list=PLI-NxcTUPiPwO9XYL8lqySIoShAy3lJV-",
+          "thumb": "https://i.ytimg.com/vi/IAIc5iuWVTE/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 2 | Application of Radio Active Isotopes |  Class 9th New Book 2025"
+        },
+        {
+          "order": 7,
+          "playlistIndex": 7,
+          "videoId": "ShcPCxsLpRs",
+          "title": "Relative Atomic Mass",
+          "subtitle": "",
+          "duration": "18:16",
+          "url": "https://www.youtube.com/watch?v=ShcPCxsLpRs&list=PLI-NxcTUPiPwO9XYL8lqySIoShAy3lJV-",
+          "thumb": "https://i.ytimg.com/vi/ShcPCxsLpRs/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 2 | Relative Atomic Mass | Class 9th New Book 2025"
+        },
+        {
+          "order": 8,
+          "playlistIndex": 8,
+          "videoId": "hNFuZJc6YqU",
+          "title": "Exercise — MCQs, Short & Long Questions",
+          "subtitle": "",
+          "duration": "18:32",
+          "url": "https://www.youtube.com/watch?v=hNFuZJc6YqU&list=PLI-NxcTUPiPwO9XYL8lqySIoShAy3lJV-",
+          "thumb": "https://i.ytimg.com/vi/hNFuZJc6YqU/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 2 | Exercise MCQ's Short and long Question | New Book 2025"
+        }
+      ],
+      "videoCount": 8
+    },
+    {
+      "id": "ch3",
+      "number": 3,
+      "title": "Chemical Bonding",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "0khSzcUPKSY",
+          "title": "Why Do Atoms form Chemical Bonds, Chemical Bonding",
+          "subtitle": "",
+          "duration": "20:53",
+          "url": "https://www.youtube.com/watch?v=0khSzcUPKSY&list=PLI-NxcTUPiPxWoGWzf583vRLLhpHgBQJ_",
+          "thumb": "https://i.ytimg.com/vi/0khSzcUPKSY/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 3 | Why Do Atoms from Chamecal Bonds, Chemical Bonding | 9 New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "kR_W9aGmFDo",
+          "title": "Ionic Bond",
+          "subtitle": "",
+          "duration": "24:47",
+          "url": "https://www.youtube.com/watch?v=kR_W9aGmFDo&list=PLI-NxcTUPiPxWoGWzf583vRLLhpHgBQJ_",
+          "thumb": "https://i.ytimg.com/vi/kR_W9aGmFDo/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 3 | Ionic Bond | Class 9th New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "7XXD4n3nkwA",
+          "title": "Covalent Bond",
+          "subtitle": "",
+          "duration": "22:10",
+          "url": "https://www.youtube.com/watch?v=7XXD4n3nkwA&list=PLI-NxcTUPiPxWoGWzf583vRLLhpHgBQJ_",
+          "thumb": "https://i.ytimg.com/vi/7XXD4n3nkwA/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 3 | Covalent Bond |  Class 9th New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "vNlhE2ustAk",
+          "title": "Formation of Covalent Compounds",
+          "subtitle": "",
+          "duration": "19:02",
+          "url": "https://www.youtube.com/watch?v=vNlhE2ustAk&list=PLI-NxcTUPiPxWoGWzf583vRLLhpHgBQJ_",
+          "thumb": "https://i.ytimg.com/vi/vNlhE2ustAk/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 3 | Formation of Covalent Compounds |  Class 9th New Book 2025"
+        },
+        {
+          "order": 5,
+          "playlistIndex": 5,
+          "videoId": "_fP9tUxpSyc",
+          "title": "Polar and Non Polar Covalent Bond",
+          "subtitle": "",
+          "duration": "8:42",
+          "url": "https://www.youtube.com/watch?v=_fP9tUxpSyc&list=PLI-NxcTUPiPxWoGWzf583vRLLhpHgBQJ_",
+          "thumb": "https://i.ytimg.com/vi/_fP9tUxpSyc/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 3 | Polar and Non Polar Covalent Bond |  Class 9th New Book 2025"
+        },
+        {
+          "order": 6,
+          "playlistIndex": 6,
+          "videoId": "0HO6HYY5zBM",
+          "title": "Coordinate Covalent Bond",
+          "subtitle": "",
+          "duration": "22:59",
+          "url": "https://www.youtube.com/watch?v=0HO6HYY5zBM&list=PLI-NxcTUPiPxWoGWzf583vRLLhpHgBQJ_",
+          "thumb": "https://i.ytimg.com/vi/0HO6HYY5zBM/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 3 | Coordinate Covalent Bond |  Class 9th New Book 2025"
+        },
+        {
+          "order": 7,
+          "playlistIndex": 7,
+          "videoId": "rRRhTs4rS2I",
+          "title": "Metallic Bond",
+          "subtitle": "",
+          "duration": "21:16",
+          "url": "https://www.youtube.com/watch?v=rRRhTs4rS2I&list=PLI-NxcTUPiPxWoGWzf583vRLLhpHgBQJ_",
+          "thumb": "https://i.ytimg.com/vi/rRRhTs4rS2I/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 3 | Metallic Bond |  Class 9th New Book 2025"
+        },
+        {
+          "order": 8,
+          "playlistIndex": 8,
+          "videoId": "gsZfYxInVTo",
+          "title": "Electropositive Character of Metals and Non-Metals",
+          "subtitle": "",
+          "duration": "16:42",
+          "url": "https://www.youtube.com/watch?v=gsZfYxInVTo&list=PLI-NxcTUPiPxWoGWzf583vRLLhpHgBQJ_",
+          "thumb": "https://i.ytimg.com/vi/gsZfYxInVTo/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 3 | Electropositive Character of Metals and Non-Metals | New Book 2025"
+        },
+        {
+          "order": 9,
+          "playlistIndex": 9,
+          "videoId": "jCP-U_Sz3xw",
+          "title": "Compare of Ionic and Covalent Compounds",
+          "subtitle": "",
+          "duration": "12:46",
+          "url": "https://www.youtube.com/watch?v=jCP-U_Sz3xw&list=PLI-NxcTUPiPxWoGWzf583vRLLhpHgBQJ_",
+          "thumb": "https://i.ytimg.com/vi/jCP-U_Sz3xw/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 3 | Compare of Ionic and Covalent Compounds | Class 9th New Book 2025"
+        },
+        {
+          "order": 10,
+          "playlistIndex": 10,
+          "videoId": "js4Gauy2ZoE",
+          "title": "Intermolecular Forces of Attraction",
+          "subtitle": "",
+          "duration": "20:14",
+          "url": "https://www.youtube.com/watch?v=js4Gauy2ZoE&list=PLI-NxcTUPiPxWoGWzf583vRLLhpHgBQJ_",
+          "thumb": "https://i.ytimg.com/vi/js4Gauy2ZoE/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 3 | Intermoleculer Forces of Attraction | New Book 2025"
+        },
+        {
+          "order": 11,
+          "playlistIndex": 11,
+          "videoId": "aRh78dCScxk",
+          "title": "Nature of Bonding and Properties",
+          "subtitle": "",
+          "duration": "24:40",
+          "url": "https://www.youtube.com/watch?v=aRh78dCScxk&list=PLI-NxcTUPiPxWoGWzf583vRLLhpHgBQJ_",
+          "thumb": "https://i.ytimg.com/vi/aRh78dCScxk/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 3 | Nature of Bonding and Properties | Class 9th New Book 2025"
+        },
+        {
+          "order": 12,
+          "playlistIndex": 12,
+          "videoId": "vNOYKPxyA2c",
+          "title": "Exercise — MCQs, Short & Long Questions",
+          "subtitle": "",
+          "duration": "21:52",
+          "url": "https://www.youtube.com/watch?v=vNOYKPxyA2c&list=PLI-NxcTUPiPxWoGWzf583vRLLhpHgBQJ_",
+          "thumb": "https://i.ytimg.com/vi/vNOYKPxyA2c/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 3 | Exercise MCQ's Short and long Question | New Book 2025"
+        }
+      ],
+      "videoCount": 12
+    },
+    {
+      "id": "ch4",
+      "number": 4,
+      "title": "Chemical Formulae & Equations",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "KxYwk1YOCWY",
+          "title": "Chemical and Empirical Formula",
+          "subtitle": "",
+          "duration": "28:17",
+          "url": "https://www.youtube.com/watch?v=KxYwk1YOCWY&list=PLI-NxcTUPiPw7LKDz0DkvoGuxS06E9PU9",
+          "thumb": "https://i.ytimg.com/vi/KxYwk1YOCWY/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 4 | Chemical and Empirical Formula | Class 9th New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "fY4LF4ioKHs",
+          "title": "Chemical Formula of Binary Ionic Compounds",
+          "subtitle": "",
+          "duration": "16:17",
+          "url": "https://www.youtube.com/watch?v=fY4LF4ioKHs&list=PLI-NxcTUPiPw7LKDz0DkvoGuxS06E9PU9",
+          "thumb": "https://i.ytimg.com/vi/fY4LF4ioKHs/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 4 | Chemical Formula of Binary Ionic Compounds | New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "cjtj66KnE0o",
+          "title": "Chemical Formula of Compounds",
+          "subtitle": "",
+          "duration": "24:27",
+          "url": "https://www.youtube.com/watch?v=cjtj66KnE0o&list=PLI-NxcTUPiPw7LKDz0DkvoGuxS06E9PU9",
+          "thumb": "https://i.ytimg.com/vi/cjtj66KnE0o/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 4 | Chemical Formula of Compunds | Class 9th New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "lRnNlrDQkho",
+          "title": "Deduce The Molecular Formula From Structural Formula",
+          "subtitle": "",
+          "duration": "16:32",
+          "url": "https://www.youtube.com/watch?v=lRnNlrDQkho&list=PLI-NxcTUPiPw7LKDz0DkvoGuxS06E9PU9",
+          "thumb": "https://i.ytimg.com/vi/lRnNlrDQkho/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 4 | Duduce The Molecular Formula From Structur Formula | New Book 2025"
+        },
+        {
+          "order": 5,
+          "playlistIndex": 5,
+          "videoId": "rNaQ_zpC7ck",
+          "title": "Avogadro's Number",
+          "subtitle": "",
+          "duration": "14:33",
+          "url": "https://www.youtube.com/watch?v=rNaQ_zpC7ck&list=PLI-NxcTUPiPw7LKDz0DkvoGuxS06E9PU9",
+          "thumb": "https://i.ytimg.com/vi/rNaQ_zpC7ck/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 4 | Avogado's Number | Class 9th New Book 2025"
+        },
+        {
+          "order": 6,
+          "playlistIndex": 6,
+          "videoId": "jzegziUc2ds",
+          "title": "The Mole And Molar Mass",
+          "subtitle": "",
+          "duration": "10:08",
+          "url": "https://www.youtube.com/watch?v=jzegziUc2ds&list=PLI-NxcTUPiPw7LKDz0DkvoGuxS06E9PU9",
+          "thumb": "https://i.ytimg.com/vi/jzegziUc2ds/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 4 | The Mole And Molar Mass | Class 9th New Book 2025"
+        },
+        {
+          "order": 7,
+          "playlistIndex": 7,
+          "videoId": "WSTT6CDDe8I",
+          "title": "Chemical Equation & Chemical Reaction",
+          "subtitle": "",
+          "duration": "23:36",
+          "url": "https://www.youtube.com/watch?v=WSTT6CDDe8I&list=PLI-NxcTUPiPw7LKDz0DkvoGuxS06E9PU9",
+          "thumb": "https://i.ytimg.com/vi/WSTT6CDDe8I/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 4 | Chemical Equation & Chemical Reaction | New Book 2025"
+        },
+        {
+          "order": 8,
+          "playlistIndex": 8,
+          "videoId": "oK7Jw3kWYfM",
+          "title": "Calculation Based on Chemical Equation",
+          "subtitle": "",
+          "duration": "7:37",
+          "url": "https://www.youtube.com/watch?v=oK7Jw3kWYfM&list=PLI-NxcTUPiPw7LKDz0DkvoGuxS06E9PU9",
+          "thumb": "https://i.ytimg.com/vi/oK7Jw3kWYfM/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 4 | Calculation Based on Chemical Equation | New Book 2025"
+        },
+        {
+          "order": 9,
+          "playlistIndex": 9,
+          "videoId": "3GoB_X9i95E",
+          "title": "Exercise — MCQs, Short & Long Questions",
+          "subtitle": "",
+          "duration": "27:04",
+          "url": "https://www.youtube.com/watch?v=3GoB_X9i95E&list=PLI-NxcTUPiPw7LKDz0DkvoGuxS06E9PU9",
+          "thumb": "https://i.ytimg.com/vi/3GoB_X9i95E/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 4 | Exercise MCQ's Short and long Question | New Book 2025"
+        }
+      ],
+      "videoCount": 9
+    },
+    {
+      "id": "ch5",
+      "number": 5,
+      "title": "Energetics",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "VV24NVGpTWQ",
+          "title": "Energetics, Form of Energy",
+          "subtitle": "",
+          "duration": "21:57",
+          "url": "https://www.youtube.com/watch?v=VV24NVGpTWQ&list=PLI-NxcTUPiPwKtbPU7iM27rnuAJPkCxRg",
+          "thumb": "https://i.ytimg.com/vi/VV24NVGpTWQ/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 5 | Energetics, Form of Energy | Class 9th New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "il6iLapU-V4",
+          "title": "Energetics, System and Surrounding",
+          "subtitle": "",
+          "duration": "6:28",
+          "url": "https://www.youtube.com/watch?v=il6iLapU-V4&list=PLI-NxcTUPiPwKtbPU7iM27rnuAJPkCxRg",
+          "thumb": "https://i.ytimg.com/vi/il6iLapU-V4/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 5 | Energetic, System and Surouding | Class 9th New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "gqU6PzZ9uw8",
+          "title": "Energetics, Enthalpy",
+          "subtitle": "",
+          "duration": "9:12",
+          "url": "https://www.youtube.com/watch?v=gqU6PzZ9uw8&list=PLI-NxcTUPiPwKtbPU7iM27rnuAJPkCxRg",
+          "thumb": "https://i.ytimg.com/vi/gqU6PzZ9uw8/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 5 | Energetic, Enthalpy | Class 9th New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "2sRMtQxEvVQ",
+          "title": "Energetics, Exothermic and Endothermic Reactions",
+          "subtitle": "",
+          "duration": "18:37",
+          "url": "https://www.youtube.com/watch?v=2sRMtQxEvVQ&list=PLI-NxcTUPiPwKtbPU7iM27rnuAJPkCxRg",
+          "thumb": "https://i.ytimg.com/vi/2sRMtQxEvVQ/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 5 | Energetic, Exothermic and Endothermic Reactions | New Book 2025"
+        },
+        {
+          "order": 5,
+          "playlistIndex": 5,
+          "videoId": "wMoBEQcfiM4",
+          "title": "Energetics, Exothermic and Endothermic Reactions Example",
+          "subtitle": "",
+          "duration": "13:05",
+          "url": "https://www.youtube.com/watch?v=wMoBEQcfiM4&list=PLI-NxcTUPiPwKtbPU7iM27rnuAJPkCxRg",
+          "thumb": "https://i.ytimg.com/vi/wMoBEQcfiM4/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 5 | Energetic, Exothermic and Endothernic Reactions Example"
+        },
+        {
+          "order": 6,
+          "playlistIndex": 6,
+          "videoId": "wpfRVlm6aAs",
+          "title": "Energetics, How does a Reaction Take Place",
+          "subtitle": "",
+          "duration": "19:24",
+          "url": "https://www.youtube.com/watch?v=wpfRVlm6aAs&list=PLI-NxcTUPiPwKtbPU7iM27rnuAJPkCxRg",
+          "thumb": "https://i.ytimg.com/vi/wpfRVlm6aAs/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 5 | Energetic, How dose a Reaction Take Place | New Book 2025"
+        },
+        {
+          "order": 7,
+          "playlistIndex": 7,
+          "videoId": "MF4SBPjAu80",
+          "title": "Energetics, Aerobic and Anaerobic Respiration",
+          "subtitle": "",
+          "duration": "17:57",
+          "url": "https://www.youtube.com/watch?v=MF4SBPjAu80&list=PLI-NxcTUPiPwKtbPU7iM27rnuAJPkCxRg",
+          "thumb": "https://i.ytimg.com/vi/MF4SBPjAu80/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 5 | Energetic, Aerobic and Anaerobic Respiration | New Book 2025"
+        },
+        {
+          "order": 8,
+          "playlistIndex": 8,
+          "videoId": "vJg1XRerPj8",
+          "title": "Exercise — MCQs, Short & Long Questions",
+          "subtitle": "",
+          "duration": "22:45",
+          "url": "https://www.youtube.com/watch?v=vJg1XRerPj8&list=PLI-NxcTUPiPwKtbPU7iM27rnuAJPkCxRg",
+          "thumb": "https://i.ytimg.com/vi/vJg1XRerPj8/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 5 | Exercise MCQ's Short and long Question | New Book 2025"
+        }
+      ],
+      "videoCount": 8
+    },
+    {
+      "id": "ch6",
+      "number": 6,
+      "title": "Chemical Equilibrium",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "rffqdpBE9UE",
+          "title": "Reversible and Irreversible Changes",
+          "subtitle": "",
+          "duration": "23:10",
+          "url": "https://www.youtube.com/watch?v=rffqdpBE9UE&list=PLI-NxcTUPiPxPpS-wex-CCWluTqzFQLRi",
+          "thumb": "https://i.ytimg.com/vi/rffqdpBE9UE/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 6 | Reversible and Irreversible Changes | Class 9th New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "rqkRkkAEcpI",
+          "title": "Dynamic Equilibrium",
+          "subtitle": "",
+          "duration": "10:26",
+          "url": "https://www.youtube.com/watch?v=rqkRkkAEcpI&list=PLI-NxcTUPiPxPpS-wex-CCWluTqzFQLRi",
+          "thumb": "https://i.ytimg.com/vi/rqkRkkAEcpI/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 6 | Dynamic Equilibrium | Class 9th New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "xxHRJP8QMlc",
+          "title": "Changing the Physical Condition of a Chemical Reaction",
+          "subtitle": "",
+          "duration": "19:09",
+          "url": "https://www.youtube.com/watch?v=xxHRJP8QMlc&list=PLI-NxcTUPiPxPpS-wex-CCWluTqzFQLRi",
+          "thumb": "https://i.ytimg.com/vi/xxHRJP8QMlc/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Ch 6 | Changing the Physical Condition of a Chemical Reaction | New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "PzNP3nAuyLI",
+          "title": "Exercise — MCQs, Short & Long Questions",
+          "subtitle": "",
+          "duration": "17:32",
+          "url": "https://www.youtube.com/watch?v=PzNP3nAuyLI&list=PLI-NxcTUPiPxPpS-wex-CCWluTqzFQLRi",
+          "thumb": "https://i.ytimg.com/vi/PzNP3nAuyLI/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 6 | Exercise MCQ's Short and long Question | New Book 2025"
+        }
+      ],
+      "videoCount": 4
+    },
+    {
+      "id": "ch7",
+      "number": 7,
+      "title": "Acids & Bases",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "h9AsjGnDnv4",
+          "title": "Acids and Bases",
+          "subtitle": "",
+          "duration": "11:44",
+          "url": "https://www.youtube.com/watch?v=h9AsjGnDnv4&list=PLI-NxcTUPiPw9pIlWZRDHXe-HD7ur6Xrc",
+          "thumb": "https://i.ytimg.com/vi/h9AsjGnDnv4/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 7 | Acids and Bases | Class 9th New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "eyf6FE_Hr5s",
+          "title": "Different Concepts of Acids and Bases",
+          "subtitle": "",
+          "duration": "30:08",
+          "url": "https://www.youtube.com/watch?v=eyf6FE_Hr5s&list=PLI-NxcTUPiPw9pIlWZRDHXe-HD7ur6Xrc",
+          "thumb": "https://i.ytimg.com/vi/eyf6FE_Hr5s/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 7 | Different Concepts of Acids and Bases | Class 9th New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "r2EK4Yof12s",
+          "title": "Bronsted - Lowry Concepts of Acids and Bases",
+          "subtitle": "",
+          "duration": "12:13",
+          "url": "https://www.youtube.com/watch?v=r2EK4Yof12s&list=PLI-NxcTUPiPw9pIlWZRDHXe-HD7ur6Xrc",
+          "thumb": "https://i.ytimg.com/vi/r2EK4Yof12s/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 7 | Bronsted - Lowry Concepts of Acids and Bases | New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "4psN9oWez7M",
+          "title": "Properties of Acids and Bases",
+          "subtitle": "",
+          "duration": "11:41",
+          "url": "https://www.youtube.com/watch?v=4psN9oWez7M&list=PLI-NxcTUPiPw9pIlWZRDHXe-HD7ur6Xrc",
+          "thumb": "https://i.ytimg.com/vi/4psN9oWez7M/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 7 | Properties of Acids and Bases | Class 9th New Book 2025"
+        },
+        {
+          "order": 5,
+          "playlistIndex": 5,
+          "videoId": "LVGRJk7IwP0",
+          "title": "Acid Rain and It's Effects",
+          "subtitle": "",
+          "duration": "14:22",
+          "url": "https://www.youtube.com/watch?v=LVGRJk7IwP0&list=PLI-NxcTUPiPw9pIlWZRDHXe-HD7ur6Xrc",
+          "thumb": "https://i.ytimg.com/vi/LVGRJk7IwP0/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 7 | Acid Rain and It's Effects | Class 9th New Book 2025"
+        },
+        {
+          "order": 6,
+          "playlistIndex": 6,
+          "videoId": "Pb2zf4KU-OY",
+          "title": "Exercise — MCQs, Short & Long Questions",
+          "subtitle": "",
+          "duration": "21:55",
+          "url": "https://www.youtube.com/watch?v=Pb2zf4KU-OY&list=PLI-NxcTUPiPw9pIlWZRDHXe-HD7ur6Xrc",
+          "thumb": "https://i.ytimg.com/vi/Pb2zf4KU-OY/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 7 | Exercise MCQ's Short and long Question | New Book 2025"
+        }
+      ],
+      "videoCount": 6
+    },
+    {
+      "id": "ch8",
+      "number": 8,
+      "title": "Periodic Table",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "QajhDgMEbFc",
+          "title": "Modern Periodic Table",
+          "subtitle": "",
+          "duration": "21:45",
+          "url": "https://www.youtube.com/watch?v=QajhDgMEbFc&list=PLI-NxcTUPiPzC97e41_WxFiOsuuFw1vAJ",
+          "thumb": "https://i.ytimg.com/vi/QajhDgMEbFc/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 8 | Modern Periodic Table | Class 9th New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "e9jC9oc-h6M",
+          "title": "Salient Feature of Modern Periodic Table",
+          "subtitle": "",
+          "duration": "23:57",
+          "url": "https://www.youtube.com/watch?v=e9jC9oc-h6M&list=PLI-NxcTUPiPzC97e41_WxFiOsuuFw1vAJ",
+          "thumb": "https://i.ytimg.com/vi/e9jC9oc-h6M/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 8 | Salient Feature of Modern Periodic Table | Class 9th New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "ueF-NpPDWrQ",
+          "title": "Similarities in Chemical Properties of Elements in Same Group",
+          "subtitle": "",
+          "duration": "29:08",
+          "url": "https://www.youtube.com/watch?v=ueF-NpPDWrQ&list=PLI-NxcTUPiPzC97e41_WxFiOsuuFw1vAJ",
+          "thumb": "https://i.ytimg.com/vi/ueF-NpPDWrQ/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Ch 8 | Similarties in Chemical Properties of Elements in Same Group | Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "KJUgigtC3Fo",
+          "title": "Variation of Periodic in Periods and Groups Part 1",
+          "subtitle": "",
+          "duration": "22:08",
+          "url": "https://www.youtube.com/watch?v=KJUgigtC3Fo&list=PLI-NxcTUPiPzC97e41_WxFiOsuuFw1vAJ",
+          "thumb": "https://i.ytimg.com/vi/KJUgigtC3Fo/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 8 | Variation of Periodic in Periods and Groups Part 1 | 9 New Book 2025"
+        },
+        {
+          "order": 5,
+          "playlistIndex": 5,
+          "videoId": "q0SMzjweXio",
+          "title": "Variation of Periodic in Periods and Groups Part 2",
+          "subtitle": "",
+          "duration": "15:36",
+          "url": "https://www.youtube.com/watch?v=q0SMzjweXio&list=PLI-NxcTUPiPzC97e41_WxFiOsuuFw1vAJ",
+          "thumb": "https://i.ytimg.com/vi/q0SMzjweXio/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 8 | Variation of Periodic in Periods and Groups Part 2 | 9 New Book 2025"
+        },
+        {
+          "order": 6,
+          "playlistIndex": 6,
+          "videoId": "vISCT3F4xNg",
+          "title": "Metallic and Reactivity",
+          "subtitle": "",
+          "duration": "9:53",
+          "url": "https://www.youtube.com/watch?v=vISCT3F4xNg&list=PLI-NxcTUPiPzC97e41_WxFiOsuuFw1vAJ",
+          "thumb": "https://i.ytimg.com/vi/vISCT3F4xNg/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 8 | Metallic and Reactivity | Class 9th New Book 2025"
+        },
+        {
+          "order": 7,
+          "playlistIndex": 7,
+          "videoId": "U8fF0clxBmw",
+          "title": "Exercise — MCQs, Short & Long Questions",
+          "subtitle": "",
+          "duration": "22:54",
+          "url": "https://www.youtube.com/watch?v=U8fF0clxBmw&list=PLI-NxcTUPiPzC97e41_WxFiOsuuFw1vAJ",
+          "thumb": "https://i.ytimg.com/vi/U8fF0clxBmw/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 8 | Exercise MCQ's Short and long Questions | New Book 2025"
+        }
+      ],
+      "videoCount": 7
+    },
+    {
+      "id": "ch9",
+      "number": 9,
+      "title": "Group Properties",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "jZ-QJBd6geg",
+          "title": "Properties of Group 17 Elements",
+          "subtitle": "",
+          "duration": "16:17",
+          "url": "https://www.youtube.com/watch?v=jZ-QJBd6geg&list=PLI-NxcTUPiPyuO2iQJOANxxsaGoqBkgnf",
+          "thumb": "https://i.ytimg.com/vi/jZ-QJBd6geg/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 9 | Properties of Group 17 Elements | Class 9th New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "N_7cAyrKfz8",
+          "title": "Properties of Group 1 Elements",
+          "subtitle": "",
+          "duration": "15:31",
+          "url": "https://www.youtube.com/watch?v=N_7cAyrKfz8&list=PLI-NxcTUPiPyuO2iQJOANxxsaGoqBkgnf",
+          "thumb": "https://i.ytimg.com/vi/N_7cAyrKfz8/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 9 | Properties of Group 1 Elements | Class 9th New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "vNDHXvKO4WM",
+          "title": "Group Properties Transition Elements, Properties of Noble Gases",
+          "subtitle": "",
+          "duration": "20:00",
+          "url": "https://www.youtube.com/watch?v=vNDHXvKO4WM&list=PLI-NxcTUPiPyuO2iQJOANxxsaGoqBkgnf",
+          "thumb": "https://i.ytimg.com/vi/vNDHXvKO4WM/hqdefault.jpg",
+          "originalTitle": "9 Class Chemistry Ch 9 | Group Properties Transition Elements, Properties of Noble Gases | New 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "qEoLxXFjd2Q",
+          "title": "Physical Properties of Metals and Non-Metals",
+          "subtitle": "",
+          "duration": "10:58",
+          "url": "https://www.youtube.com/watch?v=qEoLxXFjd2Q&list=PLI-NxcTUPiPyuO2iQJOANxxsaGoqBkgnf",
+          "thumb": "https://i.ytimg.com/vi/qEoLxXFjd2Q/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 9 | Physical Properties of Metals and Non-Metals | New Book 2025"
+        },
+        {
+          "order": 5,
+          "playlistIndex": 5,
+          "videoId": "7YcRDekgOkk",
+          "title": "Exercise — MCQs, Short & Long Questions",
+          "subtitle": "",
+          "duration": "20:01",
+          "url": "https://www.youtube.com/watch?v=7YcRDekgOkk&list=PLI-NxcTUPiPyuO2iQJOANxxsaGoqBkgnf",
+          "thumb": "https://i.ytimg.com/vi/7YcRDekgOkk/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 9 | Exercise MCQ's Short and long Questions | New Book 2025"
+        }
+      ],
+      "videoCount": 5
+    },
+    {
+      "id": "ch10",
+      "number": 10,
+      "title": "Environmental Chemistry",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "sAQ2f9qDSk0",
+          "title": "Global Warming",
+          "subtitle": "",
+          "duration": "18:33",
+          "url": "https://www.youtube.com/watch?v=sAQ2f9qDSk0&list=PLI-NxcTUPiPzc3vAr777zg6zv_45z4WjQ",
+          "thumb": "https://i.ytimg.com/vi/sAQ2f9qDSk0/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Ch 10 | Global Warming | New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "NG6cfe3UQyM",
+          "title": "Strategies to Reduce Environmental Issues",
+          "subtitle": "",
+          "duration": "13:11",
+          "url": "https://www.youtube.com/watch?v=NG6cfe3UQyM&list=PLI-NxcTUPiPzc3vAr777zg6zv_45z4WjQ",
+          "thumb": "https://i.ytimg.com/vi/NG6cfe3UQyM/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Ch 10 | Strategies to Reduce Environmental Issues | New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "9QzwE--dTN0",
+          "title": "How to Avoid Harmful Effects of Air Pollution",
+          "subtitle": "",
+          "duration": "8:41",
+          "url": "https://www.youtube.com/watch?v=9QzwE--dTN0&list=PLI-NxcTUPiPzc3vAr777zg6zv_45z4WjQ",
+          "thumb": "https://i.ytimg.com/vi/9QzwE--dTN0/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Ch 10 | How Avoid Harmful Effects of air Pollution | New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "8PVSsH57WwU",
+          "title": "Introduction, Composition of Atmosphere, Air Pollutants",
+          "subtitle": "",
+          "duration": "15:04",
+          "url": "https://www.youtube.com/watch?v=8PVSsH57WwU&list=PLI-NxcTUPiPzc3vAr777zg6zv_45z4WjQ",
+          "thumb": "https://i.ytimg.com/vi/8PVSsH57WwU/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Ch 10 | Introduction, Composition of Atmosphere, Air Pollutants | New Book 2025"
+        },
+        {
+          "order": 5,
+          "playlistIndex": 5,
+          "videoId": "J1O9QSYHUl8",
+          "title": "Acid Rain",
+          "subtitle": "",
+          "duration": "14:49",
+          "url": "https://www.youtube.com/watch?v=J1O9QSYHUl8&list=PLI-NxcTUPiPzc3vAr777zg6zv_45z4WjQ",
+          "thumb": "https://i.ytimg.com/vi/J1O9QSYHUl8/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 10 | Acid Rain | New Book 2025"
+        },
+        {
+          "order": 6,
+          "playlistIndex": 6,
+          "videoId": "hWk09KPFfHw",
+          "title": "Exercise — MCQs, Short & Long Questions",
+          "subtitle": "",
+          "duration": "13:42",
+          "url": "https://www.youtube.com/watch?v=hWk09KPFfHw&list=PLI-NxcTUPiPzc3vAr777zg6zv_45z4WjQ",
+          "thumb": "https://i.ytimg.com/vi/hWk09KPFfHw/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 10 | Exercise MCQ's Short and long Questions | New Book 2025"
+        }
+      ],
+      "videoCount": 6
+    },
+    {
+      "id": "ch11",
+      "number": 11,
+      "title": "Hydrocarbons",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "7eBL3YL4bKY",
+          "title": "Introduction, Hydrocarbons",
+          "subtitle": "",
+          "duration": "23:52",
+          "url": "https://www.youtube.com/watch?v=7eBL3YL4bKY&list=PLI-NxcTUPiPzODtayUj3FB_wh1M4drNAX",
+          "thumb": "https://i.ytimg.com/vi/7eBL3YL4bKY/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 11 | Introduction, Hydrocarbons | New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "34uxEnVIyhM",
+          "title": "Alkanes",
+          "subtitle": "",
+          "duration": "24:46",
+          "url": "https://www.youtube.com/watch?v=34uxEnVIyhM&list=PLI-NxcTUPiPzODtayUj3FB_wh1M4drNAX",
+          "thumb": "https://i.ytimg.com/vi/34uxEnVIyhM/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 11 | Alkanes | New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "8MmXUaB8UrY",
+          "title": "Preparation of Alkanes",
+          "subtitle": "",
+          "duration": "10:38",
+          "url": "https://www.youtube.com/watch?v=8MmXUaB8UrY&list=PLI-NxcTUPiPzODtayUj3FB_wh1M4drNAX",
+          "thumb": "https://i.ytimg.com/vi/8MmXUaB8UrY/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 11 | Preparation of Alkanes | Class 9th New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "YS99wByYn04",
+          "title": "Importance of Reaction",
+          "subtitle": "",
+          "duration": "21:03",
+          "url": "https://www.youtube.com/watch?v=YS99wByYn04&list=PLI-NxcTUPiPzODtayUj3FB_wh1M4drNAX",
+          "thumb": "https://i.ytimg.com/vi/YS99wByYn04/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 11 | Importance of Reaction | Class 9th New Book 2025"
+        },
+        {
+          "order": 5,
+          "playlistIndex": 5,
+          "videoId": "Z0POr_uLToA",
+          "title": "Exercise — MCQs, Short & Long Questions",
+          "subtitle": "",
+          "duration": "24:25",
+          "url": "https://www.youtube.com/watch?v=Z0POr_uLToA&list=PLI-NxcTUPiPzODtayUj3FB_wh1M4drNAX",
+          "thumb": "https://i.ytimg.com/vi/Z0POr_uLToA/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 11 | Exercise MCQ's Short and long Questions | New Book 2025"
+        }
+      ],
+      "videoCount": 5
+    },
+    {
+      "id": "ch12",
+      "number": 12,
+      "title": "Chemistry Measurements",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "eC7Q4kaC8Vg",
+          "title": "Introduction, SI Unit in Chemistry",
+          "subtitle": "",
+          "duration": "16:24",
+          "url": "https://www.youtube.com/watch?v=eC7Q4kaC8Vg&list=PLI-NxcTUPiPyQGbir7w9Myeiwr46wPd_Z",
+          "thumb": "https://i.ytimg.com/vi/eC7Q4kaC8Vg/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 12 | Introduction, SI Unit in Chemistry | New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "VHXdJAFEBQ4",
+          "title": "Tools and Techniques to Manage Accuracy and Precision",
+          "subtitle": "",
+          "duration": "15:10",
+          "url": "https://www.youtube.com/watch?v=VHXdJAFEBQ4&list=PLI-NxcTUPiPyQGbir7w9Myeiwr46wPd_Z",
+          "thumb": "https://i.ytimg.com/vi/VHXdJAFEBQ4/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Ch 12 | Tools and Techniques to Manage Accuracy and Precision | New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "20hHa5v9-0Q",
+          "title": "Exercise — MCQs, Short & Long Questions",
+          "subtitle": "",
+          "duration": "19:44",
+          "url": "https://www.youtube.com/watch?v=20hHa5v9-0Q&list=PLI-NxcTUPiPyQGbir7w9Myeiwr46wPd_Z",
+          "thumb": "https://i.ytimg.com/vi/20hHa5v9-0Q/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 12 | Exercise MCQ's Short and long Questions | New Book 2025"
+        }
+      ],
+      "videoCount": 3
+    },
+    {
+      "id": "ch13",
+      "number": 13,
+      "title": "Lab Safety & Hazards",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "aE4-5BRQUPQ",
+          "title": "Exercise — MCQs, Short & Long Questions",
+          "subtitle": "",
+          "duration": "16:45",
+          "url": "https://www.youtube.com/watch?v=aE4-5BRQUPQ&list=PLI-NxcTUPiPyfnFZ0aDC1bmnEnraPncxW",
+          "thumb": "https://i.ytimg.com/vi/aE4-5BRQUPQ/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 13 | Exercise MCQ's Short and long Questions | New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "pQOO-BN490k",
+          "title": "Hazard Signs to Emergency Situation in the Lab",
+          "subtitle": "",
+          "duration": "9:32",
+          "url": "https://www.youtube.com/watch?v=pQOO-BN490k&list=PLI-NxcTUPiPyfnFZ0aDC1bmnEnraPncxW",
+          "thumb": "https://i.ytimg.com/vi/pQOO-BN490k/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 13 | Hazard Signs to Emergency Situation in the Lab | 9thNew Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "8llpccWcYSQ",
+          "title": "Introduction, Chemical Hazards in the Laboratory",
+          "subtitle": "",
+          "duration": "17:32",
+          "url": "https://www.youtube.com/watch?v=8llpccWcYSQ&list=PLI-NxcTUPiPyfnFZ0aDC1bmnEnraPncxW",
+          "thumb": "https://i.ytimg.com/vi/8llpccWcYSQ/hqdefault.jpg",
+          "originalTitle": "9th Class Chemistry Chapter 13 | Introduction, Chemical Hazards in the Laboratory | New Book 2025"
+        }
+      ],
+      "videoCount": 3
+    }
+  ]
+}

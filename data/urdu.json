@@ -1,0 +1,952 @@
+{
+  "id": "urdu",
+  "title": "9th Urdu",
+  "subtitle": "New Book 2025",
+  "kind": "chapters",
+  "chapters": [
+    {
+      "id": "ch1",
+      "number": 1,
+      "title": "Hamd",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "YXyeo5qWT6U",
+          "title": "Tashreeh Part 1",
+          "subtitle": "",
+          "duration": "13:03",
+          "url": "https://www.youtube.com/watch?v=YXyeo5qWT6U&list=PLI-NxcTUPiPxvh390AdNRRHf0xGMTL02d",
+          "thumb": "https://i.ytimg.com/vi/YXyeo5qWT6U/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 1 | Hamd | Tashreeh Part 1 | Class 9th New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "V4PhxgnfbeQ",
+          "title": "Tashreeh Part 2",
+          "subtitle": "",
+          "duration": "15:16",
+          "url": "https://www.youtube.com/watch?v=V4PhxgnfbeQ&list=PLI-NxcTUPiPxvh390AdNRRHf0xGMTL02d",
+          "thumb": "https://i.ytimg.com/vi/V4PhxgnfbeQ/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 1 | Hamd | Tashreeh Part 2 | Class 9th New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "GRXpCLfBmKQ",
+          "title": "Tashreeh Part 3",
+          "subtitle": "",
+          "duration": "15:34",
+          "url": "https://www.youtube.com/watch?v=GRXpCLfBmKQ&list=PLI-NxcTUPiPxvh390AdNRRHf0xGMTL02d",
+          "thumb": "https://i.ytimg.com/vi/GRXpCLfBmKQ/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 1 | Hamd | Tashreeh Part 3 | Class 9th New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "OBF_6qW_WmQ",
+          "title": "Exercise (Mashk)",
+          "subtitle": "",
+          "duration": "11:47",
+          "url": "https://www.youtube.com/watch?v=OBF_6qW_WmQ&list=PLI-NxcTUPiPxvh390AdNRRHf0xGMTL02d",
+          "thumb": "https://i.ytimg.com/vi/OBF_6qW_WmQ/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 1 | Hamd | Exercise (Mashk) | Class 9th New Book 2025"
+        },
+        {
+          "order": 5,
+          "playlistIndex": 5,
+          "videoId": "FpyINo11YOY",
+          "title": "Khulasa",
+          "subtitle": "",
+          "duration": "2:57",
+          "url": "https://www.youtube.com/watch?v=FpyINo11YOY&list=PLI-NxcTUPiPxvh390AdNRRHf0xGMTL02d",
+          "thumb": "https://i.ytimg.com/vi/FpyINo11YOY/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 1 | Hamd | Khulasa | Class 9th New Book 2025"
+        },
+        {
+          "order": 6,
+          "playlistIndex": 6,
+          "videoId": "Q9-TZdKeV2M",
+          "title": "Markazi Khayal",
+          "subtitle": "",
+          "duration": "3:46",
+          "url": "https://www.youtube.com/watch?v=Q9-TZdKeV2M&list=PLI-NxcTUPiPxvh390AdNRRHf0xGMTL02d",
+          "thumb": "https://i.ytimg.com/vi/Q9-TZdKeV2M/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 1 | Hamd | Markazi Khyaal | Class 9th New Book 2025"
+        }
+      ],
+      "videoCount": 6
+    },
+    {
+      "id": "ch2",
+      "number": 2,
+      "title": "Naat",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "o651iy3HtNc",
+          "title": "Tashreeh (Part 1)",
+          "subtitle": "",
+          "duration": "10:15",
+          "url": "https://www.youtube.com/watch?v=o651iy3HtNc&list=PLI-NxcTUPiPzGev1ypyU6hBYB18BGeLJt",
+          "thumb": "https://i.ytimg.com/vi/o651iy3HtNc/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 2 | Naat | Tashreeh (Part 1) | 9th Class Urdu New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "JSCSDDgQHQo",
+          "title": "Tashreeh (Part 2)",
+          "subtitle": "",
+          "duration": "9:42",
+          "url": "https://www.youtube.com/watch?v=JSCSDDgQHQo&list=PLI-NxcTUPiPzGev1ypyU6hBYB18BGeLJt",
+          "thumb": "https://i.ytimg.com/vi/JSCSDDgQHQo/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 2 | Naat | Tashreeh (Part 2) | 9th Class Urdu New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "OojjsaWJDhU",
+          "title": "Tashreeh (Part 3)",
+          "subtitle": "",
+          "duration": "14:15",
+          "url": "https://www.youtube.com/watch?v=OojjsaWJDhU&list=PLI-NxcTUPiPzGev1ypyU6hBYB18BGeLJt",
+          "thumb": "https://i.ytimg.com/vi/OojjsaWJDhU/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 2 | Naat | Tashreeh (Part 3) | 9th Class Urdu New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "gIM_tjHIigM",
+          "title": "Mashaq",
+          "subtitle": "",
+          "duration": "16:10",
+          "url": "https://www.youtube.com/watch?v=gIM_tjHIigM&list=PLI-NxcTUPiPzGev1ypyU6hBYB18BGeLJt",
+          "thumb": "https://i.ytimg.com/vi/gIM_tjHIigM/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 2 | Naat | Mashaq | 9th Class Urdu New Book 2025"
+        },
+        {
+          "order": 5,
+          "playlistIndex": 5,
+          "videoId": "B6Zll83Jms4",
+          "title": "Markazi Khayal",
+          "subtitle": "",
+          "duration": "7:54",
+          "url": "https://www.youtube.com/watch?v=B6Zll83Jms4&list=PLI-NxcTUPiPzGev1ypyU6hBYB18BGeLJt",
+          "thumb": "https://i.ytimg.com/vi/B6Zll83Jms4/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 2 | Naat | Markazi Khyaal | 9th Class Urdu New Book 2025"
+        },
+        {
+          "order": 6,
+          "playlistIndex": 6,
+          "videoId": "r5o45ew9wyU",
+          "title": "Khulasa",
+          "subtitle": "",
+          "duration": "3:03",
+          "url": "https://www.youtube.com/watch?v=r5o45ew9wyU&list=PLI-NxcTUPiPzGev1ypyU6hBYB18BGeLJt",
+          "thumb": "https://i.ytimg.com/vi/r5o45ew9wyU/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 2 | Naat | Khulasa | 9th Class Urdu New Book 2025"
+        }
+      ],
+      "videoCount": 6
+    },
+    {
+      "id": "ch3",
+      "number": 3,
+      "title": "Ikhlaq-e-Hasanah",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "fZonmPP-J-g",
+          "title": "Aham Nakat, Musannif ka Taruf",
+          "subtitle": "",
+          "duration": "10:53",
+          "url": "https://www.youtube.com/watch?v=fZonmPP-J-g&list=PLI-NxcTUPiPw1W-zZzgvejJqXIzU49mHF",
+          "thumb": "https://i.ytimg.com/vi/fZonmPP-J-g/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 3 | Ikhlaq e Hasanah | Aham Nakat, Musanaf ka Taruf | New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "BdPrX8ePBPI",
+          "title": "Sabaq ka Khulasa",
+          "subtitle": "",
+          "duration": "6:42",
+          "url": "https://www.youtube.com/watch?v=BdPrX8ePBPI&list=PLI-NxcTUPiPw1W-zZzgvejJqXIzU49mHF",
+          "thumb": "https://i.ytimg.com/vi/BdPrX8ePBPI/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 3 | Ikhlaq e Hasanah | Sabaq ka Khulasa | New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "v2IRPHZKOwc",
+          "title": "Iqtibaas ki Tashreeh",
+          "subtitle": "",
+          "duration": "11:48",
+          "url": "https://www.youtube.com/watch?v=v2IRPHZKOwc&list=PLI-NxcTUPiPw1W-zZzgvejJqXIzU49mHF",
+          "thumb": "https://i.ytimg.com/vi/v2IRPHZKOwc/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 3 | Ikhlaq e Hasanah | Iqtibaas ki Tashreeh | Class 9th New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "p-oXUxZnliA",
+          "title": "Mashqi Sawalat",
+          "subtitle": "",
+          "duration": "15:33",
+          "url": "https://www.youtube.com/watch?v=p-oXUxZnliA&list=PLI-NxcTUPiPw1W-zZzgvejJqXIzU49mHF",
+          "thumb": "https://i.ytimg.com/vi/p-oXUxZnliA/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 3 | Ikhlaq e Hasanah | Mashqi Sawalat | Class 9th New Book 2025"
+        }
+      ],
+      "videoCount": 4
+    },
+    {
+      "id": "ch4",
+      "number": 4,
+      "title": "Apni Madad Aap",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "GlF9q6L4QJw",
+          "title": "Aham Nakat & Khulasa",
+          "subtitle": "",
+          "duration": "10:08",
+          "url": "https://www.youtube.com/watch?v=GlF9q6L4QJw&list=PLI-NxcTUPiPxA5ngV6S6RtnWYrwVoCRx5",
+          "thumb": "https://i.ytimg.com/vi/GlF9q6L4QJw/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 4 | Apni Madad aap | Aham Nakat, (Khulasa) | New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "eg32YaxCjSM",
+          "title": "Mashaq",
+          "subtitle": "",
+          "duration": "17:58",
+          "url": "https://www.youtube.com/watch?v=eg32YaxCjSM&list=PLI-NxcTUPiPxA5ngV6S6RtnWYrwVoCRx5",
+          "thumb": "https://i.ytimg.com/vi/eg32YaxCjSM/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 4 | Apni Madad aap | Mashaq | New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "oKqn98Qnc6o",
+          "title": "Iqtibaas ki Tashreeh",
+          "subtitle": "",
+          "duration": "8:47",
+          "url": "https://www.youtube.com/watch?v=oKqn98Qnc6o&list=PLI-NxcTUPiPxA5ngV6S6RtnWYrwVoCRx5",
+          "thumb": "https://i.ytimg.com/vi/oKqn98Qnc6o/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 4 | Apni Madad aap | Iqtibaas ki Tashreeh | New Book 2025"
+        }
+      ],
+      "videoCount": 3
+    },
+    {
+      "id": "ch5",
+      "number": 5,
+      "title": "Kaleem aur Mirza Zahir Dar Baig",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "Dp4oe5NtIik",
+          "title": "Aham Nakat, Sabaq ka Khulasa",
+          "subtitle": "",
+          "duration": "16:10",
+          "url": "https://www.youtube.com/watch?v=Dp4oe5NtIik&list=PLI-NxcTUPiPwGTzHoUQNp_f6Ji1B_56MP",
+          "thumb": "https://i.ytimg.com/vi/Dp4oe5NtIik/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 5 | kaleem or Mirza Zahir Dar Baig | Aham Nakat, Sabaq ka Khulasa | New 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "dhGmU9OZoPE",
+          "title": "Mashaq",
+          "subtitle": "",
+          "duration": "10:42",
+          "url": "https://www.youtube.com/watch?v=dhGmU9OZoPE&list=PLI-NxcTUPiPwGTzHoUQNp_f6Ji1B_56MP",
+          "thumb": "https://i.ytimg.com/vi/dhGmU9OZoPE/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 5 | kaleem or Mirza Zahir Dar Baig | Mashaq | New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "CEHAYU-2h7A",
+          "title": "Iqtibaas ki Tashreeh",
+          "subtitle": "",
+          "duration": "6:47",
+          "url": "https://www.youtube.com/watch?v=CEHAYU-2h7A&list=PLI-NxcTUPiPwGTzHoUQNp_f6Ji1B_56MP",
+          "thumb": "https://i.ytimg.com/vi/CEHAYU-2h7A/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 5 | kaleem or Mirza Zahir Dar Baig | Iqtibaas ki Tashreeh | 9th New Book 2025"
+        }
+      ],
+      "videoCount": 3
+    },
+    {
+      "id": "ch6",
+      "number": 6,
+      "title": "Naam Dev Maali",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "q1Rj3bv2HQw",
+          "title": "Overview",
+          "subtitle": "",
+          "duration": "13:06",
+          "url": "https://www.youtube.com/watch?v=q1Rj3bv2HQw&list=PLI-NxcTUPiPxmUdg_Bv8CZ3f-a3_IaNnH",
+          "thumb": "https://i.ytimg.com/vi/q1Rj3bv2HQw/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 6- Class 9th Urdu Chapter 6 - 9th Class Urdu New Book 2025 Playlist"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "i52bHOguXPE",
+          "title": "Mashaq",
+          "subtitle": "",
+          "duration": "11:41",
+          "url": "https://www.youtube.com/watch?v=i52bHOguXPE&list=PLI-NxcTUPiPxmUdg_Bv8CZ3f-a3_IaNnH",
+          "thumb": "https://i.ytimg.com/vi/i52bHOguXPE/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 6 | Naam Dev Maali | Mashaq | 9th Class Urdu New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "VP5KFlKifQs",
+          "title": "Iqtibaas ki Tashreeh",
+          "subtitle": "",
+          "duration": "7:12",
+          "url": "https://www.youtube.com/watch?v=VP5KFlKifQs&list=PLI-NxcTUPiPxmUdg_Bv8CZ3f-a3_IaNnH",
+          "thumb": "https://i.ytimg.com/vi/VP5KFlKifQs/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 6 | Naam Dev Mali | Iqtibaas ki Tashreeh | New Book 2025"
+        }
+      ],
+      "videoCount": 3
+    },
+    {
+      "id": "ch7",
+      "number": 7,
+      "title": "Aram-o-Sakoon",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "TTZa2s0_8js",
+          "title": "Aham Nakat",
+          "subtitle": "",
+          "duration": "13:28",
+          "url": "https://www.youtube.com/watch?v=TTZa2s0_8js&list=PLI-NxcTUPiPzBjoJ1MPuCdcnhmEDxsMPq",
+          "thumb": "https://i.ytimg.com/vi/TTZa2s0_8js/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 7 | Aram o Sakoon | Aham Nakkat | New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "puIyjzlfvLA",
+          "title": "Mashaq",
+          "subtitle": "",
+          "duration": "10:24",
+          "url": "https://www.youtube.com/watch?v=puIyjzlfvLA&list=PLI-NxcTUPiPzBjoJ1MPuCdcnhmEDxsMPq",
+          "thumb": "https://i.ytimg.com/vi/puIyjzlfvLA/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 7 | Aram o Sakoon | Mashaq | New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "qNs8d-6YOSM",
+          "title": "Iqtibaas ki Tashreeh",
+          "subtitle": "",
+          "duration": "6:35",
+          "url": "https://www.youtube.com/watch?v=qNs8d-6YOSM&list=PLI-NxcTUPiPzBjoJ1MPuCdcnhmEDxsMPq",
+          "thumb": "https://i.ytimg.com/vi/qNs8d-6YOSM/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 7 | Aram o Sakoon | Iqtibaas ki Tashreeh | New Book 2025"
+        }
+      ],
+      "videoCount": 3
+    },
+    {
+      "id": "ch8",
+      "number": 8,
+      "title": "Katbah",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "kN7ILjtP78g",
+          "title": "Aham Nakat & Khulasa",
+          "subtitle": "",
+          "duration": "14:31",
+          "url": "https://www.youtube.com/watch?v=kN7ILjtP78g&list=PLI-NxcTUPiPy_fmXWWN0Vq0sg3O4Yu5Gw",
+          "thumb": "https://i.ytimg.com/vi/kN7ILjtP78g/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 8 | Katbah | Aham Nakat, (Khulasa) | Class 9th New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "TpIF6skW1hk",
+          "title": "Mashaq",
+          "subtitle": "",
+          "duration": "16:06",
+          "url": "https://www.youtube.com/watch?v=TpIF6skW1hk&list=PLI-NxcTUPiPy_fmXWWN0Vq0sg3O4Yu5Gw",
+          "thumb": "https://i.ytimg.com/vi/TpIF6skW1hk/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 8 | Katbah | Mashaq | 9th Class Urdu New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "lBIZKD7Q03E",
+          "title": "Iqtibaas ki Tashreeh",
+          "subtitle": "",
+          "duration": "7:31",
+          "url": "https://www.youtube.com/watch?v=lBIZKD7Q03E&list=PLI-NxcTUPiPy_fmXWWN0Vq0sg3O4Yu5Gw",
+          "thumb": "https://i.ytimg.com/vi/lBIZKD7Q03E/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 8 | Katbah | Iqtibaas ki Tashreeh | Class 9th New Book 2025"
+        }
+      ],
+      "videoCount": 3
+    },
+    {
+      "id": "ch9",
+      "number": 9,
+      "title": "Ibtadai Hisaab",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "wBxFS_JCOgU",
+          "title": "Aham Nakat & Khulasa",
+          "subtitle": "",
+          "duration": "20:07",
+          "url": "https://www.youtube.com/watch?v=wBxFS_JCOgU&list=PLI-NxcTUPiPwbed2QnSCZS9cRMh5ioWwI",
+          "thumb": "https://i.ytimg.com/vi/wBxFS_JCOgU/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 9 | Ibtadai Hisaab | Aham Nakat, (Khulasa) | 9th Class Urdu New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "km5U3A3ahYw",
+          "title": "Mashaq",
+          "subtitle": "",
+          "duration": "18:07",
+          "url": "https://www.youtube.com/watch?v=km5U3A3ahYw&list=PLI-NxcTUPiPwbed2QnSCZS9cRMh5ioWwI",
+          "thumb": "https://i.ytimg.com/vi/km5U3A3ahYw/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 9 | Ibtadai Hisaab | Mashaq | 9th Class Urdu New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "74yfqjkHhFY",
+          "title": "Iqtibaas ki Tashreeh",
+          "subtitle": "",
+          "duration": "4:46",
+          "url": "https://www.youtube.com/watch?v=74yfqjkHhFY&list=PLI-NxcTUPiPwbed2QnSCZS9cRMh5ioWwI",
+          "thumb": "https://i.ytimg.com/vi/74yfqjkHhFY/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 9 | Ibtadai Hisaab | Iqtibaas ki Tashreeh | 9th Class Urdu New Book 2025"
+        }
+      ],
+      "videoCount": 3
+    },
+    {
+      "id": "ch10",
+      "number": 10,
+      "title": "Lari Mein Peroy Huwe Manzar",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "3X7uIolTlYA",
+          "title": "Aham Nakat & Khulasa",
+          "subtitle": "",
+          "duration": "7:39",
+          "url": "https://www.youtube.com/watch?v=3X7uIolTlYA&list=PLI-NxcTUPiPxjQ_4QGuzxAGpKgocvJpsO",
+          "thumb": "https://i.ytimg.com/vi/3X7uIolTlYA/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 10 | Lari Mein Peroy Huwe Manzar | Aham Nakat (Khulasa) | New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "0zt8JO1aSXk",
+          "title": "Mashaq",
+          "subtitle": "",
+          "duration": "11:14",
+          "url": "https://www.youtube.com/watch?v=0zt8JO1aSXk&list=PLI-NxcTUPiPxjQ_4QGuzxAGpKgocvJpsO",
+          "thumb": "https://i.ytimg.com/vi/0zt8JO1aSXk/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 10 | Lari Mein Peroy Huwe Manzar | Mashaq | New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "YE6xajUrILc",
+          "title": "Iqtibaas ki Tashreeh",
+          "subtitle": "",
+          "duration": "4:06",
+          "url": "https://www.youtube.com/watch?v=YE6xajUrILc&list=PLI-NxcTUPiPxjQ_4QGuzxAGpKgocvJpsO",
+          "thumb": "https://i.ytimg.com/vi/YE6xajUrILc/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 10 | Lari Mein Peroy Huwe Manzar | Iqtibaas ki Tashreeh | 9th New Book 2025"
+        }
+      ],
+      "videoCount": 3
+    },
+    {
+      "id": "ch11",
+      "number": 11,
+      "title": "Bheriya",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "dNMe2wLDbrE",
+          "title": "Aham Nakat & Khulasa",
+          "subtitle": "",
+          "duration": "5:36",
+          "url": "https://www.youtube.com/watch?v=dNMe2wLDbrE&list=PLI-NxcTUPiPw6QZhAkqgYuJF78m0L3DXx",
+          "thumb": "https://i.ytimg.com/vi/dNMe2wLDbrE/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 11 | Bheriya | Aham Nakat (Khulasa) | Class 9th New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "WcLEaafkogw",
+          "title": "Mashaq",
+          "subtitle": "",
+          "duration": "8:29",
+          "url": "https://www.youtube.com/watch?v=WcLEaafkogw&list=PLI-NxcTUPiPw6QZhAkqgYuJF78m0L3DXx",
+          "thumb": "https://i.ytimg.com/vi/WcLEaafkogw/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 11 | Bheriya | Mashaq | Class 9th New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "ySd1GsZXkrg",
+          "title": "Iqtibaas ki Tashreeh",
+          "subtitle": "",
+          "duration": "6:07",
+          "url": "https://www.youtube.com/watch?v=ySd1GsZXkrg&list=PLI-NxcTUPiPw6QZhAkqgYuJF78m0L3DXx",
+          "thumb": "https://i.ytimg.com/vi/ySd1GsZXkrg/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 11 | Bheriya | Iqtibaas ki Tashreeh | Class 9th New Book 2025"
+        }
+      ],
+      "videoCount": 3
+    },
+    {
+      "id": "ch12",
+      "number": 12,
+      "title": "Mehnat ki Barkaat",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "zcXrJBUWi9I",
+          "title": "Tashreeh",
+          "subtitle": "",
+          "duration": "9:49",
+          "url": "https://www.youtube.com/watch?v=zcXrJBUWi9I&list=PLI-NxcTUPiPxmjlVNSijzkEh6DzEjcoqw",
+          "thumb": "https://i.ytimg.com/vi/zcXrJBUWi9I/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 12 | Mehnat ki Barkaat | Tashreeh | Class 9th New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "uKISXjHEHME",
+          "title": "Markazi Khayal, Khulasa",
+          "subtitle": "",
+          "duration": "11:49",
+          "url": "https://www.youtube.com/watch?v=uKISXjHEHME&list=PLI-NxcTUPiPxmjlVNSijzkEh6DzEjcoqw",
+          "thumb": "https://i.ytimg.com/vi/uKISXjHEHME/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 12 | Mehnat ki Barkaat | Markazi Khyaal, Khulasa | Class 9th New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "vOYRIi69hmc",
+          "title": "Mashaq",
+          "subtitle": "",
+          "duration": "5:34",
+          "url": "https://www.youtube.com/watch?v=vOYRIi69hmc&list=PLI-NxcTUPiPxmjlVNSijzkEh6DzEjcoqw",
+          "thumb": "https://i.ytimg.com/vi/vOYRIi69hmc/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 12 | Mehnat ki Barkaat | Mashaq | Class 9th New Book 2025"
+        }
+      ],
+      "videoCount": 3
+    },
+    {
+      "id": "ch13",
+      "number": 13,
+      "title": "Chapter 13",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "ixQiU18pWgc",
+          "title": "Alfaaz Maani",
+          "subtitle": "",
+          "duration": "13:51",
+          "url": "https://www.youtube.com/watch?v=ixQiU18pWgc&list=PLI-NxcTUPiPxVbqtsRV989xh9k3o8SwBv",
+          "thumb": "https://i.ytimg.com/vi/ixQiU18pWgc/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 13 | Alfaaz Maani | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "u2ahlj86Vdo",
+          "title": "Tashreeh",
+          "subtitle": "",
+          "duration": "15:34",
+          "url": "https://www.youtube.com/watch?v=u2ahlj86Vdo&list=PLI-NxcTUPiPxVbqtsRV989xh9k3o8SwBv",
+          "thumb": "https://i.ytimg.com/vi/u2ahlj86Vdo/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 13 | Tashreeh | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "Tp0AsfPLFwM",
+          "title": "Markazi Khayal, Khulasa",
+          "subtitle": "",
+          "duration": "16:20",
+          "url": "https://www.youtube.com/watch?v=Tp0AsfPLFwM&list=PLI-NxcTUPiPxVbqtsRV989xh9k3o8SwBv",
+          "thumb": "https://i.ytimg.com/vi/Tp0AsfPLFwM/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 13 | Markazi Khyaal, Khulasa | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "oznnD_SIuM8",
+          "title": "Mashaq",
+          "subtitle": "",
+          "duration": "6:35",
+          "url": "https://www.youtube.com/watch?v=oznnD_SIuM8&list=PLI-NxcTUPiPxVbqtsRV989xh9k3o8SwBv",
+          "thumb": "https://i.ytimg.com/vi/oznnD_SIuM8/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 13 | Mashaq | Class 9th Urdu New Book 2025"
+        }
+      ],
+      "videoCount": 4
+    },
+    {
+      "id": "ch14",
+      "number": 14,
+      "title": "Chapter 14",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "d4iCZ_l3OeU",
+          "title": "Alfaaz Maani",
+          "subtitle": "",
+          "duration": "3:36",
+          "url": "https://www.youtube.com/watch?v=d4iCZ_l3OeU&list=PLI-NxcTUPiPxjSVsSN4ShJ-eFGIyjboPo",
+          "thumb": "https://i.ytimg.com/vi/d4iCZ_l3OeU/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 14 | Alfaaz Maani | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "h91Pw3GSeh4",
+          "title": "Tashreeh",
+          "subtitle": "",
+          "duration": "20:54",
+          "url": "https://www.youtube.com/watch?v=h91Pw3GSeh4&list=PLI-NxcTUPiPxjSVsSN4ShJ-eFGIyjboPo",
+          "thumb": "https://i.ytimg.com/vi/h91Pw3GSeh4/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 14 | Tashreeh | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "I3-rEMcYEeg",
+          "title": "Markazi Khayal, Khulasa",
+          "subtitle": "",
+          "duration": "11:26",
+          "url": "https://www.youtube.com/watch?v=I3-rEMcYEeg&list=PLI-NxcTUPiPxjSVsSN4ShJ-eFGIyjboPo",
+          "thumb": "https://i.ytimg.com/vi/I3-rEMcYEeg/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 14 | Markazi Khyaal, Khulasa | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "Fqo9tTzK31g",
+          "title": "Mashaq",
+          "subtitle": "",
+          "duration": "19:28",
+          "url": "https://www.youtube.com/watch?v=Fqo9tTzK31g&list=PLI-NxcTUPiPxjSVsSN4ShJ-eFGIyjboPo",
+          "thumb": "https://i.ytimg.com/vi/Fqo9tTzK31g/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 14 | Mashaq | Class 9th Urdu New Book 2025"
+        }
+      ],
+      "videoCount": 4
+    },
+    {
+      "id": "ch15",
+      "number": 15,
+      "title": "Chapter 15",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "iYCZEu-KORA",
+          "title": "Alfaaz Maani",
+          "subtitle": "",
+          "duration": "11:57",
+          "url": "https://www.youtube.com/watch?v=iYCZEu-KORA&list=PLI-NxcTUPiPzYQs7QzbjreOfcXdWU0o1R",
+          "thumb": "https://i.ytimg.com/vi/iYCZEu-KORA/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 15 | Alfaaz Maani | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "_ess-2xnPIc",
+          "title": "Markazi Khayal, Khulasa",
+          "subtitle": "",
+          "duration": "8:21",
+          "url": "https://www.youtube.com/watch?v=_ess-2xnPIc&list=PLI-NxcTUPiPzYQs7QzbjreOfcXdWU0o1R",
+          "thumb": "https://i.ytimg.com/vi/_ess-2xnPIc/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 15 | Markazi Khyaal, Khulasa | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "WPXskvdJru0",
+          "title": "Tashreeh Part 1",
+          "subtitle": "",
+          "duration": "13:54",
+          "url": "https://www.youtube.com/watch?v=WPXskvdJru0&list=PLI-NxcTUPiPzYQs7QzbjreOfcXdWU0o1R",
+          "thumb": "https://i.ytimg.com/vi/WPXskvdJru0/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 15 | Tashreeh Part 1 | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "5v3d5kBBzBI",
+          "title": "Tashreeh Part 2",
+          "subtitle": "",
+          "duration": "29:31",
+          "url": "https://www.youtube.com/watch?v=5v3d5kBBzBI&list=PLI-NxcTUPiPzYQs7QzbjreOfcXdWU0o1R",
+          "thumb": "https://i.ytimg.com/vi/5v3d5kBBzBI/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 15 | Tashreeh Part 2 | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 5,
+          "playlistIndex": 5,
+          "videoId": "ZlZzPNlM_d0",
+          "title": "Mashaq",
+          "subtitle": "",
+          "duration": "16:13",
+          "url": "https://www.youtube.com/watch?v=ZlZzPNlM_d0&list=PLI-NxcTUPiPzYQs7QzbjreOfcXdWU0o1R",
+          "thumb": "https://i.ytimg.com/vi/ZlZzPNlM_d0/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 15 | Mashaq | Class 9th Urdu New Book 2025"
+        }
+      ],
+      "videoCount": 5
+    },
+    {
+      "id": "ch16",
+      "number": 16,
+      "title": "Chapter 16",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "mqfqj5t5bpI",
+          "title": "Alfaaz Maani",
+          "subtitle": "",
+          "duration": "8:30",
+          "url": "https://www.youtube.com/watch?v=mqfqj5t5bpI&list=PLI-NxcTUPiPzLHudkwEKN9gFXg557TvH6",
+          "thumb": "https://i.ytimg.com/vi/mqfqj5t5bpI/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 16 | Alfaaz Maani | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "9WKPqrEEjKc",
+          "title": "Tashreeh Part 1",
+          "subtitle": "",
+          "duration": "17:55",
+          "url": "https://www.youtube.com/watch?v=9WKPqrEEjKc&list=PLI-NxcTUPiPzLHudkwEKN9gFXg557TvH6",
+          "thumb": "https://i.ytimg.com/vi/9WKPqrEEjKc/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 16 | Tashreeh Part 1 | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "oiFdQ9pwcQo",
+          "title": "Tashreeh Part 2",
+          "subtitle": "",
+          "duration": "22:36",
+          "url": "https://www.youtube.com/watch?v=oiFdQ9pwcQo&list=PLI-NxcTUPiPzLHudkwEKN9gFXg557TvH6",
+          "thumb": "https://i.ytimg.com/vi/oiFdQ9pwcQo/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 16 | Tashreeh Part 2 | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "GOlgZOptp4Q",
+          "title": "Mashaq",
+          "subtitle": "",
+          "duration": "17:21",
+          "url": "https://www.youtube.com/watch?v=GOlgZOptp4Q&list=PLI-NxcTUPiPzLHudkwEKN9gFXg557TvH6",
+          "thumb": "https://i.ytimg.com/vi/GOlgZOptp4Q/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 16 | Mashaq | Class 9th Urdu New Book 2025"
+        }
+      ],
+      "videoCount": 4
+    },
+    {
+      "id": "ch17",
+      "number": 17,
+      "title": "Chapter 17",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "v_tChR8w4kc",
+          "title": "Alfaaz Maani",
+          "subtitle": "",
+          "duration": "9:21",
+          "url": "https://www.youtube.com/watch?v=v_tChR8w4kc&list=PLI-NxcTUPiPwhNsOOAijdXs25uiRPTZog",
+          "thumb": "https://i.ytimg.com/vi/v_tChR8w4kc/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 17 | Alfaaz Maani | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "zjGEYjdj-s4",
+          "title": "Tashreeh Part 1",
+          "subtitle": "",
+          "duration": "17:27",
+          "url": "https://www.youtube.com/watch?v=zjGEYjdj-s4&list=PLI-NxcTUPiPwhNsOOAijdXs25uiRPTZog",
+          "thumb": "https://i.ytimg.com/vi/zjGEYjdj-s4/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 17 | Tashreeh Part 1 | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "sl7znzkWuPk",
+          "title": "Tashreeh Part 2",
+          "subtitle": "",
+          "duration": "18:56",
+          "url": "https://www.youtube.com/watch?v=sl7znzkWuPk&list=PLI-NxcTUPiPwhNsOOAijdXs25uiRPTZog",
+          "thumb": "https://i.ytimg.com/vi/sl7znzkWuPk/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 17 | Tashreeh Part 2 | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "L6ulcK03RQw",
+          "title": "Mashaq",
+          "subtitle": "",
+          "duration": "16:24",
+          "url": "https://www.youtube.com/watch?v=L6ulcK03RQw&list=PLI-NxcTUPiPwhNsOOAijdXs25uiRPTZog",
+          "thumb": "https://i.ytimg.com/vi/L6ulcK03RQw/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 17 | Mashaq | Class 9th Urdu New Book 2025"
+        }
+      ],
+      "videoCount": 4
+    },
+    {
+      "id": "ch18",
+      "number": 18,
+      "title": "Chapter 18",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "HCFUeQvN0JI",
+          "title": "Alfaaz Maani",
+          "subtitle": "",
+          "duration": "7:45",
+          "url": "https://www.youtube.com/watch?v=HCFUeQvN0JI&list=PLI-NxcTUPiPwpFz5hRg31DuTiMwW3XR3V",
+          "thumb": "https://i.ytimg.com/vi/HCFUeQvN0JI/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 18 | Alfaaz Maani | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "YSTp3WF9KJU",
+          "title": "Tashreeh Part 1",
+          "subtitle": "",
+          "duration": "22:42",
+          "url": "https://www.youtube.com/watch?v=YSTp3WF9KJU&list=PLI-NxcTUPiPwpFz5hRg31DuTiMwW3XR3V",
+          "thumb": "https://i.ytimg.com/vi/YSTp3WF9KJU/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 18 | Tashreeh Part 1 | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "b7o2d6kQRGY",
+          "title": "Tashreeh Part 2",
+          "subtitle": "",
+          "duration": "22:24",
+          "url": "https://www.youtube.com/watch?v=b7o2d6kQRGY&list=PLI-NxcTUPiPwpFz5hRg31DuTiMwW3XR3V",
+          "thumb": "https://i.ytimg.com/vi/b7o2d6kQRGY/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 18 | Tashreeh Part 2 | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "f-7goI0UyNc",
+          "title": "Mashaq",
+          "subtitle": "",
+          "duration": "12:18",
+          "url": "https://www.youtube.com/watch?v=f-7goI0UyNc&list=PLI-NxcTUPiPwpFz5hRg31DuTiMwW3XR3V",
+          "thumb": "https://i.ytimg.com/vi/f-7goI0UyNc/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 18 | Mashaq | Class 9th Urdu New Book 2025"
+        }
+      ],
+      "videoCount": 4
+    },
+    {
+      "id": "ch19",
+      "number": 19,
+      "title": "Chapter 19",
+      "videos": [
+        {
+          "order": 1,
+          "playlistIndex": 1,
+          "videoId": "cn8lnE9NNho",
+          "title": "Alfaaz Maani",
+          "subtitle": "",
+          "duration": "8:49",
+          "url": "https://www.youtube.com/watch?v=cn8lnE9NNho&list=PLI-NxcTUPiPxjsc4DtVdJP5mWgucKZjMW",
+          "thumb": "https://i.ytimg.com/vi/cn8lnE9NNho/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 19 | Alfaaz Maani | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 2,
+          "playlistIndex": 2,
+          "videoId": "a7ZblinwUn4",
+          "title": "Tashreeh Part 1",
+          "subtitle": "",
+          "duration": "16:09",
+          "url": "https://www.youtube.com/watch?v=a7ZblinwUn4&list=PLI-NxcTUPiPxjsc4DtVdJP5mWgucKZjMW",
+          "thumb": "https://i.ytimg.com/vi/a7ZblinwUn4/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 19 | Tashreeh Part 1 | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 3,
+          "playlistIndex": 3,
+          "videoId": "IQCLzfsY6cc",
+          "title": "Tashreeh Part 2",
+          "subtitle": "",
+          "duration": "13:53",
+          "url": "https://www.youtube.com/watch?v=IQCLzfsY6cc&list=PLI-NxcTUPiPxjsc4DtVdJP5mWgucKZjMW",
+          "thumb": "https://i.ytimg.com/vi/IQCLzfsY6cc/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 19 | Tashreeh Part 2 | Class 9th Urdu New Book 2025"
+        },
+        {
+          "order": 4,
+          "playlistIndex": 4,
+          "videoId": "qmzTQWmS3Mw",
+          "title": "Mashaq",
+          "subtitle": "",
+          "duration": "13:49",
+          "url": "https://www.youtube.com/watch?v=qmzTQWmS3Mw&list=PLI-NxcTUPiPxjsc4DtVdJP5mWgucKZjMW",
+          "thumb": "https://i.ytimg.com/vi/qmzTQWmS3Mw/hqdefault.jpg",
+          "originalTitle": "9th Class Urdu Chapter 19 | Mashaq | Class 9th Urdu New Book 2025"
+        }
+      ],
+      "videoCount": 4
+    }
+  ]
+}
