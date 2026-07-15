@@ -19,6 +19,12 @@
     <div id="searchWrap" class="search"><input id="search" type="search" placeholder="Search videos…"></div>
   </header>
   <main id="screen" class="screen"><div class="empty">Loading Lectures…</div></main>
+  <div id="playerOverlay" class="player-overlay" onclick="closePlayer()">
+    <div class="player-wrap" onclick="event.stopPropagation()">
+      <button class="player-close" onclick="closePlayer()" aria-label="Close player">✕</button>
+      <div id="playerContainer" class="player-container"></div>
+    </div>
+  </div>
 </div>
 <script src="/app.js" defer></script>
 <script src="app.js" defer></script>
