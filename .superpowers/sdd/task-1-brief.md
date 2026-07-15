@@ -1,3 +1,29 @@
+### Task 1: Foundation — Fonts, Color Tokens, CSS Reset, Background Mesh
+
+**Files:**
+- Modify: `index.html` — add font preconnects
+- Modify: `styles.css` — full rewrite with design tokens
+
+**Interfaces:**
+- Consumes: nothing
+- Produces: CSS custom properties used by all subsequent tasks. Font assets loaded.
+
+- [ ] **Step 1: Add font preconnects and Inter + JetBrains Mono to index.html**
+
+Add inside `<head>` before existing styles:
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+```
+
+Remove any old font loading. Wrap Google Fonts import in a conditional that only loads on first visit + stores in cache.
+
+- [ ] **Step 2: Rewrite styles.css with design tokens**
+
+Replace entire `styles.css` content with:
+
+```css
 :root {
   /* Vercel Dark color tokens */
   --canvas: #11182d;
@@ -19,7 +45,7 @@
 
   /* Typography tokens */
   --display: 'Inter', system-ui, -apple-system, sans-serif;
-  --body-font: 'Inter', system-ui, -apple-system, sans-serif;
+  --body: 'Inter', system-ui, -apple-system, sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, monospace;
 
   /* Spacing */
@@ -50,7 +76,7 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 body {
   margin: 0;
   color: var(--ink);
-  font-family: var(--body-font);
+  font-family: var(--body);
   font-weight: 400;
   line-height: 1.45;
   background: var(--canvas-soft);
@@ -104,116 +130,18 @@ button { font-family: inherit; cursor: pointer; }
   }
   body::before { animation: none; }
 }
+```
 
-/* ─── App Shell ─── */
-.app {
-  width: min(980px, 100%);
-  margin: auto;
-  min-height: 100vh;
-  padding: 14px 14px 48px;
-}
+- [ ] **Step 3: Verify fonts load**
 
-.top {
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--canvas) 90%, transparent), transparent);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  padding: 10px 0 14px;
-  margin-bottom: 8px;
-}
+Run app locally. Open DevTools → Network tab → filter "fonts.googleapis.com" — confirm Inter and JetBrains Mono loaded with 200 status.
 
-.titlebar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  position: relative;
-}
+- [ ] **Step 4: Commit**
 
-.back {
-  display: none;
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-md);
-  background: var(--canvas);
-  color: var(--body);
-  font-size: 18px;
-  position: absolute;
-  left: 4px;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: all 0.2s;
-  place-items: center;
-  padding: 0;
-}
-.back.show { display: grid; }
-.back:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-50%) rotate(-90deg);
-}
+```bash
+git add index.html styles.css
+git commit -m "feat: add Vercel dark design tokens, Inter + JetBrains Mono fonts, mesh gradient bg"
+```
 
-.heading {
-  text-align: center;
-  padding: 0 48px;
-}
-.heading h1 {
-  margin: 0;
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.88px;
-  line-height: 1.2;
-}
-.heading p {
-  margin: 4px 0 0;
-  color: var(--body);
-  font-size: 12px;
-  font-family: var(--mono);
-  font-weight: 400;
-  letter-spacing: 0;
-}
+---
 
-.search {
-  margin: 12px 4px 0;
-  display: none;
-}
-.search.show { display: block; }
-.search input {
-  width: 100%;
-  height: 40px;
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-sm);
-  padding: 0 14px;
-  background: var(--canvas);
-  color: var(--ink);
-  font: inherit;
-  font-size: 14px;
-  outline: none;
-  text-align: center;
-}
-.search input::placeholder { color: var(--mute); }
-.search input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-soft);
-}
-
-/* Page transitions */
-.screen {
-  padding-top: 12px;
-  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.screen.exit {
-  opacity: 0;
-  transform: translateY(8px);
-}
-.screen.enter {
-  opacity: 0;
-  transform: translateY(8px);
-}
-.screen.active {
-  opacity: 1;
-  transform: translateY(0);
-}
