@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy": "astro build && wrangler pages deploy dist --project-name 9lectures"
+    "deploy": "astro build && wrangler pages deploy dist/client --project-name 9lectures"
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.5",
