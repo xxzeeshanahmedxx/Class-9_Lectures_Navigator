@@ -1,0 +1,42 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import VideoCard from '../../../../components/VideoCard.astro';
+import subjects from '../../../../data/subjects.json';
+import mathData from '../../../../data/math.json';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const ch of mathData.chapters || []) {
+    for (const sec of ch.sections || []) {
+      paths.push({
+        params: { subject: 'math', chapter: ch.id, section: sec.id },
+        props: { chapter: ch, section: sec },
+      });
+    }
+  }
+  return paths;
+}
+
+const { chapter, section } = Astro.props;
+const mathSubject = subjects.find((s) => s.id === 'math');
+const videos = section.videos || [];
+---
+
+<Layout
+  title={section.title}
+  subtitle={`${chapter.title} · ${videos.length} videos`}
+  colors={mathSubject}
+  backUrl={`/math/${chapter.id}/`}
+>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {videos.map((v) => (
+      <VideoCard
+        videoId={v.videoId}
+        title={v.title}
+        subtitle={v.subtitle}
+        duration={v.duration}
+        thumb={v.thumb}
+      />
+    ))}
+  </div>
+</Layout>
