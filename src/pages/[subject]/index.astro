@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ChapterRow from '../../components/ChapterRow.astro';
+import subjects from '../../data/subjects.json';
+import mathData from '../../data/math.json';
+import physicsData from '../../data/physics.json';
+import chemistryData from '../../data/chemistry.json';
+import urduData from '../../data/urdu.json';
+import computerData from '../../data/computer.json';
+
+const dataMap: Record<string, any> = {
+  math: mathData, physics: physicsData, chemistry: chemistryData,
+  urdu: urduData, computer: computerData,
+};
+
+export async function getStaticPaths() {
+  return subjects.map((s) => ({
+    params: { subject: s.id },
+    props: { subject: s },
+  }));
+}
+
+const { subject } = Astro.props;
+const data = dataMap[subject.id];
+const chapters = data.chapters || [];
+const isExercises = data.kind === 'exercises';
+---
+
+<Layout title={subject.title} subtitle="Select a chapter" colors={subject} backUrl="/">
+  <div class="flex flex-col">
+    {chapters.map((ch, i) => {
+      const num = ch.number || ch.chapterNumber || i + 1;
+      const chTitle = ch.title || 'Chapter ' + num;
+      if (isExercises) {
+        const sc = (ch.sections || []).length;
+        return (
+          <ChapterRow
+            number={num}
+            title={chTitle}
+            count={sc}
+            countLabel={sc === 1 ? 'section' : 'sections'}
+            href={`/${subject.id}/${ch.id}/`}
+          />
+        );
+      } else {
+        const vc = ch.videos ? ch.videos.length : 0;
+        return (
+          <ChapterRow
+            number={num}
+            title={chTitle}
+            count={vc}
+            countLabel={vc === 1 ? 'video' : 'videos'}
+            href={`/${subject.id}/${ch.id}/`}
+          />
+        );
+      }
+    })}
+  </div>
+</Layout>
