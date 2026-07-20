@@ -1,0 +1,23 @@
+{
+  "name": "class-9-lectures-navigator",
+  "type": "module",
+  "version": "2.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "astro build && wrangler pages deploy dist --project-name 9lectures"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.5",
+    "@fontsource/jetbrains-mono": "^5.2.5",
+    "astro": "^7.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/cloudflare": "^14.0.0",
+    "@tailwindcss/vite": "^4.3.0",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^5.7.0",
+    "wrangler": "^4.107.0"
+  }
+}
