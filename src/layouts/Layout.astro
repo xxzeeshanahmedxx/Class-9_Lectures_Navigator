@@ -48,5 +48,20 @@ const { title, subtitle, colors, backUrl } = Astro.props;
     <footer class="text-center text-xs py-4 opacity-40 px-4">
       Made by Zeeshan Ahmed (17) for 9th grade students across Pakistan
     </footer>
+    <script>
+      import PlayerOverlay from '../components/PlayerOverlay.js';
+
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.video-trigger');
+        if (btn) {
+          const videoId = btn.dataset.videoId;
+          if (videoId) {
+            e.preventDefault();
+            const player = new PlayerOverlay();
+            player.open(videoId);
+          }
+        }
+      });
+    </script>
   </body>
 </html>
