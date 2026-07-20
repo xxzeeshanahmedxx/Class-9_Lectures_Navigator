@@ -1,0 +1,68 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import SectionRow from '../../../components/SectionRow.astro';
+import VideoCard from '../../../components/VideoCard.astro';
+import subjects from '../../../data/subjects.json';
+import mathData from '../../../data/math.json';
+import physicsData from '../../../data/physics.json';
+import chemistryData from '../../../data/chemistry.json';
+import urduData from '../../../data/urdu.json';
+import computerData from '../../../data/computer.json';
+
+export async function getStaticPaths() {
+  const dataMap = {
+    math: mathData, physics: physicsData, chemistry: chemistryData,
+    urdu: urduData, computer: computerData,
+  };
+  const paths = [];
+  for (const s of subjects) {
+    const data = dataMap[s.id];
+    const chapters = data.chapters || [];
+    for (const ch of chapters) {
+      paths.push({
+        params: { subject: s.id, chapter: ch.id },
+        props: { subject: s, chapter: ch, dataKind: data.kind },
+      });
+    }
+  }
+  return paths;
+}
+
+const { subject, chapter, dataKind } = Astro.props;
+const isExercises = dataKind === 'exercises';
+const num = chapter.number || chapter.chapterNumber || '';
+const chTitle = chapter.title || '';
+const displayTitle = num ? `Chapter ${num}` : chTitle;
+---
+
+<Layout
+  title={displayTitle}
+  subtitle={chTitle}
+  colors={subject}
+  backUrl={`/${subject.id}/`}
+>
+  {isExercises ? (
+    <div class="flex flex-col">
+      {(chapter.sections || []).map((sec, i) => (
+        <SectionRow
+          number={i + 1}
+          title={sec.title}
+          videoCount={(sec.videos || []).length}
+          href={`/${subject.id}/${chapter.id}/${sec.id}/`}
+        />
+      ))}
+    </div>
+  ) : (
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {(chapter.videos || []).map((v) => (
+        <VideoCard
+          videoId={v.videoId}
+          title={v.title}
+          subtitle={v.subtitle}
+          duration={v.duration}
+          thumb={v.thumb}
+        />
+      ))}
+    </div>
+  )}
+</Layout>
