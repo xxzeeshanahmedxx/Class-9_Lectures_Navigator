@@ -40,28 +40,34 @@ const displayTitle = num ? `Chapter ${num}` : chTitle;
   subtitle={chTitle}
   colors={subject}
   backUrl={`/${subject.id}/`}
+  showPWA={true}
 >
   {isExercises ? (
     <div class="flex flex-col">
       {(chapter.sections || []).map((sec, i) => (
-        <SectionRow
-          number={i + 1}
-          title={sec.title}
-          videoCount={(sec.videos || []).length}
-          href={`/${subject.id}/${chapter.id}/${sec.id}/`}
-        />
+        <div class="animate-fade-in-up" style={`animation-delay: ${i * 50}ms`}>
+          <SectionRow
+            number={i + 1}
+            title={sec.title}
+            videoCount={(sec.videos || []).length}
+            href={`/${subject.id}/${chapter.id}/${sec.id}/`}
+            colors={{ accent: subject.accent }}
+          />
+        </div>
       ))}
     </div>
   ) : (
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {(chapter.videos || []).map((v) => (
-        <VideoCard
-          videoId={v.videoId}
-          title={v.title}
-          subtitle={v.subtitle}
-          duration={v.duration}
-          thumb={v.thumb}
-        />
+      {(chapter.videos || []).map((v, i) => (
+        <div class="animate-fade-in-up" style={`animation-delay: ${i * 50}ms`}>
+          <VideoCard
+            videoId={v.videoId}
+            title={v.title}
+            subtitle={v.subtitle}
+            duration={v.duration}
+            thumb={v.thumb}
+          />
+        </div>
       ))}
     </div>
   )}

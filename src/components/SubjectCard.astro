@@ -6,12 +6,23 @@ export interface Props {
   accent: string;
 }
 
-const { id, title, emoji, accent } = Astro.props;
+const { id, title, accent } = Astro.props;
 ---
 
 <a
   href={`/${id}/`}
-  class="group relative rounded-2xl overflow-hidden aspect-square block transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
+  class="group relative rounded-xl overflow-hidden aspect-square block active:scale-[0.95] transition-all duration-200 touch-min"
+  aria-label={title}
+  style={`--card-from: ${accent};`}
 >
-  <img src={`/assets/${id}.webp`} alt={title} class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" loading="lazy" style="position: absolute; inset: 0;" />
+  <img
+    src={`/assets/${id}.webp`}
+    alt={title}
+    class="absolute inset-0 w-full h-full object-cover"
+    loading="lazy"
+    decoding="async"
+  />
+  <!-- Gradient overlay: brand diagonal from bottom-right -->
+  <div class="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-300" style="background: linear-gradient(135deg, transparent 40%, var(--card-from, var(--accent)));"></div>
+  <span class="sr-only">{title}</span>
 </a>

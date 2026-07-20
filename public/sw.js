@@ -1,12 +1,13 @@
-const CACHE = '9lectures-v3';
-const ASSETS = [
+const CACHE = '9lectures-v4';
+const STATIC = [
   '/',
   '/manifest.json',
+  '/robots.txt',
 ];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE).then((cache) => cache.addAll(ASSETS))
+    caches.open(CACHE).then((cache) => cache.addAll(STATIC))
   );
   self.skipWaiting();
 });
@@ -21,6 +22,7 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  if (event.request.method !== 'GET') return;
   event.respondWith(
     caches.match(event.request).then((cached) => {
       if (cached) return cached;

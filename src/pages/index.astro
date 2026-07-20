@@ -2,12 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 import SubjectCard from '../components/SubjectCard.astro';
 import subjects from '../data/subjects.json';
+const siteUrl = 'https://9lectures.pages.dev';
 ---
 
-<Layout title="Class 9 · Punjab Curriculum">
-  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-    {subjects.map((s) => (
-      <SubjectCard id={s.id} title={s.title} emoji={s.emoji} accent={s.accent} />
+<Layout title="Class 9 · Punjab Curriculum" canonical={siteUrl}>
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+    {subjects.map((s, i) => (
+      <div class={`animate-fade-in-up animate-delay-${i + 1}`}>
+        <SubjectCard id={s.id} title={s.title} emoji={s.emoji} accent={s.accent} />
+      </div>
     ))}
   </div>
+
 </Layout>

@@ -27,16 +27,19 @@ const videos = section.videos || [];
   subtitle={`${chapter.title} · ${videos.length} videos`}
   colors={mathSubject}
   backUrl={`/math/${chapter.id}/`}
+  showPWA={true}
 >
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    {videos.map((v) => (
-      <VideoCard
-        videoId={v.videoId}
-        title={v.title}
-        subtitle={v.subtitle}
-        duration={v.duration}
-        thumb={v.thumb}
-      />
+    {videos.map((v, i) => (
+      <div class="animate-fade-in-up" style={`animation-delay: ${i * 50}ms`}>
+        <VideoCard
+          videoId={v.videoId}
+          title={v.title}
+          subtitle={v.subtitle}
+          duration={v.duration}
+          thumb={v.thumb}
+        />
+      </div>
     ))}
   </div>
 </Layout>

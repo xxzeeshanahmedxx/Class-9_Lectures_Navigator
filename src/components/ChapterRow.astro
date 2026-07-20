@@ -5,22 +5,25 @@ export interface Props {
   count: number;
   countLabel: string;
   href: string;
+  colors: {
+    accent: string; soft: string;
+  };
 }
 
-const { number, title, count, countLabel, href } = Astro.props;
+const { number, title, count, countLabel, href, colors } = Astro.props;
 ---
 
 <a
   href={href}
-  class="flex items-center gap-4 rounded-xl px-4 py-3.5 transition-all duration-200 hover:opacity-80"
-  style="border-bottom: 1px solid var(--line, #1e2a4a);"
+  class="flex items-center gap-3 px-3 sm:px-4 min-h-[48px] touch-min transition-all duration-150 active:scale-[0.99] hover:[background:var(--surface-hover)]"
+  style="border-bottom: 1px solid var(--hairline);"
 >
-  <span class="flex items-center justify-center w-8 h-8 rounded-lg text-xs font-mono font-bold flex-shrink-0" style="background: var(--soft, #1a2544); color: var(--accent, #8cb4ff);">
+  <span class="flex items-center justify-center w-7 h-7 rounded text-xs font-semibold flex-shrink-0 gradient-brand" style="color: #fff;">
     {number}
   </span>
   <div class="min-w-0 flex-1">
-    <div class="text-sm font-medium truncate">{title}</div>
-    <span class="text-xs opacity-50">{count} {countLabel}</span>
+    <div class="text-[15px] font-medium truncate" style="color: var(--text);">{title}</div>
+    <span class="text-[13px]" style="color: var(--text-secondary);">{count} {countLabel}</span>
   </div>
-  <span class="text-lg opacity-30 font-mono flex-shrink-0" style="color: var(--accent, #8cb4ff);">&rarr;</span>
+  <span class="text-sm" style="color: var(--text-muted);">&rarr;</span>
 </a>

@@ -8,7 +8,7 @@ import chemistryData from '../../data/chemistry.json';
 import urduData from '../../data/urdu.json';
 import computerData from '../../data/computer.json';
 
-const dataMap: Record<string, any> = {
+const dataMap = {
   math: mathData, physics: physicsData, chemistry: chemistryData,
   urdu: urduData, computer: computerData,
 };
@@ -31,29 +31,26 @@ const isExercises = data.kind === 'exercises';
     {chapters.map((ch, i) => {
       const num = ch.number || ch.chapterNumber || i + 1;
       const chTitle = ch.title || 'Chapter ' + num;
-      if (isExercises) {
-        const sc = (ch.sections || []).length;
-        return (
-          <ChapterRow
-            number={num}
-            title={chTitle}
-            count={sc}
-            countLabel={sc === 1 ? 'section' : 'sections'}
-            href={`/${subject.id}/${ch.id}/`}
-          />
-        );
-      } else {
-        const vc = ch.videos ? ch.videos.length : 0;
-        return (
-          <ChapterRow
-            number={num}
-            title={chTitle}
-            count={vc}
-            countLabel={vc === 1 ? 'video' : 'videos'}
-            href={`/${subject.id}/${ch.id}/`}
-          />
-        );
-      }
+      const row = isExercises ? (
+        <ChapterRow
+          number={num}
+          title={chTitle}
+          count={(ch.sections || []).length}
+          countLabel="sections"
+          href={`/${subject.id}/${ch.id}/`}
+          colors={{ accent: subject.accent, soft: subject.soft }}
+        />
+      ) : (
+        <ChapterRow
+          number={num}
+          title={chTitle}
+          count={ch.videos ? ch.videos.length : 0}
+          countLabel="videos"
+          href={`/${subject.id}/${ch.id}/`}
+          colors={{ accent: subject.accent, soft: subject.soft }}
+        />
+      );
+      return <div class="animate-fade-in-up" style={`animation-delay: ${i * 50}ms`}>{row}</div>;
     })}
   </div>
 </Layout>
