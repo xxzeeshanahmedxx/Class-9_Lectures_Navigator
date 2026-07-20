@@ -41,7 +41,7 @@ const { title, subtitle, colors, backUrl } = Astro.props;
     <header class="sticky top-0 z-40 backdrop-blur-md" style="background: color-mix(in srgb, var(--bg, #070a1a) 80%, transparent); border-bottom: 1px solid var(--line, #1e2a4a);">
       <div class="flex items-center gap-3 px-4 h-12 max-w-4xl mx-auto">
         {backUrl && (
-          <a href={backUrl} class="flex items-center justify-center w-8 h-8 rounded-lg text-lg font-mono hover:opacity-70 transition-opacity" style="color: var(--accent, #8cb4ff);" data-astro-transition-persist>&lsaquo;</a>
+          <a href={backUrl} class="flex items-center justify-center w-8 h-8 rounded-lg text-lg font-mono hover:opacity-70 transition-opacity" style="color: var(--accent, #8cb4ff);">&lsaquo;</a>
         )}
         <div class="min-w-0">
           <h1 class="text-sm font-semibold truncate">{title}</h1>
