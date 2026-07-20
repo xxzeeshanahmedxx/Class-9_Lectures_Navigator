@@ -9,6 +9,7 @@
     "deploy": "astro build && wrangler pages deploy dist/client --project-name 9lectures"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
     "@fontsource/inter": "^5.2.5",
     "@fontsource/jetbrains-mono": "^5.2.5",
     "astro": "^7.0.0"
