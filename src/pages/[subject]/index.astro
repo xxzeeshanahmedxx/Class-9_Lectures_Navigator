@@ -28,7 +28,7 @@ const chNames = chapters.map((ch, i) => ch.title || `Chapter ${ch.number || i + 
 const siteUrl = 'https://9lectures.pages.dev';
 const pageUrl = siteUrl + '/' + subject.id + '/';
 
-const subjectDesc = `Free ${subject.id} class 9 lectures for Punjab Board 2025 new book. Watch all ${chapters.length} chapters including ${chNames.slice(0, 3).join(', ')}${chNames.length > 3 ? ' and more' : ''}. Complete video course online.`;
+const subjectDesc = `Free ${subject.id} class 9 lectures for Punjab Board 2026 new book. Watch all ${chapters.length} chapters including ${chNames.slice(0, 3).join(', ')}${chNames.length > 3 ? ' and more' : ''}. Full video course online.`;
 
 const breadcrumbs = [
   { name: 'Home', url: siteUrl + '/' },
@@ -36,23 +36,24 @@ const breadcrumbs = [
 ];
 
 const subjLines = {
-  math: `Math Class 9 – Free online video lectures for Punjab Board 2025. Complete course covering real numbers, logarithms, sets and functions, factorization, algebra, linear equations, trigonometry, coordinate geometry, logic, graphs, statistics and probability.`,
-  physics: `Physics Class 9 – Free online video lectures for Punjab Board 2025. Complete course covering physical quantities and measurement, kinematics, dynamics, turning effect of forces, work energy and power, mechanical and thermal properties of matter, magnetism and nature of science.`,
-  chemistry: `Chemistry Class 9 – Free online video lectures for Punjab Board 2025. Complete course covering structure of atom, chemical bonding, formulae and equations, energetics, equilibrium, acids and bases, periodic table, group properties, hydrocarbons and environmental chemistry.`,
-  urdu: `Urdu Class 9 – Free online video lectures for Punjab Board 2025. Complete course covering hamd, naat, ikhlaq-e-hasanah, apni madad aap, nazam, ghazal, khatoot, tashreeh, grammar and essays.`,
-  computer: `Computer Class 9 – Free online video lectures for Punjab Board 2025. Complete course covering computer systems and logic, troubleshooting and security, computer networks, computational thinking, web development and data science.`,
+  math: `Math Class 9 – Free online video lectures for Punjab Board 2026. Course covering real numbers, logarithms, sets and functions, factorization, algebra, linear equations, trigonometry, coordinate geometry, logic, graphs, statistics and probability.`,
+  physics: `Physics Class 9 – Free online video lectures for Punjab Board 2026. Course covering physical quantities and measurement, kinematics, dynamics, turning effect of forces, work energy and power, mechanical and thermal properties of matter, magnetism and nature of science.`,
+  chemistry: `Chemistry Class 9 – Free online video lectures for Punjab Board 2026. Course covering structure of atom, chemical bonding, formulae and equations, energetics, equilibrium, acids and bases, periodic table, group properties, hydrocarbons and environmental chemistry.`,
+  urdu: `Urdu Class 9 – Free online video lectures for Punjab Board 2026. Course covering hamd, naat, ikhlaq-e-hasanah, apni madad aap, nazam, ghazal, khatoot, tashreeh, grammar and essays.`,
+  computer: `Computer Class 9 – Free online video lectures for Punjab Board 2026. Course covering computer systems and logic, troubleshooting and security, computer networks, computational thinking, web development and data science.`,
 };
-const visibleLine = subjLines[subject.id] || `Free ${subject.title} class 9 lectures for Punjab Board 2025 new book – ${chapters.length} chapters. Watch complete video course online.`;
+const visibleLine = subjLines[subject.id] || `Free ${subject.title} class 9 lectures for Punjab Board 2026 new book – ${chapters.length} chapters. Watch full video course online.`;
 ---
 
 <Layout
-  title={`${subject.title} Class 9 – Complete Course | Free Lectures Punjab Board`}
+  title={`${subject.title} Class 9 – Full Course | Free Lectures Punjab Board`}
   subtitle="Select a chapter"
   desc={subjectDesc}
   colors={subject}
   backUrl="/"
   canonical={pageUrl}
   breadcrumbs={breadcrumbs}
+  currentSubject={subject.id}
 >
   <p class="mb-5 text-[14px] leading-relaxed" style="color: var(--text-secondary);">{visibleLine}</p>
   <div class="flex flex-col gap-3">

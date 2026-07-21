@@ -55,9 +55,9 @@ const allVideos = isExercises
 const topics = extractTopics(allVideos);
 const summaryText = topics.length > 0
   ? `This chapter covers: ${topics.join(', ')}.`
-  : `Complete video lectures for ${subject.title} class 9 chapter ${num}.`;
+  : `Video lectures for ${subject.title} class 9 chapter ${num}.`;
 
-const chapterDesc = `${subject.title} class 9 chapter ${num} – ${chTitle}. ${summaryText} Free video lectures for Punjab Board 2025.`;
+const chapterDesc = `${subject.title} class 9 chapter ${num} – ${chTitle}. ${summaryText} Free video lectures for Punjab Board 2026.`;
 
 const visibleTopics = topics.slice(0, 4).join(', ');
 const visibleLine = topics.length > 0
@@ -80,6 +80,7 @@ const breadcrumbs = [
   canonical={pageUrl}
   showPWA={true}
   breadcrumbs={breadcrumbs}
+  currentSubject={subject.id}
 >
   {topics.length > 0 && (
     <p class="mb-5 text-[14px] leading-relaxed" style="color: var(--text-secondary);">{visibleLine}</p>

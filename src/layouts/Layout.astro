@@ -18,7 +18,7 @@ export interface Props {
   breadcrumbs?: { name: string; url: string }[];
 }
 
-const { title, subtitle, colors, backUrl, canonical, showPWA, noHeader, breadcrumbs } = Astro.props;
+const { title, subtitle, colors, backUrl, canonical, showPWA, noHeader, breadcrumbs, currentSubject } = Astro.props;
 const accentColor = colors?.accent || '#8cb4ff';
 const siteName = 'Class 9 · Punjab Curriculum';
 const siteUrl = 'https://9lectures.pages.dev';
@@ -164,6 +164,19 @@ const ogImage = siteUrl + '/apple-touch-icon.png';
     <main class="flex-1 max-w-4xl mx-auto w-full px-3 sm:px-4 py-4 sm:py-6 animate-fade-in-up">
       <slot />
     </main>
+    <div class="max-w-4xl mx-auto px-3 sm:px-4 mb-2">
+      <div class="border-t pt-4 pb-2 text-center" style="border-color: var(--hairline);">
+        {currentSubject === 'physics' ? (
+          <p class="text-[13px] leading-relaxed" style="color: var(--text-secondary);">
+            📘 Also explore <a href="/math/" class="font-medium underline underline-offset-2 hover:opacity-80" style="color: var(--accent);">Math Class 9</a> – free Punjab Board video lectures →
+          </p>
+        ) : (
+          <p class="text-[13px] leading-relaxed" style="color: var(--text-secondary);">
+            📘 Also explore <a href="/physics/" class="font-medium underline underline-offset-2 hover:opacity-80" style="color: var(--accent);">Physics Class 9</a> – free Punjab Board video lectures →
+          </p>
+        )}
+      </div>
+    </div>
     {showPWA && (
     <div id="pwa-banner" class="fixed bottom-0 left-0 right-0 z-30 translate-y-full transition-transform duration-300" style="background: var(--surface); border-top: 1px solid var(--hairline);">
       <div class="flex items-center gap-3 px-4 py-3 max-w-4xl mx-auto">
