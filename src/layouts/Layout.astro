@@ -30,7 +30,7 @@ const ogImage = siteUrl + '/apple-touch-icon.png';
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <ClientRouter />
     <title>{title === siteName ? title : `${title} · ${siteName}`}</title>
     <meta name="description" content={desc} />
@@ -206,9 +206,9 @@ const ogImage = siteUrl + '/apple-touch-icon.png';
       })();
     </script>
 
-    <footer class={`text-center text-[11px] leading-relaxed py-4 px-4 space-y-0.5${showPWA ? ' pb-20' : ''}`} style="color: var(--text-muted);">
+    <footer class={`text-center text-[11px] leading-relaxed py-4 px-4 space-y-0.5${showPWA ? ' pb-20' : ''}`} style="color: var(--text-secondary);">
       <p>Lectures belong to their respective teachers.</p>
-      <p>Made by Zeeshan Ahmed · <a href="https://9lectures.pages.dev" class="underline underline-offset-2 hover:opacity-70">Class 9 Lectures</a></p>
+      <p>Made by Zeeshan Ahmed · <a href="https://9lectures.pages.dev" class="underline underline-offset-2 hover:opacity-80" style="color: var(--text-secondary);">Class 9 Lectures</a></p>
     </footer>
     <script>
       import PlayerOverlay from '../components/PlayerOverlay.js';
