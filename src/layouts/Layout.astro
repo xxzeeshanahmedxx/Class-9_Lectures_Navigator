@@ -14,10 +14,11 @@ export interface Props {
   backUrl?: string;
   canonical?: string;
   showPWA?: boolean;
+  noHeader?: boolean;
   breadcrumbs?: { name: string; url: string }[];
 }
 
-const { title, subtitle, colors, backUrl, canonical, showPWA, breadcrumbs } = Astro.props;
+const { title, subtitle, colors, backUrl, canonical, showPWA, noHeader, breadcrumbs } = Astro.props;
 const accentColor = colors?.accent || '#8cb4ff';
 const siteName = 'Class 9 · Punjab Curriculum';
 const siteUrl = 'https://9lectures.pages.dev';
@@ -141,6 +142,7 @@ const ogImage = siteUrl + '/apple-touch-icon.png';
     </script>
   </head>
   <body class="min-h-screen flex flex-col" style="background: var(--page);">
+    {!noHeader && (
     <header class="sticky top-0 z-40 animate-fade-in" style="background: linear-gradient(135deg, color-mix(in srgb, var(--brand-from, var(--accent)) 8%, var(--page)), color-mix(in srgb, var(--brand-to, var(--accent2)) 8%, var(--page))); border-bottom: 1px solid var(--hairline); backdrop-filter: blur(12px);">
       <div class="flex items-center gap-3 px-4 h-14 sm:h-16 max-w-4xl mx-auto">
         {backUrl ? (
@@ -158,6 +160,7 @@ const ogImage = siteUrl + '/apple-touch-icon.png';
         </div>
       </div>
     </header>
+    )}
     <main class="flex-1 max-w-4xl mx-auto w-full px-3 sm:px-4 py-4 sm:py-6 animate-fade-in-up">
       <slot />
     </main>
