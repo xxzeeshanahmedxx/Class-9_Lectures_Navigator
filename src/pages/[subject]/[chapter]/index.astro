@@ -8,6 +8,7 @@ import physicsData from '../../../data/physics.json';
 import chemistryData from '../../../data/chemistry.json';
 import urduData from '../../../data/urdu.json';
 import computerData from '../../../data/computer.json';
+import freeilmPhysics from '../../../data/freeilm-physics.json';
 
 export async function getStaticPaths() {
   const dataMap = {
@@ -112,6 +113,31 @@ const breadcrumbs = [
           />
         </div>
       ))}
+    </div>
+  )}
+  {subject.id === 'physics' && freeilmPhysics[chapter.id] && (
+    <div class="mt-10 p-5 rounded-xl border" style="border-color: var(--card-border); background: var(--card-bg);">
+      <div class="flex items-center gap-3 mb-4">
+        <svg class="w-6 h-6 shrink-0" style="color: #34a853;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        <h3 class="text-lg font-semibold" style="color: var(--text-title);">Download Freeilm.com Notes</h3>
+      </div>
+      <p class="text-sm mb-4" style="color: var(--text-secondary);">PDF notes by Freeilm.com for {subject.title} Class 9 Chapter {chapter.number} – {chapter.title}. Includes MCQs, short questions, long questions, and numerical problems.</p>
+      <div class="flex flex-col gap-2">
+        {freeilmPhysics[chapter.id].files.map((f, i) => (
+          <a
+            href={f.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 hover:-translate-y-0.5"
+            style="background: var(--card-hover); color: var(--text-title); text-decoration: none;"
+          >
+            <svg class="w-5 h-5 shrink-0" style="color: #34a853;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            <span>{f.label}</span>
+            <svg class="w-4 h-4 ml-auto shrink-0" style="color: var(--text-arrow);" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        ))}
+      </div>
+      <p class="text-xs mt-3" style="color: var(--text-muted);">Notes provided by Freeilm.com – free study material for Pakistani students.</p>
     </div>
   )}
 </Layout>

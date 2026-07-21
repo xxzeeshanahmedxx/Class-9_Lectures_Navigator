@@ -13,6 +13,7 @@
     "@fontsource/inter": "^5.2.5",
     "@fontsource/jetbrains-mono": "^5.2.5",
     "astro": "^7.0.0",
+    "pdf-parse": "^2.4.5",
     "pdfkit": "^0.19.1"
   },
   "devDependencies": {

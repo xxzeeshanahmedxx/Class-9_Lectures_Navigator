@@ -1,0 +1,81 @@
+{
+  "ch1": {
+    "title": "Physical Quantities & Measurement",
+    "files": [
+      { "label": "MCQ's and Short Questions", "url": "https://drive.google.com/uc?export=download&id=1JisWX_ebkLh7x6SwF9jsydW0RS7FVo1e" },
+      { "label": "Long Questions", "url": "https://drive.google.com/uc?export=download&id=1SLDS57D5UqFnW2jRzFcsP9ac_GplK6DM" },
+      { "label": "Exercise Questions", "url": "https://drive.google.com/uc?export=download&id=1rzW6x6247EfTY1tpjUgdvBEQyuwhOc9C" },
+      { "label": "Exercise Numerical", "url": "https://drive.google.com/uc?export=download&id=1dZNNZHFodqiKVjxLR7M04XmAUhHawhUe" }
+    ]
+  },
+  "ch2": {
+    "title": "Kinematics",
+    "files": [
+      { "label": "MCQ's and Short Questions", "url": "https://drive.google.com/uc?export=download&id=1WoHNf_3-V3DXFesjTH6AQIFpUc3AL2HH" },
+      { "label": "Long Questions", "url": "https://drive.google.com/uc?export=download&id=16-14b0ipww6liBBsqx6dS9j68LofMnXt" },
+      { "label": "Exercise Questions", "url": "https://drive.google.com/uc?export=download&id=17uQ7vfjdfnZ-kYoeHdw6FApxadn65JK3" },
+      { "label": "Exercise Numerical", "url": "https://drive.google.com/uc?export=download&id=1HxFvgXVN9jnuHywDbkzwciHG37DrH6Fr" }
+    ]
+  },
+  "ch3": {
+    "title": "Dynamics",
+    "files": [
+      { "label": "MCQ's and Short Questions", "url": "https://drive.google.com/uc?export=download&id=1LgKQ0PsKWevsUU5oRWUEg7SMyjEpOubI" },
+      { "label": "Long Questions", "url": "https://drive.google.com/uc?export=download&id=1KXKcgO0vC8hXT2wEw570mp2zmrTvxz2a" },
+      { "label": "Exercise Questions", "url": "https://drive.google.com/uc?export=download&id=146-vcMHk0wqc052o0Qmw8l1xB6KENDFM" },
+      { "label": "Exercise Numerical", "url": "https://drive.google.com/uc?export=download&id=19g9VIgQ-OenEQbwDIRzBW_Xby8upVQ7S" }
+    ]
+  },
+  "ch4": {
+    "title": "Turning Effect of Force",
+    "files": [
+      { "label": "MCQ's and Short Questions", "url": "https://drive.google.com/uc?export=download&id=1UDj0HCqcVVZiqrEBEE8nNrZqk6hKabNf" },
+      { "label": "Long Questions", "url": "https://drive.google.com/uc?export=download&id=1kNdRKhhS9XrVmbJrUnWeG7m2sEhIZ5bp" },
+      { "label": "Exercise Questions", "url": "https://drive.google.com/uc?export=download&id=1O_W3Ywjs2xaCns3ByVuVejhgsiwIpdaK" },
+      { "label": "Exercise Numerical", "url": "https://drive.google.com/uc?export=download&id=15KIlm1oJBb1TivWU3frLTJhcHS7buJIA" }
+    ]
+  },
+  "ch5": {
+    "title": "Work, Energy and Power",
+    "files": [
+      { "label": "MCQ's and Short Questions", "url": "https://drive.google.com/uc?export=download&id=1FU0MAgRnBieaRN1u2S2B-O6sWaD3u71B" },
+      { "label": "Long Questions", "url": "https://drive.google.com/uc?export=download&id=1REqe1mpBkMTgEP9L75b3X9Q5digDriYi" },
+      { "label": "Exercise Questions", "url": "https://drive.google.com/uc?export=download&id=1pK-e-_BHrIZWRTHXFgpm5sWgQton-4y6" },
+      { "label": "Exercise Numerical", "url": "https://drive.google.com/uc?export=download&id=1zJ75Oygha-ua83XXaH2hcYo_g7JhXYky" }
+    ]
+  },
+  "ch6": {
+    "title": "Mechanical Properties of Matter",
+    "files": [
+      { "label": "MCQ's and Short Questions", "url": "https://drive.google.com/uc?export=download&id=1hIte-IBuOo1VA1eADQPGRhw0meJsW8xY" },
+      { "label": "Long Questions", "url": "https://drive.google.com/uc?export=download&id=1GTE5xRLEglMxTmbuDlkqO3UUaNQy-PpV" },
+      { "label": "Exercise Questions", "url": "https://drive.google.com/uc?export=download&id=1U_6CfSNNoWUGhnZn8p-aXcnN3X2qVZbi" },
+      { "label": "Exercise Numerical", "url": "https://drive.google.com/uc?export=download&id=1Ld1e1-1pqOw2UUg6D1T7Ue5UrMI5jd39" }
+    ]
+  },
+  "ch7": {
+    "title": "Thermal Properties of Matter",
+    "files": [
+      { "label": "MCQ's and Short Questions", "url": "https://drive.google.com/uc?export=download&id=1HIoClGa_1lNgEWA7B-VsY_DGXHDfR7DQ" },
+      { "label": "Long Questions", "url": "https://drive.google.com/uc?export=download&id=1groZNjBkSKKC2C8Q0HI3pB0mgksNf1DM" },
+      { "label": "Exercise Questions", "url": "https://drive.google.com/uc?export=download&id=1KDyCbaC03_7z71aaD3wp63vvlHLBGVo_" },
+      { "label": "Exercise Numerical", "url": "https://drive.google.com/uc?export=download&id=1uA1LUMGoYjMW89HkVTDTKMfHVctUIOoS" }
+    ]
+  },
+  "ch8": {
+    "title": "Magnetism",
+    "files": [
+      { "label": "MCQ's and Short Questions", "url": "https://drive.google.com/uc?export=download&id=1yGUlFBvU5T0qghmkYQHgwPOpXAYifSDU" },
+      { "label": "Long Questions", "url": "https://drive.google.com/uc?export=download&id=1k2wJlBegs9v1b4dGdXm9mFnN1If8WJ6n" },
+      { "label": "Exercise Questions", "url": "https://drive.google.com/uc?export=download&id=1mUEiA6ecVOK9bwfvSlP4lQTxSDtSRjYH" }
+    ]
+  },
+  "ch9": {
+    "title": "Nature of Science",
+    "files": [
+      { "label": "MCQ's and Short Questions", "url": "https://drive.google.com/uc?export=download&id=10Bjxi6IglZDuZ8AATfzfbb0nRU5ZT1Se" },
+      { "label": "Long Questions", "url": "https://drive.google.com/uc?export=download&id=15ZO2GZzUWNXrpKH4cDmXxTo1VfoHz6uA" },
+      { "label": "Exercise Questions", "url": "https://drive.google.com/uc?export=download&id=1RMkPaS0NzACy90p7J0J77hsiqAj7QE1p" }
+    ]
+  }
+}
