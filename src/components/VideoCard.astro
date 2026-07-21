@@ -13,7 +13,7 @@ const { videoId, title, subtitle, duration, thumb } = Astro.props;
 <div>
   <button
     data-video-id={videoId}
-    class="video-trigger relative w-full aspect-video rounded-xl overflow-hidden focus:outline-none active:scale-[0.98] transition-transform duration-150 touch-min"
+    class="video-trigger relative w-full aspect-video rounded-xl overflow-hidden focus:outline-none active:scale-[0.98] touch-min"
     aria-label={`Play ${title}`}
   >
     <img src={thumb} alt={title} class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />

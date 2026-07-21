@@ -127,7 +127,7 @@ const ogImage = siteUrl + '/apple-touch-icon.png';
     <header class="sticky top-0 z-40 animate-fade-in" style="background: linear-gradient(135deg, color-mix(in srgb, var(--brand-from, var(--accent)) 8%, var(--page)), color-mix(in srgb, var(--brand-to, var(--accent2)) 8%, var(--page))); border-bottom: 1px solid var(--hairline); backdrop-filter: blur(12px);">
       <div class="flex items-center gap-3 px-4 h-14 sm:h-16 max-w-4xl mx-auto">
         {backUrl ? (
-          <a href={backUrl} class="flex items-center justify-center w-10 h-10 -ml-1 rounded-xl active:opacity-50 transition-opacity flex-shrink-0" style="color: var(--text-muted);" aria-label="Back">
+          <a href={backUrl} class="flex items-center justify-center w-10 h-10 -ml-1 rounded-xl active:opacity-50 flex-shrink-0" style="color: var(--text-muted);" aria-label="Back">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
           </a>
         ) : (
@@ -152,7 +152,7 @@ const ogImage = siteUrl + '/apple-touch-icon.png';
           <div class="text-[13px] font-medium" style="color: var(--text);">Install App</div>
           <div class="text-[11px]" style="color: var(--text-secondary);">Open lectures faster from your home screen</div>
         </div>
-        <button id="pwa-install" class="px-4 h-8 rounded-lg text-[12px] font-medium flex-shrink-0 gradient-brand text-white active:scale-95 transition-transform duration-150">Install</button>
+        <button id="pwa-install" class="px-4 h-8 rounded-lg text-[12px] font-medium flex-shrink-0 gradient-brand text-white active:scale-95">Install</button>
         <button id="pwa-dismiss" class="w-7 h-7 flex items-center justify-center flex-shrink-0 active:opacity-50" style="color: var(--text-muted);" aria-label="Dismiss">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
         </button>
