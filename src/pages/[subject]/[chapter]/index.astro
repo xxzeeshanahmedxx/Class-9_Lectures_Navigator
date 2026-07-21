@@ -12,12 +12,23 @@ import freeilmPhysics from '../../../data/freeilm-physics.json';
 import freeilmChemistry from '../../../data/freeilm-chemistry.json';
 import freeilmMath from '../../../data/freeilm-math.json';
 import freeilmUrdu from '../../../data/freeilm-urdu.json';
+import freeilmComputer from '../../../data/freeilm-computer.json';
+
+const computerFreeilm = {
+  ch1: { files: [].concat(freeilmComputer.ch1.files, freeilmComputer.ch2.files, freeilmComputer.ch3.files, freeilmComputer.ch5.files) },
+  ch2: { files: [].concat(freeilmComputer.ch4.files, freeilmComputer.ch11.files) },
+  ch3: { files: freeilmComputer.ch6.files },
+  ch4: { files: freeilmComputer.ch7.files },
+  ch5: { files: [].concat(freeilmComputer.ch8.files, freeilmComputer.ch10.files) },
+  ch6: { files: [].concat(freeilmComputer.ch9.files, freeilmComputer.ch12.files) },
+};
 
 const freeilmMap = {
   physics: freeilmPhysics,
   chemistry: freeilmChemistry,
   math: freeilmMath,
   urdu: freeilmUrdu,
+  computer: computerFreeilm,
 };
 
 export async function getStaticPaths() {
