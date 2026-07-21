@@ -21,7 +21,7 @@ export interface Props {
 const { title, subtitle, colors, backUrl, canonical, showPWA, noHeader, breadcrumbs, currentSubject } = Astro.props;
 const accentColor = colors?.accent || '#8cb4ff';
 const siteName = 'Class 9 · Punjab Curriculum';
-const siteUrl = 'https://9lectures.pages.dev';
+const siteUrl = 'https://class9hub.com';
 const defaultDesc = 'Free study lectures for 9th grade Punjab board students — Mathematics, Physics, Chemistry, Computer, Urdu.';
 const desc = Astro.props.desc || defaultDesc;
 const ogImage = siteUrl + '/apple-touch-icon.png';
@@ -225,7 +225,7 @@ const ogImage = siteUrl + '/apple-touch-icon.png';
 
     <footer class={`text-center text-[11px] leading-relaxed py-4 px-4 space-y-0.5${showPWA ? ' pb-20' : ''}`} style="color: var(--text-secondary);">
       <p>Lectures belong to their respective teachers.</p>
-      <p>Made by Zeeshan Ahmed · <a href="https://9lectures.pages.dev" class="underline underline-offset-2 hover:opacity-80" style="color: var(--text-secondary);">Class 9 Lectures</a></p>
+      <p>Made by Zeeshan Ahmed · <a href="https://class9hub.com" class="underline underline-offset-2 hover:opacity-80" style="color: var(--text-secondary);">Class 9 Hub</a></p>
     </footer>
     <script>
       import PlayerOverlay from '../components/PlayerOverlay.js';

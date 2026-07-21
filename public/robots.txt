@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://9lectures.pages.dev/sitemap-index.xml
+Sitemap: https://class9hub.com/sitemap-index.xml

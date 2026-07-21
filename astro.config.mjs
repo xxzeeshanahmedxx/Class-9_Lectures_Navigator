@@ -9,6 +9,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: 'https://9lectures.pages.dev',
+  site: 'https://class9hub.com',
   integrations: [sitemap()],
 });

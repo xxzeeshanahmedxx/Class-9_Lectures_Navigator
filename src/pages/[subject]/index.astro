@@ -25,7 +25,7 @@ const data = dataMap[subject.id];
 const chapters = data.chapters || [];
 const isExercises = data.kind === 'exercises';
 const chNames = chapters.map((ch, i) => ch.title || `Chapter ${ch.number || i + 1}`);
-const siteUrl = 'https://9lectures.pages.dev';
+const siteUrl = 'https://class9hub.com';
 const pageUrl = siteUrl + '/' + subject.id + '/';
 
 const subjectDesc = `Free ${subject.id} class 9 lectures for Punjab Board 2026 new book. Watch all ${chapters.length} chapters including ${chNames.slice(0, 3).join(', ')}${chNames.length > 3 ? ' and more' : ''}. Full video course online.`;
