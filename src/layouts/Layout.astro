@@ -143,10 +143,10 @@ const ogImage = siteUrl + '/apple-touch-icon.png';
   </head>
   <body class="min-h-screen flex flex-col" style="background: var(--page);">
     {!noHeader && (
-    <header class="sticky top-0 z-40 animate-fade-in" style="background: linear-gradient(135deg, color-mix(in srgb, var(--brand-from, var(--accent)) 8%, var(--page)), color-mix(in srgb, var(--brand-to, var(--accent2)) 8%, var(--page))); border-bottom: 1px solid var(--hairline); backdrop-filter: blur(12px);">
+    <header class="sticky top-0 z-40 animate-fade-in" style="background: #0d0d14; border-bottom: 1px solid var(--card-border); backdrop-filter: blur(12px);">
       <div class="flex items-center gap-3 px-4 h-14 sm:h-16 max-w-4xl mx-auto">
         {backUrl ? (
-          <a href={backUrl} class="flex items-center justify-center w-10 h-10 -ml-1 rounded-xl active:opacity-50 flex-shrink-0" style="color: var(--text-muted);" aria-label="Back">
+          <a href={backUrl} class="flex items-center justify-center w-10 h-10 -ml-1 rounded-xl active:opacity-50 flex-shrink-0" style="color: #6b6b85;" aria-label="Back">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
           </a>
         ) : (
@@ -155,8 +155,8 @@ const ogImage = siteUrl + '/apple-touch-icon.png';
           </div>
         )}
         <div class="min-w-0 flex-1">
-          <h1 class="text-[18px] sm:text-[20px] font-semibold truncate leading-tight" style="color: var(--text);">{title}</h1>
-          {subtitle && <p class="text-[13px] sm:text-[14px] leading-tight truncate" style="color: var(--text-secondary);">{subtitle}</p>}
+          <h1 class="text-[18px] sm:text-[20px] font-semibold truncate leading-tight" style="color: #e8e8f0;">{title}</h1>
+          {subtitle && <p class="text-[13px] sm:text-[14px] leading-tight truncate" style="color: #9e9eb8;">{subtitle}</p>}
         </div>
       </div>
     </header>
