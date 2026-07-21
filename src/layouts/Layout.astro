@@ -6,6 +6,7 @@ import ThemeStyles from '../components/ThemeStyles.astro';
 export interface Props {
   title: string;
   subtitle?: string;
+  desc?: string;
   colors?: {
     accent: string; accent2: string; bg: string; bg2: string; bg3: string;
     card: string; card2: string; line: string; soft: string;
@@ -13,13 +14,15 @@ export interface Props {
   backUrl?: string;
   canonical?: string;
   showPWA?: boolean;
+  breadcrumbs?: { name: string; url: string }[];
 }
 
-const { title, subtitle, colors, backUrl, canonical, showPWA } = Astro.props;
+const { title, subtitle, colors, backUrl, canonical, showPWA, breadcrumbs } = Astro.props;
 const accentColor = colors?.accent || '#8cb4ff';
 const siteName = 'Class 9 · Punjab Curriculum';
 const siteUrl = 'https://9lectures.pages.dev';
-const desc = 'Free study lectures for 9th grade Punjab board students — Mathematics, Physics, Chemistry, Computer, Urdu.';
+const defaultDesc = 'Free study lectures for 9th grade Punjab board students — Mathematics, Physics, Chemistry, Computer, Urdu.';
+const desc = Astro.props.desc || defaultDesc;
 const ogImage = siteUrl + '/apple-touch-icon.png';
 ---
 
@@ -34,7 +37,7 @@ const ogImage = siteUrl + '/apple-touch-icon.png';
     <meta name="theme-color" content="#0a0a12" />
     <meta name="application-name" content={siteName} />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="canonical" href={canonical || siteUrl} />
+    <link rel="canonical" href={canonical || Astro.url.href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -44,7 +47,7 @@ const ogImage = siteUrl + '/apple-touch-icon.png';
     <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title === siteName ? title : `${title} · ${siteName}`} />
     <meta property="og:description" content={desc} />
-    <meta property="og:url" content={canonical || siteUrl} />
+    <meta property="og:url" content={canonical || Astro.url.href} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:locale" content="en_US" />
 
@@ -67,6 +70,19 @@ const ogImage = siteUrl + '/apple-touch-icon.png';
         "query-input": "required name=search_term_string"
       }
     })}></script>
+
+    {breadcrumbs && breadcrumbs.length > 0 && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": breadcrumbs.map((b, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": b.name,
+        "item": b.url.startsWith('http') ? b.url : siteUrl + b.url
+      }))
+    })}></script>
+    )}
 
     <ThemeStyles colors={colors} />
     <script>

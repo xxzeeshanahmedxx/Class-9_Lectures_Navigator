@@ -3,32 +3,80 @@ import Layout from '../../../../layouts/Layout.astro';
 import VideoCard from '../../../../components/VideoCard.astro';
 import subjects from '../../../../data/subjects.json';
 import mathData from '../../../../data/math.json';
+import physicsData from '../../../../data/physics.json';
+import chemistryData from '../../../../data/chemistry.json';
+import urduData from '../../../../data/urdu.json';
+import computerData from '../../../../data/computer.json';
 
 export async function getStaticPaths() {
+  const dataMap = {
+    math: mathData, physics: physicsData, chemistry: chemistryData,
+    urdu: urduData, computer: computerData,
+  };
   const paths = [];
-  for (const ch of mathData.chapters || []) {
-    for (const sec of ch.sections || []) {
-      paths.push({
-        params: { subject: 'math', chapter: ch.id, section: sec.id },
-        props: { chapter: ch, section: sec },
-      });
+  for (const s of subjects) {
+    const data = dataMap[s.id];
+    for (const ch of data.chapters || []) {
+      for (const sec of ch.sections || []) {
+        paths.push({
+          params: { subject: s.id, chapter: ch.id, section: sec.id },
+          props: { subject: s, chapter: ch, section: sec },
+        });
+      }
     }
   }
   return paths;
 }
 
-const { chapter, section } = Astro.props;
-const mathSubject = subjects.find((s) => s.id === 'math');
+function extractTopics(videos) {
+  const seen = new Set();
+  return (videos || []).map(v => {
+    const k = v.title + (v.subtitle || '');
+    if (seen.has(k)) return null;
+    seen.add(k);
+    return v.title + (v.subtitle ? ` (${v.subtitle})` : '');
+  }).filter(Boolean).slice(0, 6);
+}
+
+const { subject, chapter, section } = Astro.props;
 const videos = section.videos || [];
+const siteUrl = 'https://9lectures.pages.dev';
+const pageUrl = `${siteUrl}/${subject.id}/${chapter.id}/${section.id}/`;
+const secTitle = section.title || '';
+const chTitle = chapter.title || '';
+const topics = extractTopics(videos);
+const summaryText = topics.length > 0
+  ? `This section covers: ${topics.join(', ')}.`
+  : '';
+
+const sectionDesc = `${subject.title} class 9 ${chTitle} – ${secTitle}. ${summaryText} Free video lectures for Punjab Board online.`;
+
+const breadcrumbs = [
+  { name: 'Home', url: siteUrl + '/' },
+  { name: subject.title + ' Class 9', url: siteUrl + '/' + subject.id + '/' },
+  { name: `${subject.title} Class 9 ${chapter.number ? 'Chapter ' + chapter.number : ''}`.trim(), url: siteUrl + '/' + subject.id + '/' + chapter.id + '/' },
+  { name: secTitle, url: pageUrl },
+];
 ---
 
 <Layout
-  title={section.title}
-  subtitle={`${chapter.title} · ${videos.length} videos`}
-  colors={mathSubject}
-  backUrl={`/math/${chapter.id}/`}
+  title={`${subject.title} Class 9 ${chTitle} – ${secTitle}`}
+  subtitle={`${chTitle} · ${videos.length} videos`}
+  desc={sectionDesc}
+  colors={subject}
+  backUrl={`/${subject.id}/${chapter.id}/`}
+  canonical={pageUrl}
   showPWA={true}
+  breadcrumbs={breadcrumbs}
 >
+  {summaryText && (
+    <div class="mb-5 text-[15px] leading-relaxed" style="color: var(--text-secondary);">
+      <p>
+        <strong style="color: var(--text);">{subject.title} class 9 {chTitle} – {secTitle}</strong>.
+        {summaryText}
+      </p>
+    </div>
+  )}
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
     {videos.map((v, i) => (
       <div class="animate-fade-in-up" style={`animation-delay: ${i * 50}ms`}>
