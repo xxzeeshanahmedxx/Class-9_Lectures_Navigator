@@ -59,6 +59,11 @@ const summaryText = topics.length > 0
 
 const chapterDesc = `${subject.title} class 9 chapter ${num} – ${chTitle}. ${summaryText} Free video lectures for Punjab Board 2025.`;
 
+const visibleTopics = topics.slice(0, 4).join(', ');
+const visibleLine = topics.length > 0
+  ? `${subject.title} Class 9 Chapter ${num} – ${chTitle}: ${visibleTopics}. Free Punjab Board video lectures.`
+  : `${subject.title} Class 9 Chapter ${num} – ${chTitle}. Free Punjab Board video lectures.`;
+
 const breadcrumbs = [
   { name: 'Home', url: siteUrl + '/' },
   { name: subject.title + ' Class 9', url: siteUrl + '/' + subject.id + '/' },
@@ -77,13 +82,7 @@ const breadcrumbs = [
   breadcrumbs={breadcrumbs}
 >
   {topics.length > 0 && (
-    <div class="mb-5 text-[15px] leading-relaxed" style="color: var(--text-secondary);">
-      <p>
-        <strong style="color: var(--text);">{subject.title} class 9 chapter {num} – {chTitle}</strong>.
-        {summaryText}
-      </p>
-      <p class="mt-2">Watch the complete chapter video lectures below.</p>
-    </div>
+    <p class="mb-5 text-[14px] leading-relaxed" style="color: var(--text-secondary);">{visibleLine}</p>
   )}
   {isExercises ? (
     <div class="flex flex-col gap-3">

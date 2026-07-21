@@ -51,6 +51,11 @@ const summaryText = topics.length > 0
 
 const sectionDesc = `${subject.title} class 9 ${chTitle} – ${secTitle}. ${summaryText} Free video lectures for Punjab Board online.`;
 
+const visibleTopics = topics.slice(0, 3).join(', ');
+const visibleLine = topics.length > 0
+  ? `${subject.title} Class 9 ${chTitle} – ${secTitle}: ${visibleTopics}. Free Punjab Board video lecture.`
+  : `${subject.title} Class 9 ${chTitle} – ${secTitle}. Free Punjab Board video lecture.`;
+
 const breadcrumbs = [
   { name: 'Home', url: siteUrl + '/' },
   { name: subject.title + ' Class 9', url: siteUrl + '/' + subject.id + '/' },
@@ -70,12 +75,7 @@ const breadcrumbs = [
   breadcrumbs={breadcrumbs}
 >
   {summaryText && (
-    <div class="mb-5 text-[15px] leading-relaxed" style="color: var(--text-secondary);">
-      <p>
-        <strong style="color: var(--text);">{subject.title} class 9 {chTitle} – {secTitle}</strong>.
-        {summaryText}
-      </p>
-    </div>
+    <p class="mb-5 text-[14px] leading-relaxed" style="color: var(--text-secondary);">{visibleLine}</p>
   )}
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
     {videos.map((v, i) => (

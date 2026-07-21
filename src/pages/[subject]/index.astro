@@ -35,9 +35,14 @@ const breadcrumbs = [
   { name: subject.title + ' Class 9', url: pageUrl },
 ];
 
-const introTopics = chNames.slice(0, 6);
-const introText = introTopics.join(', ');
-const remaining = chNames.length - introTopics.length;
+const subjLines = {
+  math: `Math Class 9 – Free online video lectures for Punjab Board 2025. Complete course covering real numbers, logarithms, sets and functions, factorization, algebra, linear equations, trigonometry, coordinate geometry, logic, graphs, statistics and probability.`,
+  physics: `Physics Class 9 – Free online video lectures for Punjab Board 2025. Complete course covering physical quantities and measurement, kinematics, dynamics, turning effect of forces, work energy and power, mechanical and thermal properties of matter, magnetism and nature of science.`,
+  chemistry: `Chemistry Class 9 – Free online video lectures for Punjab Board 2025. Complete course covering structure of atom, chemical bonding, formulae and equations, energetics, equilibrium, acids and bases, periodic table, group properties, hydrocarbons and environmental chemistry.`,
+  urdu: `Urdu Class 9 – Free online video lectures for Punjab Board 2025. Complete course covering hamd, naat, ikhlaq-e-hasanah, apni madad aap, nazam, ghazal, khatoot, tashreeh, grammar and essays.`,
+  computer: `Computer Class 9 – Free online video lectures for Punjab Board 2025. Complete course covering computer systems and logic, troubleshooting and security, computer networks, computational thinking, web development and data science.`,
+};
+const visibleLine = subjLines[subject.id] || `Free ${subject.title} class 9 lectures for Punjab Board 2025 new book – ${chapters.length} chapters. Watch complete video course online.`;
 ---
 
 <Layout
@@ -49,18 +54,7 @@ const remaining = chNames.length - introTopics.length;
   canonical={pageUrl}
   breadcrumbs={breadcrumbs}
 >
-  <div class="mb-6 space-y-3 text-[15px] leading-relaxed" style="color: var(--text-secondary);">
-    <p>
-      Free <strong style="color: var(--text);">{subject.title} class 9</strong> lectures for
-      Punjab Board 2025 new book. This page covers all <strong style="color: var(--text);">{chapters.length} chapters</strong>
-      including {introText}{remaining > 0 ? `, and ${remaining} more` : ''}.
-      Watch complete video lectures online at your own pace.
-    </p>
-    <p>
-      Each chapter has detailed video explanations covering the full Punjab Curriculum.
-      Click on a chapter below to start learning.
-    </p>
-  </div>
+  <p class="mb-5 text-[14px] leading-relaxed" style="color: var(--text-secondary);">{visibleLine}</p>
   <div class="flex flex-col gap-3">
     {chapters.map((ch, i) => {
       const num = ch.number || ch.chapterNumber || i + 1;
