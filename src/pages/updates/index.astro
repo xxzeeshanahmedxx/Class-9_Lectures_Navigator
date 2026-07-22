@@ -29,7 +29,7 @@ function formatDate(d) {
     {[...updates].reverse().map((item) => (
       <a
         href={`/updates/${item.slug}/`}
-        class="rounded-xl p-4 sm:p-5 flex items-start gap-4 animate-fade-in-up group block"
+        class="rounded-xl p-4 sm:p-5 flex items-start gap-4 animate-fade-in-up group block update-card"
         style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);"
       >
         <div
@@ -54,3 +54,13 @@ function formatDate(d) {
     ))}
   </div>
 </Layout>
+
+<style is:global>
+  @media (hover: hover) {
+    .update-card:hover {
+      scale: 1.01;
+      box-shadow: 0 0 20px color-mix(in srgb, var(--accent, #8cb4ff) 20%, transparent), 0 0 40px color-mix(in srgb, var(--accent, #8cb4ff) 8%, transparent) !important;
+      border-color: color-mix(in srgb, var(--accent, #8cb4ff) 40%, transparent) !important;
+    }
+  }
+</style>

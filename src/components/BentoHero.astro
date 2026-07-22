@@ -49,7 +49,7 @@ const totalSubjects = subjects.length;
   <!-- Search bar link (col-span-3) -->
   <a
     href="/search/"
-    class="col-span-3 rounded-xl p-4 sm:p-5 flex items-center gap-3 active:scale-[0.99] transition-transform"
+    class="col-span-3 rounded-xl p-4 sm:p-5 flex items-center gap-3 active:scale-[0.97] transition-transform duration-150 bento-search"
     style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);"
     aria-label="Search lectures"
   >
@@ -60,3 +60,13 @@ const totalSubjects = subjects.length;
     <span class="text-[14px] sm:text-[15px]" style="color: var(--text-muted);" data-lang="searchPlaceholder">Search lectures...</span>
   </a>
 </div>
+
+<style is:global>
+  @media (hover: hover) {
+    .bento-search:hover {
+      scale: 1.01;
+      box-shadow: 0 0 20px color-mix(in srgb, var(--accent, #8cb4ff) 20%, transparent), 0 0 40px color-mix(in srgb, var(--accent, #8cb4ff) 8%, transparent) !important;
+      border-color: color-mix(in srgb, var(--accent, #8cb4ff) 40%, transparent) !important;
+    }
+  }
+</style>

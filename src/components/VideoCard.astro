@@ -23,7 +23,7 @@ const thumb = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
 ---
 
 <div
-  class="group relative rounded-xl overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-hover"
+  class="group video-card relative rounded-xl overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-hover"
   style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);"
 >
   <button
@@ -58,3 +58,11 @@ const thumb = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
     style={`box-shadow: inset 0 0 0 1px ${accent};`}
   />
 </div>
+
+<style is:global>
+  @media (hover: hover) {
+    .video-card:hover {
+      box-shadow: 0 0 20px color-mix(in srgb, var(--accent, #8cb4ff) 20%, transparent), 0 0 40px color-mix(in srgb, var(--accent, #8cb4ff) 8%, transparent) !important;
+    }
+  }
+</style>

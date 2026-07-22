@@ -40,7 +40,7 @@ const accent = subject.accent || '#8cb4ff';
     {chapterList.map((ch, i) => (
       <a
         href={`/notes/${subject.id}/${ch.chapterId}/`}
-        class="rounded-xl p-4 sm:p-5 flex items-center justify-between animate-fade-in-up group"
+        class="rounded-xl p-4 sm:p-5 flex items-center justify-between animate-fade-in-up group note-card"
         style={`animation-delay: ${i * 40}ms; background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);`}
       >
         <div class="flex items-center gap-4 min-w-0">
@@ -73,5 +73,15 @@ const accent = subject.accent || '#8cb4ff';
   @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(12px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<style is:global>
+  @media (hover: hover) {
+    .note-card:hover {
+      scale: 1.01;
+      box-shadow: 0 0 20px color-mix(in srgb, var(--accent, #8cb4ff) 20%, transparent), 0 0 40px color-mix(in srgb, var(--accent, #8cb4ff) 8%, transparent) !important;
+      border-color: color-mix(in srgb, var(--accent, #8cb4ff) 40%, transparent) !important;
+    }
   }
 </style>

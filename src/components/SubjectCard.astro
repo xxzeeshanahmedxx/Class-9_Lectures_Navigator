@@ -19,12 +19,12 @@ const lucideSvgs: Record<string, string> = {
 ---
 <a
   href={`/${id}/`}
-  class="group relative rounded-xl overflow-hidden aspect-square block active:scale-[0.96] transition-transform duration-150 touch-min"
+  class="group subject-card relative rounded-xl overflow-hidden aspect-square block active:scale-[0.96] transition-transform duration-150 touch-min"
   aria-label={title}
-  style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);"
+  style="--accent: {accent}; background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);"
 >
   <div
-    class="absolute inset-0 flex flex-col items-center justify-center"
+    class="absolute inset-0 flex flex-col items-center justify-center subject-icon"
     style={`background: linear-gradient(145deg, ${accent}25 0%, ${accent}08 60%, var(--card-bg) 100%);`}
     set:html={lucideSvgs[id] || ''}
   />
@@ -40,3 +40,16 @@ const lucideSvgs: Record<string, string> = {
     style={`box-shadow: inset 0 0 0 1px ${accent};`}
   />
 </a>
+
+<style is:global>
+  @media (hover: hover) {
+    .subject-card:hover {
+      scale: 1.03;
+      box-shadow: 0 0 20px color-mix(in srgb, var(--accent, #8cb4ff) 25%, transparent), 0 0 40px color-mix(in srgb, var(--accent, #8cb4ff) 10%, transparent) !important;
+    }
+    .subject-card:hover .subject-icon svg {
+      transform: rotate(-6deg) scale(1.12);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+  }
+</style>
