@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SubjectCard from '../../components/SubjectCard.astro';
+import subjects from '../../data/subjects.json';
+import { SITE_URL } from '../../lib/constants';
+const accentMap = { math: '#8cb4ff', physics: '#f0a6c2', chemistry: '#9dde8b', computer: '#fbc38d', urdu: '#c5a3ff', biology: '#7dd3fc', english: '#fed7aa' };
+---
+
+<Layout
+  title="Subject Notes – Class 9 Hub"
+  desc="Free subject notes for class 9 Punjab board — Mathematics, Physics, Chemistry, Computer, Urdu, Biology, English."
+  canonical={`${SITE_URL}/notes/`}
+  noHeader={true}
+>
+  <div
+    class="rounded-xl p-5 sm:p-6 mb-6 border-2 border-dashed animate-fade-in-up"
+    style="border-color: var(--accent, #8cb4ff); background: var(--card-bg);"
+  >
+    <h2 class="text-[17px] sm:text-[19px] font-bold" style="color: var(--text-primary);">Content Partnerships Available</h2>
+    <p class="text-[13px] sm:text-[14px] mt-2 leading-relaxed" style="color: var(--text-secondary);">
+      This space is reserved for subject notes. We're looking for content partners to provide chapter-wise study notes for class 9 Punjab board students. <a href="mailto:zeeshan@example.com" class="underline underline-offset-2" style="color: var(--accent, #8cb4ff);">Contact us</a> to feature your material.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-6">
+    {subjects.map((s, i) => (
+      <a href={`/notes/${s.id}/`} class="block animate-fade-in-up" style={`animation-delay: ${Math.min(i + 1, 7) * 50}ms;`}>
+        <SubjectCard id={s.id} title={s.title} accent={s.accent} />
+      </a>
+    ))}
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {subjects.map((s, i) => (
+      <div
+        class="rounded-xl p-4 sm:p-5 animate-fade-in-up"
+        style={`animation-delay: ${(i + 1) * 50}ms; background: var(--card-bg); border: 1px dashed var(--border);`}
+      >
+        <span class="text-[13px] font-bold" style="color: {s.accent};">{s.title}</span>
+        <p class="text-[12px] mt-1 leading-relaxed" style="color: var(--text-muted);">
+          Chapter-wise notes coming soon — partner content welcome.
+        </p>
+        <div class="mt-2 h-1.5 rounded-full" style="background: {s.accent}20; width: 60%;" />
+        <div class="mt-1 h-1.5 rounded-full" style="background: {s.accent}15; width: 40%;" />
+        <div class="mt-1 h-1.5 rounded-full" style="background: {s.accent}10; width: 80%;" />
+      </div>
+    ))}
+  </div>
+</Layout>

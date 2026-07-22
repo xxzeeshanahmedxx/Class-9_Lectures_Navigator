@@ -1,0 +1,77 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import subjects from '../../../data/subjects.json';
+import { notes } from '../../../data/notes';
+import { SITE_URL } from '../../../lib/constants';
+
+export async function getStaticPaths() {
+  return subjects.map((s) => ({
+    params: { subject: s.id },
+    props: { subject: s },
+  }));
+}
+
+const { subject } = Astro.props;
+const chapterList = notes.filter((n) => n.subjectId === subject.id);
+const accent = subject.accent || '#8cb4ff';
+---
+
+<Layout
+  title={`${subject.title} Notes – Class 9 Hub`}
+  desc={`Free chapter-wise ${subject.title} notes for class 9 Punjab board students. Study notes for all chapters.`}
+  canonical={`${SITE_URL}/notes/${subject.id}/`}
+  noHeader={true}
+>
+  <a
+    href="/notes/"
+    class="inline-flex items-center gap-1 text-[12px] mb-4 animate-fade-in-up"
+    style="color: var(--text-muted);"
+  >
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to Notes
+  </a>
+
+  <h1 class="text-[22px] sm:text-[26px] font-bold mb-1 animate-fade-in-up" style="color: var(--text-primary);">{subject.title} Notes</h1>
+  <p class="text-[13px] sm:text-[14px] mb-5 animate-fade-in-up" style="color: var(--text-secondary);">
+    Chapter-wise study notes for class 9 Punjab board — {subject.title}.
+  </p>
+
+  <div class="flex flex-col gap-2">
+    {chapterList.map((ch, i) => (
+      <a
+        href={`/notes/${subject.id}/${ch.chapterId}/`}
+        class="rounded-xl p-4 sm:p-5 flex items-center justify-between animate-fade-in-up group"
+        style={`animation-delay: ${i * 40}ms; background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);`}
+      >
+        <div class="flex items-center gap-4 min-w-0">
+          <div
+            class="w-9 h-9 rounded-lg flex items-center justify-center text-[13px] font-bold flex-shrink-0"
+            style={`background: ${accent}18; color: ${accent};`}
+          >{ch.chapterId.replace('ch', '')}</div>
+          <span class="text-[14px] sm:text-[15px] font-medium truncate" style="color: var(--text-primary);">{ch.chapterTitle}</span>
+        </div>
+        <svg
+          class="flex-shrink-0 transition-transform group-hover:translate-x-0.5"
+          width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          style="color: var(--text-muted);"
+        ><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    ))}
+  </div>
+
+  <div class="mt-8 rounded-xl p-4 sm:p-5 border-2 border-dashed animate-fade-in-up text-center" style="border-color: var(--border); background: var(--card-bg);">
+    <p class="text-[13px] leading-relaxed" style="color: var(--text-secondary);">
+      Want to contribute notes for this subject? <a href="mailto:zeeshan@example.com" class="underline underline-offset-2" style="color: var(--accent, #8cb4ff);">Get in touch</a>.
+    </p>
+  </div>
+</Layout>
+
+<style>
+  .animate-fade-in-up {
+    animation: fadeInUp 0.4s ease-out both;
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

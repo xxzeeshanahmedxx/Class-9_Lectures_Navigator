@@ -5,6 +5,7 @@ export interface Props {
   subtitle?: string;
   duration?: string;
   accent?: string;
+  index?: number;
 }
 
 const {
@@ -13,7 +14,10 @@ const {
   subtitle,
   duration,
   accent = '#8cb4ff',
+  index = 99,
 } = Astro.props;
+
+const eager = index < 3;
 
 const thumb = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
 ---
@@ -31,8 +35,9 @@ const thumb = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
       src={thumb}
       alt={title}
       class="absolute inset-0 w-full h-full object-cover"
-      loading="lazy"
+      loading={eager ? 'eager' : 'lazy'}
       decoding="async"
+      fetchpriority={eager ? 'high' : undefined}
     />
     {duration && (
       <span

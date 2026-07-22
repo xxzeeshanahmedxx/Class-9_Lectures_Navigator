@@ -2,24 +2,21 @@
 export interface Props {
   id: string;
   title: string;
-  emoji: string;
   accent: string;
 }
 
-const { id, title, emoji, accent } = Astro.props;
+const { id, title, accent } = Astro.props;
 
-const bgSvgs: Record<string, string> = {
-  math: `<svg viewBox="0 0 120 120" fill="none" stroke="currentColor"><circle cx="60" cy="60" r="50" stroke-width="0.8" opacity="0.12"/><line x1="60" y1="60" x2="60" y2="12" stroke-width="2.2" stroke-linecap="round" opacity="0.35"/><line x1="60" y1="60" x2="18" y2="78" stroke-width="2.2" stroke-linecap="round" opacity="0.35"/><path d="M60 74 A26 26 0 0 1 60 48" stroke-width="2.2" stroke-linecap="round" opacity="0.3"/><circle cx="60" cy="60" r="3" fill="currentColor" opacity="0.5"/><path d="M60 60 A12 12 0 0 1 68 68" stroke-width="1.2" stroke-linecap="round" opacity="0.2"/></svg>`,
-  physics: `<svg viewBox="0 0 120 120" fill="none" stroke="currentColor"><ellipse cx="60" cy="60" rx="48" ry="16" stroke-width="1.5" opacity="0.25"/><ellipse cx="60" cy="60" rx="48" ry="16" stroke-width="1.5" opacity="0.25" transform="rotate(60 60 60)"/><ellipse cx="60" cy="60" rx="48" ry="16" stroke-width="1.5" opacity="0.25" transform="rotate(120 60 60)"/><circle cx="60" cy="60" r="10" fill="currentColor" opacity="0.2"/><circle cx="56" cy="56" r="3.5" fill="currentColor" opacity="0.5"/><circle cx="64" cy="57" r="2.5" fill="currentColor" opacity="0.4"/><circle cx="60" cy="64" r="3" fill="currentColor" opacity="0.45"/><circle cx="60" cy="44" r="3" fill="currentColor" opacity="0.5"/><circle cx="42" cy="68" r="3" fill="currentColor" opacity="0.45"/><circle cx="84" cy="46" r="2.5" fill="currentColor" opacity="0.4"/></svg>`,
-  chemistry: `<svg viewBox="0 0 120 120" fill="none" stroke="currentColor"><polygon points="60,30 88,45 88,75 60,90 32,75 32,45" stroke-width="1.8" opacity="0.3"/><line x1="60" y1="30" x2="60" y2="12" stroke-width="1.5" stroke-linecap="round" opacity="0.25"/><line x1="88" y1="45" x2="108" y2="38" stroke-width="1.5" stroke-linecap="round" opacity="0.25"/><line x1="32" y1="45" x2="12" y2="38" stroke-width="1.5" stroke-linecap="round" opacity="0.25"/><circle cx="60" cy="12" r="3" fill="currentColor" opacity="0.4"/><circle cx="108" cy="38" r="3" fill="currentColor" opacity="0.4"/><circle cx="12" cy="38" r="3" fill="currentColor" opacity="0.4"/></svg>`,
-  urdu: `<svg viewBox="0 0 120 120" fill="none" stroke="currentColor"><circle cx="60" cy="60" r="48" stroke-width="0.6" opacity="0.1"/><path d="M30 18 C30 18 88 30 78 65 C68 100 28 92 22 80" stroke-width="3.5" stroke-linecap="round" opacity="0.35"/><path d="M18 30 C18 30 72 40 66 70 C60 96 38 90 34 84" stroke-width="1.5" stroke-linecap="round" opacity="0.18"/><circle cx="40" cy="84" r="3" fill="currentColor" opacity="0.4"/><circle cx="50" cy="87" r="2.5" fill="currentColor" opacity="0.35"/><circle cx="60" cy="85" r="2" fill="currentColor" opacity="0.3"/></svg>`,
-  computer: `<svg viewBox="0 0 120 120" fill="none" stroke="currentColor"><rect x="20" y="25" width="80" height="70" rx="6" stroke-width="1.5" opacity="0.25"/><line x1="20" y1="37" x2="100" y2="37" stroke-width="1.5" opacity="0.12"/><circle cx="30" cy="31" r="2.5" fill="currentColor" opacity="0.3"/><circle cx="38" cy="31" r="2.5" fill="currentColor" opacity="0.25"/><circle cx="46" cy="31" r="2.5" fill="currentColor" opacity="0.2"/><path d="M30 48 L36 54 L30 60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.3"/><path d="M62 48 L56 54 L62 60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.3"/><line x1="42" y1="56" x2="56" y2="56" stroke-width="2" stroke-linecap="round" opacity="0.25"/><line x1="30" y1="72" x2="60" y2="72" stroke-width="2" stroke-linecap="round" opacity="0.2"/><line x1="30" y1="80" x2="50" y2="80" stroke-width="2" stroke-linecap="round" opacity="0.15"/></svg>`,
-  biology: `<svg viewBox="0 0 120 120" fill="none" stroke="currentColor"><circle cx="60" cy="60" r="50" stroke-width="0.8" opacity="0.1"/><path d="M35 15 C52 28 68 28 85 15" stroke-width="2.2" stroke-linecap="round" opacity="0.3"/><path d="M85 105 C68 92 52 92 35 105" stroke-width="2.2" stroke-linecap="round" opacity="0.3"/><path d="M55 20 L65 20 M50 40 L70 40 M55 60 L65 60 M50 80 L70 80 M55 100 L65 100" stroke-width="1.5" opacity="0.12"/><line x1="42" y1="24" x2="42" y2="96" stroke-width="1.2" opacity="0.15"/><line x1="78" y1="24" x2="78" y2="96" stroke-width="1.2" opacity="0.15"/><circle cx="35" cy="15" r="3.5" fill="currentColor" opacity="0.4"/><circle cx="85" cy="15" r="3.5" fill="currentColor" opacity="0.4"/><circle cx="35" cy="105" r="3.5" fill="currentColor" opacity="0.4"/><circle cx="85" cy="105" r="3.5" fill="currentColor" opacity="0.4"/></svg>`,
-  english: `<svg viewBox="0 0 120 120" fill="none" stroke="currentColor"><circle cx="60" cy="60" r="50" stroke-width="0.8" opacity="0.1"/><path d="M12 28 C12 28 60 40 60 65 L60 100 C60 100 12 90 12 65 Z" stroke-width="1.8" opacity="0.3"/><path d="M108 28 C108 28 60 40 60 65 L60 100 C60 100 108 90 108 65 Z" stroke-width="1.8" opacity="0.3"/><line x1="60" y1="40" x2="60" y2="100" stroke-width="1.5" opacity="0.12"/><line x1="24" y1="55" x2="48" y2="55" stroke-width="1.8" stroke-linecap="round" opacity="0.2"/><line x1="26" y1="65" x2="46" y2="65" stroke-width="1.5" stroke-linecap="round" opacity="0.15"/><line x1="28" y1="75" x2="44" y2="75" stroke-width="1.2" stroke-linecap="round" opacity="0.1"/><line x1="72" y1="55" x2="96" y2="55" stroke-width="1.8" stroke-linecap="round" opacity="0.2"/><line x1="74" y1="65" x2="94" y2="65" stroke-width="1.5" stroke-linecap="round" opacity="0.15"/><line x1="76" y1="75" x2="92" y2="75" stroke-width="1.2" stroke-linecap="round" opacity="0.1"/></svg>`,
+const lucideSvgs: Record<string, string> = {
+  physics: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><circle cx="12" cy="12" r="1"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"/></svg>`,
+  chemistry: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/></svg>`,
+  math: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>`,
+  computer: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><rect width="18" height="12" x="3" y="4" rx="2" ry="2"/><line x1="2" x2="22" y1="20" y2="20"/></svg>`,
+  biology: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3"/><path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4"/><path d="M5 21h14"/></svg>`,
+  urdu: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32" transform="scale(-1, 1)"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg>`,
+  english: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>`,
 };
 ---
-}
-
 <a
   href={`/${id}/`}
   class="group relative rounded-xl overflow-hidden aspect-square block active:scale-[0.96] transition-transform duration-150 touch-min"
@@ -27,17 +24,10 @@ const bgSvgs: Record<string, string> = {
   style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);"
 >
   <div
-    class="absolute inset-0 pointer-events-none"
-    style={`color: ${accent};`}
-    set:html={bgSvgs[id] || ''}
-  />
-
-  <div
     class="absolute inset-0 flex flex-col items-center justify-center"
     style={`background: linear-gradient(145deg, ${accent}25 0%, ${accent}08 60%, var(--card-bg) 100%);`}
-  >
-    <span class="text-[52px] sm:text-[64px] leading-none mb-1">{emoji}</span>
-  </div>
+    set:html={lucideSvgs[id] || ''}
+  />
 
   <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
 

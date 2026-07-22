@@ -1,0 +1,100 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import subjects from '../../../../data/subjects.json';
+import { notes } from '../../../../data/notes';
+import { SITE_URL } from '../../../../lib/constants';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const s of subjects) {
+    const chs = notes.filter((n) => n.subjectId === s.id);
+    for (const ch of chs) {
+      paths.push({
+        params: { subject: s.id, chapter: ch.chapterId },
+        props: { subject: s, chapter: ch },
+      });
+    }
+  }
+  return paths;
+}
+
+const { subject, chapter } = Astro.props;
+const accent = subject.accent || '#8cb4ff';
+const chNumber = chapter.chapterId.replace('ch', '');
+---
+
+<Layout
+  title={`${chapter.chapterTitle} – ${subject.title} Notes Class 9`}
+  desc={`Free ${chapter.chapterTitle} notes for class 9 ${subject.title} Punjab board. Study notes and video lectures.`}
+  canonical={`${SITE_URL}/notes/${subject.id}/${chapter.chapterId}/`}
+  noHeader={true}
+>
+  <a
+    href={`/notes/${subject.id}/`}
+    class="inline-flex items-center gap-1 text-[12px] mb-4 animate-fade-in-up"
+    style="color: var(--text-muted);"
+  >
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to {subject.title} Notes
+  </a>
+
+  <div class="animate-fade-in-up">
+    <div
+      class="w-10 h-10 rounded-xl flex items-center justify-center text-[15px] font-bold mb-3"
+      style={`background: ${accent}18; color: ${accent};`}
+    >{chNumber}</div>
+    <h1 class="text-[20px] sm:text-[24px] font-bold mb-1" style="color: var(--text-primary);">{chapter.chapterTitle}</h1>
+    <p class="text-[13px] sm:text-[14px] mb-6" style="color: var(--text-secondary);">
+      {subject.title} — Chapter {chNumber} notes for class 9 Punjab board.
+    </p>
+  </div>
+
+  <div
+    class="rounded-xl p-6 sm:p-8 flex flex-col items-center justify-center text-center animate-fade-in-up min-h-[200px]"
+    style="background: var(--card-bg); border: 1px dashed var(--border);"
+  >
+    {chapter.content ? (
+      <div class="prose prose-sm max-w-none" style="color: var(--text-primary);" set:html={chapter.content} />
+    ) : (
+      <>
+        <div
+          class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4"
+          style={`background: ${accent}15;`}
+        >
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke={accent} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h2 class="text-[16px] sm:text-[18px] font-bold mb-2" style="color: var(--text-primary);">Notes Coming Soon</h2>
+        <p class="text-[13px] leading-relaxed max-w-sm" style="color: var(--text-secondary);">
+          Chapter notes are being prepared. In the meantime, watch the full video lecture for this chapter.
+        </p>
+        <a
+          href={`/${subject.id}/#${chapter.chapterId}`}
+          class="inline-flex items-center gap-2 mt-5 px-5 py-2.5 rounded-xl text-[13px] font-semibold transition-all hover:brightness-110"
+          style={`background: ${accent}; color: #0c0f15;`}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Watch Video Lectures
+        </a>
+      </>
+    )}
+  </div>
+
+  <div class="mt-6 rounded-xl p-4 sm:p-5 animate-fade-in-up" style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);">
+    <h3 class="text-[13px] font-bold mb-2" style="color: var(--text-primary);">📖 Study Tips</h3>
+    <ul class="text-[13px] leading-relaxed space-y-1" style="color: var(--text-secondary);">
+      <li>• Watch video lecture first for concept clarity.</li>
+      <li>• Use this space for notes, formulas, and key points.</li>
+      <li>• Practice Punjab board past papers after studying.</li>
+    </ul>
+  </div>
+</Layout>
+
+<style>
+  .animate-fade-in-up {
+    animation: fadeInUp 0.4s ease-out both;
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

@@ -151,7 +151,7 @@ img {
 }
 
 .animate-fade-in-up {
-  animation: fade-in-up 0.45s ease-out both;
+  animation: fade-in-up 0.2s ease-out both;
 }
 .animate-fade-in {
   animation: fade-in 0.35s ease-out both;

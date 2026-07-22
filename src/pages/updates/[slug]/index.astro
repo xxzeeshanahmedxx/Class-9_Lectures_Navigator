@@ -1,0 +1,88 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { updates } from '../../../data/updates';
+import { SITE_URL } from '../../../lib/constants';
+
+export async function getStaticPaths() {
+  return updates.map((u) => ({
+    params: { slug: u.slug },
+    props: { item: u },
+  }));
+}
+
+const { item } = Astro.props;
+
+const iconMap = {
+  'new-content': '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>',
+  'holiday': '<circle cx="12" cy="12" r="5"/><path d="M12 1v2"/><path d="M12 21v2"/><path d="M4.22 4.22l1.42 1.42"/><path d="M18.36 18.36l1.42 1.42"/><path d="M1 12h2"/><path d="M21 12h2"/><path d="M4.22 19.78l1.42-1.42"/><path d="M18.36 5.64l1.42-1.42"/>',
+  'date-sheet': '<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/>',
+  'result': '<path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>',
+};
+
+function formatDate(d) {
+  const dt = new Date(d);
+  return dt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+}
+
+const typeLabel = { 'new-content': 'New Content', 'holiday': 'Holiday', 'date-sheet': 'Date Sheet', 'result': 'Result' };
+---
+
+<Layout
+  title={`${item.title} – Class 9 Hub Updates`}
+  desc={item.description}
+  canonical={`${SITE_URL}/updates/${item.slug}/`}
+  noHeader={true}
+>
+  <a
+    href="/updates/"
+    class="inline-flex items-center gap-1 text-[12px] mb-4 animate-fade-in-up"
+    style="color: var(--text-muted);"
+  >
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to Updates
+  </a>
+
+  <div class="animate-fade-in-up">
+    <div
+      class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-[11px] font-semibold mb-3"
+      style={`background: var(--accent)15; color: var(--accent, #8cb4ff);`}
+    >
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" set:html={iconMap[item.type]} />
+      {typeLabel[item.type] || 'Update'}
+    </div>
+    <h1 class="text-[20px] sm:text-[24px] font-bold mb-2" style="color: var(--text-primary);">{item.title}</h1>
+    <span class="text-[12px] font-mono" style="color: var(--text-muted);">{formatDate(item.date)}</span>
+  </div>
+
+  <div class="mt-6 rounded-xl p-5 sm:p-6 animate-fade-in-up" style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);">
+    <p class="text-[14px] leading-relaxed" style="color: var(--text-secondary);">{item.description}</p>
+
+    {item.content ? (
+      <div class="mt-4 prose prose-sm max-w-none" style="color: var(--text-primary);" set:html={item.content} />
+    ) : (
+      <div class="mt-6 rounded-xl p-4 text-center" style="background: var(--accent)08; border: 1px dashed var(--accent)30;">
+        <p class="text-[13px]" style="color: var(--text-muted);">Full details coming soon.</p>
+      </div>
+    )}
+  </div>
+
+  <div class="mt-6 animate-fade-in-up text-center">
+    <a
+      href="/updates/"
+      class="inline-flex items-center gap-1 text-[13px] font-medium underline underline-offset-2"
+      style="color: var(--accent, #8cb4ff);"
+    >
+      ← All Updates
+    </a>
+  </div>
+</Layout>
+
+<style>
+  .animate-fade-in-up {
+    animation: fadeInUp 0.4s ease-out both;
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

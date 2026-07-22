@@ -13,13 +13,15 @@ import { SITE_URL } from '../lib/constants';
   canonical={SITE_URL}
   noHeader={true}
 >
-  <BentoHero />
+  <div id="first-visit-hero"><BentoHero /></div>
   <ContinueStudying />
   <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mt-6">
     {subjects.map((s, i) => (
       <div class={`animate-fade-in-up animate-delay-${Math.min(i + 1, 7)}`}>
-        <SubjectCard id={s.id} title={s.title} emoji={s.emoji} accent={s.accent} />
+        <SubjectCard id={s.id} title={s.title} accent={s.accent} />
       </div>
     ))}
   </div>
 </Layout>
+
+<script>(function(){if(localStorage.getItem('c9-visited')){var e=document.getElementById('first-visit-hero');if(e)e.style.display='none'}})();</script>

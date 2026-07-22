@@ -1,4 +1,4 @@
-const CACHE = '9lectures-v5';
+const CACHE = '9lectures-v7';
 const STATIC = [
   '/',
   '/manifest.json',
@@ -23,6 +23,21 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
+  if (event.request.destination === 'document') {
+    event.respondWith(
+      caches.match(event.request).then((cached) => {
+        const fetchAndUpdate = fetch(event.request).then((response) => {
+          if (response && response.status === 200 && response.type === 'basic') {
+            const clone = response.clone();
+            caches.open(CACHE).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        }).catch(() => cached || caches.match('/'));
+        return cached || fetchAndUpdate;
+      })
+    );
+    return;
+  }
   event.respondWith(
     caches.match(event.request).then((cached) => {
       if (cached) return cached;
@@ -31,10 +46,7 @@ self.addEventListener('fetch', (event) => {
         const clone = response.clone();
         caches.open(CACHE).then((cache) => cache.put(event.request, clone));
         return response;
-      }).catch(() => {
-        if (event.request.destination === 'document') return caches.match('/');
-        return new Response('Offline', { status: 503 });
-      });
+      }).catch(() => new Response('Offline', { status: 503 }));
     })
   );
 });

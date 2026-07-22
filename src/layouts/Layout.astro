@@ -169,6 +169,7 @@ const themeColor = accent || '#07070d';
               subject, chapter, title,
               accent: btn.dataset.accent || '#8cb4ff',
             });
+            localStorage.setItem('c9-visited', '1');
             if (subject && chapterId) {
               markViewed(subject, chapterId, videoId, title);
             }

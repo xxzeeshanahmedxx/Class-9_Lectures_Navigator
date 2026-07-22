@@ -1,0 +1,42 @@
+export const updates = [
+  {
+    date: '2026-07-20',
+    type: 'new-content',
+    title: 'New Physics Chapter 8 Lectures Added',
+    description: 'Complete chapter 8 on Thermal Properties of Matter — now available for all Punjab board students.',
+    slug: 'physics-ch8-thermal-properties',
+    content: '',
+  },
+  {
+    date: '2026-07-15',
+    type: 'holiday',
+    title: 'Summer Break Announced',
+    description: 'All Punjab schools closed from July 20 to August 14. Enjoy your break!',
+    slug: 'summer-break-2026',
+    content: '',
+  },
+  {
+    date: '2026-07-10',
+    type: 'date-sheet',
+    title: 'Annual Exam 2026 Date Sheet Released',
+    description: 'Punjab Board 9th class annual exams start from March 2027. Check the official schedule.',
+    slug: 'annual-exam-2026-date-sheet',
+    content: '',
+  },
+  {
+    date: '2026-07-05',
+    type: 'result',
+    title: '9th Class Results 2025 Announced',
+    description: 'Previous year results are now available on the official board website.',
+    slug: '9th-class-results-2025',
+    content: '',
+  },
+  {
+    date: '2026-07-01',
+    type: 'new-content',
+    title: 'Chemistry Chapter 10 & 11 Online',
+    description: 'Electrochemistry and Chemical Equilibrium — new video lectures uploaded.',
+    slug: 'chemistry-ch10-ch11-lectures',
+    content: '',
+  },
+];
