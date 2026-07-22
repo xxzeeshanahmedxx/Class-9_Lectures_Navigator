@@ -1,0 +1,89 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+
+export interface Props {
+  title: string;
+  subtitle?: string;
+  backUrl?: string;
+  accent?: string;  // subject accent color for divider line + logo gradient
+}
+
+const { title, subtitle, backUrl, accent } = Astro.props;
+---
+
+<header
+  class="sticky top-0 z-40 animate-fade-in"
+  style="background: var(--header-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);"
+>
+  <!-- accent gradient line at top of header -->
+  {accent && (
+    <div
+      class="h-[2px] w-full flex-shrink-0"
+      style={`background: linear-gradient(90deg, ${accent}, transparent);`}
+    ></div>
+  )}
+  <div class="flex items-center gap-3 px-4 h-[70px] sm:h-20 max-w-4xl mx-auto">
+    <!-- Back / Logo -->
+    {backUrl ? (
+      <a
+        href={backUrl}
+        class="flex items-center justify-center w-11 h-11 -ml-1 rounded-xl active:opacity-50 flex-shrink-0"
+        style="color: var(--color-muted);"
+        aria-label="Back"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5" />
+          <path d="M12 19l-7-7 7-7" />
+        </svg>
+      </a>
+    ) : (
+      <div class="flex items-center gap-1.5 flex-shrink-0">
+        <span
+          class="text-[24px] sm:text-[26px] font-bold leading-none gradient-brand"
+          style="-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"
+        >9</span>
+      </div>
+    )}
+
+    <!-- Accent vertical divider -->
+    {accent && <div class="w-px h-6 flex-shrink-0" style={`background: ${accent}20;`}></div>}
+
+    <!-- Title area -->
+    <div class="min-w-0 flex-1">
+      <h1 class="text-[18px] sm:text-[20px] font-semibold truncate leading-tight" style="color: var(--color-title);">
+        {title}
+      </h1>
+      {subtitle && (
+        <p
+          class="text-[13px] sm:text-[14px] leading-tight truncate"
+          style="color: var(--color-secondary);"
+          data-lang="selectChapter"
+        >{subtitle}</p>
+      )}
+    </div>
+
+    <!-- Search -->
+    <a
+      href="/search/"
+      class="flex items-center justify-center w-11 h-11 rounded-xl active:opacity-50 flex-shrink-0"
+      style="color: var(--color-muted);"
+      aria-label="Search lectures"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8" />
+        <path d="M21 21l-4.35-4.35" />
+      </svg>
+    </a>
+
+    <!-- Theme toggle -->
+    <ThemeToggle />
+
+    <!-- Lang toggle -->
+    <button
+      id="lang-toggle"
+      class="flex items-center justify-center w-11 h-11 rounded-xl active:opacity-50 flex-shrink-0 text-[12px] font-bold"
+      style="color: var(--color-muted);"
+      aria-label="Toggle language"
+    >EN</button>
+  </div>
+</header>
