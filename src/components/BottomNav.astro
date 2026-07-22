@@ -1,6 +1,6 @@
 <nav id="bottom-nav"
   class="sm:hidden fixed bottom-0 left-0 right-0 z-50"
-  style="background: var(--header-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid var(--border); padding-bottom: env(safe-area-inset-bottom, 0px);"
+  style="background: var(--header-bg); backdrop-filter: blur(24px) saturate(1.2); -webkit-backdrop-filter: blur(24px) saturate(1.2); border-top: 1px solid var(--border); padding-bottom: env(safe-area-inset-bottom, 0px);"
 >
   <div class="flex items-end justify-around pb-1.5 pt-1.5 px-2" style="height: calc(56px + env(safe-area-inset-bottom, 0px));">
     <a
@@ -47,7 +47,7 @@
   </div>
 </nav>
 
-<script>
+<script is:inline>
   (function () {
     var currentPath = window.location.pathname;
     document.querySelectorAll('#bottom-nav a[href]').forEach(function(link) {

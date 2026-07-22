@@ -30,12 +30,21 @@ function extractTopics(videos) {
   }).filter(Boolean).slice(0, 6);
 }
 
+function parseDuration(d) {
+  if (!d) return 0;
+  const parts = d.split(':').map(Number);
+  if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+  if (parts.length === 2) return parts[0] * 60 + parts[1];
+  return 0;
+}
+
 const { subject, chapter, section } = Astro.props;
 const videos = section.videos || [];
 const siteUrl = SITE_URL;
 const pageUrl = `${siteUrl}/${subject.id}/${chapter.id}/${section.id}/`;
 const secTitle = section.title || '';
 const chTitle = chapter.title || '';
+const chNum = chapter.number || '';
 const topics = extractTopics(videos);
 const summaryText = topics.length > 0
   ? `This section covers: ${topics.join(', ')}.`
@@ -43,17 +52,23 @@ const summaryText = topics.length > 0
 
 const sectionDesc = `${subject.title} class 9 ${chTitle} – ${secTitle}. ${summaryText} Free video lectures for Punjab Board online.`;
 
-const visibleTopics = topics.slice(0, 3).join(', ');
-const visibleLine = topics.length > 0
-  ? `${subject.title} Class 9 ${chTitle} – ${secTitle}: ${visibleTopics}. Free Punjab Board video lecture.`
-  : `${subject.title} Class 9 ${chTitle} – ${secTitle}. Free Punjab Board video lecture.`;
-
 const breadcrumbs = [
   { name: 'Home', url: siteUrl + '/' },
   { name: subject.title + ' Class 9', url: siteUrl + '/' + subject.id + '/' },
-  { name: `${subject.title} Class 9 ${chapter.number ? 'Chapter ' + chapter.number : ''}`.trim(), url: siteUrl + '/' + subject.id + '/' + chapter.id + '/' },
+  { name: `${chTitle}`, url: siteUrl + '/' + subject.id + '/' + chapter.id + '/' },
   { name: secTitle, url: pageUrl },
 ];
+
+// Calculate total duration
+let totalSeconds = 0;
+for (const v of videos) {
+  totalSeconds += parseDuration(v.duration);
+}
+const mins = Math.floor(totalSeconds / 60);
+const durationStr = `~${mins}m`;
+
+// Extract question numbers from video titles
+const questionLabels = videos.map(v => v.title).join(', ');
 ---
 
 <Layout
@@ -66,12 +81,76 @@ const breadcrumbs = [
   showPWA={true}
   breadcrumbs={breadcrumbs}
 >
-  {summaryText && (
-    <p class="mb-5 font-body text-[14px] leading-relaxed" style="color: var(--text-secondary);">{visibleLine}</p>
-  )}
+  <!-- Breadcrumb -->
+  <div class="flex items-center gap-1.5 text-[13px] mb-4 flex-wrap anim">
+    <a href="/" style="color: var(--text-muted); text-decoration: none; font-weight: 500;">Home</a>
+    <span style="color: var(--text-dim); font-size: 11px;">›</span>
+    <a href={`/${subject.id}/`} style="color: var(--text-muted); text-decoration: none; font-weight: 500;">{subject.title}</a>
+    <span style="color: var(--text-dim); font-size: 11px;">›</span>
+    <a href={`/${subject.id}/${chapter.id}/`} style="color: var(--text-muted); text-decoration: none; font-weight: 500;">Ch {chNum} — {chTitle}</a>
+    <span style="color: var(--text-dim); font-size: 11px;">›</span>
+    <span style="color: var(--text-secondary); font-weight: 600;">{secTitle}</span>
+  </div>
+
+  <!-- Exercise Hero -->
+  <div class="relative py-6 sm:py-8 mb-8">
+    <div class="absolute top-[-60px] left-[30%] w-[400px] h-[250px] pointer-events-none" style={`background: radial-gradient(ellipse 60% 50% at 50% 40%, ${subject.accent}10 0%, transparent 100%);`}></div>
+
+    <div class="relative flex items-start gap-4 sm:gap-5">
+      <!-- Icon -->
+      <div
+        class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center flex-shrink-0 font-mono text-[18px] sm:text-[20px] font-bold text-white anim"
+        style={`background: linear-gradient(135deg, ${subject.accent}90, ${subject.accent}); box-shadow: 0 0 28px ${subject.accent}30, inset 0 1px 0 rgba(255,255,255,.12);`}
+      >
+        {secTitle.replace('Exercise ', '').replace('Review Exercise ', 'R').replace('Exercise', 'Ex')}
+      </div>
+
+      <div class="flex-1 min-w-0">
+        <!-- Tag -->
+        <div
+          class="anim d1 inline-flex items-center gap-2 text-[12px] font-semibold px-3 py-1 rounded-full mb-3"
+          style={`background: ${subject.accent}12; color: ${subject.accent}; border: 1px solid ${subject.accent}20;`}
+        >
+          <span class="w-1.5 h-1.5 rounded-full" style={`background: ${subject.accent}; box-shadow: 0 0 6px ${subject.accent};`}></span>
+          {subject.title} · {chTitle}
+        </div>
+
+        <!-- Title -->
+        <h1 class="anim d2 text-[22px] sm:text-[28px] font-extrabold tracking-tight leading-tight mb-2" style="color: var(--text-primary);">
+          <span style="font-weight: 500; color: var(--text-secondary);">{secTitle} —</span> {chTitle}
+        </h1>
+
+        {summaryText && (
+          <p class="anim d3 text-[14px] leading-relaxed mb-3" style="color: var(--text-secondary);">
+            {topics.slice(0, 3).join(', ')}
+          </p>
+        )}
+
+        <!-- Stats -->
+        <div class="anim d4 flex flex-wrap gap-4 sm:gap-6">
+          <div class="flex items-center gap-2 text-[14px]" style="color: var(--text-muted);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            <span class="font-mono font-semibold" style="color: var(--text-primary);">{videos.length}</span>
+            <span>videos</span>
+          </div>
+          <div class="flex items-center gap-2 text-[14px]" style="color: var(--text-muted);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span class="font-mono font-semibold" style="color: var(--text-primary);">{durationStr}</span>
+            <span>total</span>
+          </div>
+          <div class="flex items-center gap-2 text-[14px]" style="color: var(--text-muted);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span style="color: var(--text-primary);">{questionLabels}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Videos Grid -->
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
     {videos.map((v, i) => (
-      <div class="animate-fade-in-up" style={`animation-delay: ${i * 50}ms`}>
+      <div class={`anim d${Math.min(i + 1, 9)}`}>
         <VideoCard
           videoId={v.videoId}
           title={v.title}
@@ -83,4 +162,19 @@ const breadcrumbs = [
       </div>
     ))}
   </div>
+
+  <!-- IntersectionObserver -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.anim').forEach(function(el) { observer.observe(el); });
+    });
+  </script>
 </Layout>

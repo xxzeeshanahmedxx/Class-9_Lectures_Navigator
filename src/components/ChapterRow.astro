@@ -9,33 +9,68 @@ export interface Props {
 }
 
 const { number, title, count, label, href, accent = '#8cb4ff' } = Astro.props;
+
+// Format number with leading zero for single digits
+const displayNum = number < 10 ? `0${number}` : `${number}`;
 ---
 
 <a
   href={href}
   aria-label={title}
-  class="flex items-center gap-3 px-4 min-h-[60px] sm:min-h-[68px] rounded-xl border relative active:scale-[0.97] transition-transform duration-150 chapter-card"
-  style="--accent: {accent}; background: var(--card-bg); border-color: var(--border); box-shadow: var(--shadow-card);"
+  class="group flex items-center gap-4 px-4 sm:px-5 min-h-[64px] sm:min-h-[72px] rounded-2xl relative active:scale-[0.97] transition-all duration-300"
+  style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card); overflow: hidden;"
 >
-  <span
-    class="flex items-center justify-center w-8 h-8 rounded font-mono text-sm flex-shrink-0"
-    style={`background: ${accent}20; color: ${accent};`}
+  <!-- Left accent bar (hidden until hover) -->
+  <div
+    class="absolute left-0 top-0 bottom-0 w-[3px] rounded-l-2xl opacity-0 transition-opacity duration-200"
+    style={`background: ${accent};`}
+  ></div>
+
+  <!-- Number box -->
+  <div
+    class="flex items-center justify-center w-11 h-11 rounded-xl flex-shrink-0 font-mono text-[15px] font-semibold transition-all duration-300"
+    style={`background: ${accent}10; border: 1px solid ${accent}18; color: ${accent};`}
   >
-    {number}
-  </span>
-  <div class="min-w-0 flex-1">
-    <div class="font-body text-[17px] sm:text-[18px] font-medium truncate" style="color: var(--color-title);">{title}</div>
-    <span class="font-body text-[14px]" style="color: var(--text-secondary);">{count} <span data-lang={label}>{label}</span></span>
+    {displayNum}
   </div>
-  <span class="font-mono text-base" style="color: var(--color-muted);">&rarr;</span>
+
+  <!-- Content -->
+  <div class="min-w-0 flex-1">
+    <div class="text-[15px] sm:text-[16px] font-bold tracking-tight truncate" style="color: var(--text-primary);">
+      {title}
+    </div>
+    <div class="flex items-center gap-2 text-[13px] mt-0.5" style="color: var(--text-muted);">
+      <span class="font-mono font-semibold" style="color: var(--text-secondary);">{count}</span>
+      <span data-lang={label}>{label}</span>
+    </div>
+  </div>
+
+  <!-- Arrow -->
+  <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300" style="color: var(--text-dim);">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+      <path d="M5 12h14"/><path d="M12 5l7 7-7 7"/>
+    </svg>
+  </div>
 </a>
 
 <style is:global>
   @media (hover: hover) {
-    .chapter-card:hover {
-      scale: 1.015;
-      box-shadow: 0 0 20px color-mix(in srgb, var(--accent, #8cb4ff) 20%, transparent), 0 0 40px color-mix(in srgb, var(--accent, #8cb4ff) 8%, transparent) !important;
-      border-color: color-mix(in srgb, var(--accent, #8cb4ff) 40%, transparent) !important;
+    .group:hover .absolute.left-0 {
+      opacity: 1;
+    }
+    a.group:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    a.group:hover .w-8 {
+      color: var(--text-secondary);
+      transform: translateX(3px);
+    }
+    a.group:hover .w-11 {
+      background: var(--accent, #8cb4ff) !important;
+      border-color: var(--accent, #8cb4ff) !important;
+      color: white !important;
     }
   }
 </style>

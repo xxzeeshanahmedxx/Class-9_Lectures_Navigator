@@ -1,66 +1,84 @@
 ---
 import subjects from '../data/subjects.json';
+import { getData } from '../lib/data.js';
 
-const accentMap = {};
+// Build subject info for client-side rendering
+const subjectInfo: Record<string, { title: string; accent: string; chapters: number }> = {};
 for (const s of subjects) {
-  accentMap[s.id] = { title: s.title, accent: s.accent };
+  const d = getData(s.id);
+  subjectInfo[s.id] = { title: s.title, accent: s.accent, chapters: d.chapters.length };
 }
 ---
 
-<section class="continue-studying animate-fade-in-up" data-accents={JSON.stringify(accentMap)}>
-  <h2 class="text-[17px] sm:text-[19px] font-bold mb-3" style="color: var(--color-title);" data-lang="continueStudying">Continue Studying</h2>
-  <div class="flex gap-3 overflow-x-auto no-scrollbar pb-2" id="continue-scroll">
-    <div id="continue-skeleton" class="flex gap-3">
-      <div class="flex-shrink-0 rounded-xl border overflow-hidden" style="width:176px;height:108px;background:var(--card-bg);border-color:var(--border);"><div class="h-full w-full shimmer-skeleton"></div></div>
-      <div class="flex-shrink-0 rounded-xl border overflow-hidden" style="width:176px;height:108px;background:var(--card-bg);border-color:var(--border);"><div class="h-full w-full shimmer-skeleton"></div></div>
-      <div class="flex-shrink-0 rounded-xl border overflow-hidden" style="width:176px;height:108px;background:var(--card-bg);border-color:var(--border);"><div class="h-full w-full shimmer-skeleton"></div></div>
+<section class="py-10 sm:py-12" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);" id="continue-section">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="flex items-end justify-between mb-6">
+      <div>
+        <h2 class="text-[22px] sm:text-[24px] font-bold tracking-tight" style="color: var(--text-primary);" data-lang="continueStudying">Continue Studying</h2>
+        <p class="text-[13px] mt-0.5" style="color: var(--text-muted);">Pick up where you left off</p>
+      </div>
+    </div>
+
+    <!-- Skeleton (hidden when JS loads) -->
+    <div class="flex gap-3 overflow-x-auto no-scrollbar pb-2" id="continue-skeleton">
+      <div class="flex-shrink-0 rounded-2xl overflow-hidden" style="width:190px;height:110px;background:var(--card-bg);border:1px solid var(--border);"><div class="h-full w-full shimmer-skeleton"></div></div>
+      <div class="flex-shrink-0 rounded-2xl overflow-hidden" style="width:190px;height:110px;background:var(--card-bg);border:1px solid var(--border);"><div class="h-full w-full shimmer-skeleton"></div></div>
+      <div class="flex-shrink-0 rounded-2xl overflow-hidden" style="width:190px;height:110px;background:var(--card-bg);border:1px solid var(--border);"><div class="h-full w-full shimmer-skeleton"></div></div>
+    </div>
+
+    <!-- Real content (populated by JS) -->
+    <div class="flex gap-3 overflow-x-auto no-scrollbar pb-2 hidden" id="continue-scroll"></div>
+
+    <!-- Empty state -->
+    <div class="hidden text-center py-6" id="continue-empty">
+      <p class="text-[14px]" style="color: var(--text-muted);">Start watching a lecture and it'll show up here.</p>
     </div>
   </div>
 </section>
 
-<script>
-import { getRecent } from '../lib/progress.js';
+<script is:inline define:vars={{ subjectInfo }}>
+(function() {
+  var RECENT_KEY = 'c9-recent';
+  var section = document.getElementById('continue-section');
+  var skeleton = document.getElementById('continue-skeleton');
+  var scroll = document.getElementById('continue-scroll');
+  var empty = document.getElementById('continue-empty');
 
-const section = document.querySelector('.continue-studying');
-const scroll = document.getElementById('continue-scroll');
-const skeleton = document.getElementById('continue-skeleton');
-const accentMap = JSON.parse(section.dataset.accents);
-const recent = getRecent();
+  var recent = [];
+  try { recent = JSON.parse(localStorage.getItem(RECENT_KEY) || '[]'); } catch(e) {}
+  recent = recent.slice(0, 6);
 
-if (recent.length === 0) {
-  section.style.display = 'none';
-} else {
+  if (recent.length === 0) {
+    skeleton.style.display = 'none';
+    empty.classList.remove('hidden');
+    return;
+  }
+
   skeleton.style.display = 'none';
-  const fragment = document.createDocumentFragment();
-  for (const item of recent) {
-    const info = accentMap[item.subject];
+  scroll.classList.remove('hidden');
+
+  var fragment = document.createDocumentFragment();
+  for (var i = 0; i < recent.length; i++) {
+    var item = recent[i];
+    var info = subjectInfo[item.subject];
     if (!info) continue;
-    const card = document.createElement('a');
-    card.href = `/${item.subject}/${item.chapterId}/`;
-    card.className =
-      'flex-shrink-0 rounded-xl border overflow-hidden active:scale-[0.97] touch-min transition-transform';
-    card.style.cssText =
-      'width:176px;background:var(--card-bg);border-color:var(--border);--accent:' + info.accent;
-    card.setAttribute('aria-label', `Continue studying: ${item.title}`);
-    card.innerHTML = `<div class="p-3 flex flex-col gap-1.5"><span class="font-mono text-[11px] font-medium" style="color:${info.accent}">${info.title}</span><span class="font-body text-[13px] leading-snug line-clamp-2" style="color:var(--text-primary)">${item.title}</span></div>`;
+
+    var card = document.createElement('a');
+    card.href = '/' + item.subject + '/' + item.chapterId + '/';
+    card.className = 'flex-shrink-0 rounded-2xl overflow-hidden active:scale-[0.97] touch-min transition-all duration-200';
+    card.style.cssText = 'width:190px;background:var(--card-bg);border:1px solid var(--border);';
+    card.setAttribute('aria-label', 'Continue: ' + item.title);
+
+    card.innerHTML =
+      '<div style="position:absolute;top:0;left:0;right:0;height:2px;background:' + info.accent + ';border-radius:14px 14px 0 0;"></div>' +
+      '<div class="p-4 relative">' +
+        '<div class="text-[12px] font-semibold mb-2" style="color:' + info.accent + ';">' + info.title + '</div>' +
+        '<div class="text-[14px] font-semibold leading-snug line-clamp-2" style="color:var(--text-primary);">' + item.title + '</div>' +
+      '</div>';
+
+    card.style.position = 'relative';
     fragment.appendChild(card);
   }
   scroll.appendChild(fragment);
-}
+})();
 </script>
-
-<style is:global>
-  .shimmer-skeleton {
-    background: linear-gradient(90deg, var(--card-bg) 25%, var(--border) 50%, var(--card-bg) 75%);
-    background-size: 200% 100%;
-    animation: shimmer 1.5s ease-in-out infinite;
-    border-radius: inherit;
-  }
-  @media (hover: hover) {
-    #continue-scroll > a:hover {
-      scale: 1.02;
-      box-shadow: 0 0 20px color-mix(in srgb, var(--accent, #8cb4ff) 20%, transparent), 0 0 40px color-mix(in srgb, var(--accent, #8cb4ff) 8%, transparent) !important;
-      border-color: color-mix(in srgb, var(--accent, #8cb4ff) 40%, transparent) !important;
-    }
-  }
-</style>

@@ -43,6 +43,7 @@ const pageUrl = `${siteUrl}/${subject.id}/${chapter.id}/`;
 const allVideos = isExercises
   ? (chapter.sections || []).flatMap(s => s.videos || [])
   : (chapter.videos || []);
+const totalVideoCount = allVideos.length;
 const topics = extractTopics(allVideos);
 const summaryText = topics.length > 0
   ? `This chapter covers: ${topics.join(', ')}.`
@@ -50,16 +51,29 @@ const summaryText = topics.length > 0
 
 const chapterDesc = `${subject.title} class 9 chapter ${num} – ${chTitle}. ${summaryText} Free video lectures for Punjab Board 2026.`;
 
-const visibleTopics = topics.slice(0, 4).join(', ');
-const visibleLine = topics.length > 0
-  ? `${subject.title} Class 9 Chapter ${num} – ${chTitle}: ${visibleTopics}. Free Punjab Board video lectures.`
-  : `${subject.title} Class 9 Chapter ${num} – ${chTitle}. Free Punjab Board video lectures.`;
-
 const breadcrumbs = [
   { name: 'Home', url: siteUrl + '/' },
   { name: subject.title + ' Class 9', url: siteUrl + '/' + subject.id + '/' },
   { name: `${subject.title} Class 9 ${displayTitle}`, url: pageUrl },
 ];
+
+// Calculate total duration (rough estimate)
+function parseDuration(d) {
+  if (!d) return 0;
+  const parts = d.split(':').map(Number);
+  if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+  if (parts.length === 2) return parts[0] * 60 + parts[1];
+  return 0;
+}
+let totalSeconds = 0;
+for (const v of allVideos) {
+  totalSeconds += parseDuration(v.duration);
+}
+const hours = Math.floor(totalSeconds / 3600);
+const mins = Math.floor((totalSeconds % 3600) / 60);
+const durationStr = hours > 0 ? `~${hours}h ${mins}m` : `~${mins}m`;
+
+const sectionCount = isExercises ? (chapter.sections || []).length : 0;
 ---
 
 <Layout
@@ -72,20 +86,73 @@ const breadcrumbs = [
   showPWA={true}
   breadcrumbs={breadcrumbs}
 >
-  {topics.length > 0 && (
-    <p class="mb-5 font-body text-[14px] leading-relaxed" style="color: var(--text-secondary);">{visibleLine}</p>
-  )}
+  <!-- Breadcrumb -->
+  <div class="flex items-center gap-1.5 text-[13px] mb-4 flex-wrap anim">
+    <a href="/" style="color: var(--text-muted); text-decoration: none; font-weight: 500;">Home</a>
+    <span style="color: var(--text-dim); font-size: 11px;">›</span>
+    <a href={`/${subject.id}/`} style="color: var(--text-muted); text-decoration: none; font-weight: 500;">{subject.title}</a>
+    <span style="color: var(--text-dim); font-size: 11px;">›</span>
+    <span style="color: var(--text-secondary); font-weight: 600;">Chapter {num} — {chTitle}</span>
+  </div>
+
+  <!-- Chapter Hero -->
+  <div class="relative py-6 sm:py-8 mb-8">
+    <!-- Ambient glow -->
+    <div class="absolute top-[-80px] left-[30%] w-[500px] h-[300px] pointer-events-none" style={`background: radial-gradient(ellipse 60% 50% at 50% 40%, ${subject.accent}15 0%, transparent 100%);`}></div>
+
+    <div class="relative flex items-start gap-4 sm:gap-5">
+      <!-- Icon -->
+      <div
+        class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center flex-shrink-0 font-mono text-[20px] sm:text-[22px] font-bold text-white anim"
+        style={`background: linear-gradient(135deg, ${subject.accent}90, ${subject.accent}); box-shadow: 0 0 28px ${subject.accent}30, inset 0 1px 0 rgba(255,255,255,.12);`}
+      >
+        {num}
+      </div>
+
+      <div class="flex-1 min-w-0">
+        <!-- Tag -->
+        <div
+          class="anim d1 inline-flex items-center gap-2 text-[12px] font-semibold px-3 py-1 rounded-full mb-3"
+          style={`background: ${subject.accent}12; color: ${subject.accent}; border: 1px solid ${subject.accent}20;`}
+        >
+          <span class="w-1.5 h-1.5 rounded-full" style={`background: ${subject.accent}; box-shadow: 0 0 6px ${subject.accent};`}></span>
+          {subject.title} · Chapter {num}
+        </div>
+
+        <!-- Title -->
+        <h1 class="anim d2 text-[24px] sm:text-[30px] font-extrabold tracking-tight leading-tight mb-2" style="color: var(--text-primary);">
+          <span style="font-weight: 500; color: var(--text-secondary);">Chapter {num} —</span> {chTitle}
+        </h1>
+
+        <!-- Stats -->
+        <div class="anim d3 flex flex-wrap gap-4 sm:gap-6 mt-3">
+          <div class="flex items-center gap-2 text-[14px]" style="color: var(--text-muted);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            <span class="font-mono font-semibold" style="color: var(--text-primary);">{totalVideoCount}</span>
+            <span>videos</span>
+          </div>
+          {isExercises && (
+            <div class="flex items-center gap-2 text-[14px]" style="color: var(--text-muted);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 016.5 2H19a1 1 0 011 1v18a1 1 0 01-1 1H6.5a1 1 0 010-5H20"/></svg>
+              <span class="font-mono font-semibold" style="color: var(--text-primary);">{sectionCount}</span>
+              <span>exercises</span>
+            </div>
+          )}
+          <div class="flex items-center gap-2 text-[14px]" style="color: var(--text-muted);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span class="font-mono font-semibold" style="color: var(--text-primary);">{durationStr}</span>
+            <span>total</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content -->
   {isExercises ? (
     <div class="flex flex-col gap-3">
       {(chapter.sections || []).map((sec, i) => (
-        <div
-          class="animate-fade-in-up"
-          style={`animation-delay: ${i * 50}ms`}
-          data-subject={subject.id}
-          data-chapter={chapter.id}
-          data-chapter-id={sec.id}
-          data-accent={subject.accent}
-        >
+        <div class={`anim d${Math.min(i + 1, 9)}`}>
           <ChapterRow
             number={i + 1}
             title={sec.title}
@@ -100,14 +167,7 @@ const breadcrumbs = [
   ) : (
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {(chapter.videos || []).map((v, i) => (
-        <div
-          class="animate-fade-in-up"
-          style={`animation-delay: ${i * 50}ms`}
-          data-subject={subject.id}
-          data-chapter={chapter.id}
-          data-chapter-id={v.videoId}
-          data-accent={subject.accent}
-        >
+        <div class={`anim d${Math.min(i + 1, 9)}`}>
           <VideoCard
             videoId={v.videoId}
             title={v.title}
@@ -120,4 +180,19 @@ const breadcrumbs = [
       ))}
     </div>
   )}
+
+  <!-- IntersectionObserver -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.anim').forEach(function(el) { observer.observe(el); });
+    });
+  </script>
 </Layout>

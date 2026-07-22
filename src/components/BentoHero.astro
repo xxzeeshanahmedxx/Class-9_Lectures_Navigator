@@ -1,54 +1,95 @@
 ---
 import subjects from '../data/subjects.json';
+import { getData } from '../lib/data.js';
 
-// Stats
-const totalVideos = 512;
+let totalVideos = 0;
+let totalChapters = 0;
+for (const s of subjects) {
+  const d = getData(s.id);
+  totalChapters += d.chapters.length;
+  for (const ch of d.chapters) {
+    totalVideos += ch.videoCount || 0;
+  }
+}
 const totalSubjects = subjects.length;
 ---
 
-<div class="flex flex-col gap-3">
-  <div
-    class="rounded-xl p-5 sm:p-6 flex items-center gap-3 sm:gap-4"
-    style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);"
-  >
-    <span
-      class="text-[32px] sm:text-[36px] font-bold leading-none gradient-brand flex-shrink-0"
-      style="-webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"
-    >9</span>
-    <div>
-      <h1
-        class="text-[17px] sm:text-[19px] font-bold leading-tight"
-        style="color: var(--text-primary);"
-        data-lang="siteName"
-      >Class 9 · Punjab Curriculum</h1>
-      <p
-        class="text-[14px] sm:text-[15px] leading-relaxed mt-0.5"
-        style="color: var(--text-secondary);"
-        data-lang="siteDesc"
-      >Free study lectures for 9th grade Punjab board — 7 subjects, 512 videos.</p>
+<div class="relative py-10 sm:py-16 text-center">
+  <!-- Ambient glow -->
+  <div class="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[900px] h-[600px] pointer-events-none" style="
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 40%, rgba(99,102,241,.15) 0%, transparent 100%),
+      radial-gradient(ellipse 40% 40% at 35% 55%, rgba(167,139,250,.08) 0%, transparent 100%),
+      radial-gradient(ellipse 40% 40% at 65% 55%, rgba(124,58,237,.08) 0%, transparent 100%);
+  "></div>
+
+  <!-- Grid lines -->
+  <div class="absolute inset-0 pointer-events-none opacity-[.04]" style="
+    background-image:
+      linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent);
+  "></div>
+
+  <div class="relative">
+    <!-- Badge -->
+    <div class="anim inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-5 text-[13px] font-semibold" style="
+      background: linear-gradient(135deg, rgba(99,102,241,.12), rgba(167,139,250,.08));
+      color: var(--accent-light, #a5b4fc);
+      border: 1px solid rgba(99,102,241,.2);
+    ">
+      <span class="w-1.5 h-1.5 rounded-full" style="background: #22c55e; box-shadow: 0 0 8px #22c55e; animation: pulse-dot 2s ease infinite;"></span>
+      <span data-lang="heroBadge">Free Punjab Board Lectures — 2026 Syllabus</span>
     </div>
+
+    <!-- Headline -->
+    <h1 class="anim d1 text-[36px] sm:text-[48px] md:text-[56px] font-extrabold tracking-[-1.5px] leading-[1.05] mb-4">
+      <span class="gradient-brand" style="-webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;" data-lang="heroTitle">Learn smarter,<br/>not harder.</span>
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="anim d2 text-[16px] sm:text-[18px] max-w-[520px] mx-auto leading-relaxed mb-10" style="color: var(--text-secondary);" data-lang="heroDesc">
+      {totalVideos} video lectures across {totalSubjects} subjects. Chapter-wise, exercise-wise, completely free — built for Punjab Board 9th graders.
+    </p>
+
+    <!-- Stats row -->
+    <div class="anim d3 flex justify-center gap-0 mb-10">
+      <div class="text-center px-6 sm:px-9 relative">
+        <div class="font-mono text-[28px] sm:text-[36px] font-semibold tracking-tight" style="color: var(--text-primary);">
+          {totalSubjects}<span style="color: var(--accent2);">+</span>
+        </div>
+        <div class="text-[13px] font-medium mt-0.5" style="color: var(--text-muted);" data-lang="subjects">Subjects</div>
+      </div>
+      <div class="text-center px-6 sm:px-9 relative" style="border-left: 1px solid var(--border);">
+        <div class="font-mono text-[28px] sm:text-[36px] font-semibold tracking-tight" style="color: var(--text-primary);">{totalVideos}</div>
+        <div class="text-[13px] font-medium mt-0.5" style="color: var(--text-muted);" data-lang="videos">Videos</div>
+      </div>
+      <div class="text-center px-6 sm:px-9 relative" style="border-left: 1px solid var(--border);">
+        <div class="font-mono text-[28px] sm:text-[36px] font-semibold tracking-tight" style="color: var(--text-primary);">{totalChapters}</div>
+        <div class="text-[13px] font-medium mt-0.5" style="color: var(--text-muted);">Chapters</div>
+      </div>
+      <div class="hidden sm:block text-center px-6 sm:px-9 relative" style="border-left: 1px solid var(--border);">
+        <div class="font-mono text-[28px] sm:text-[36px] font-semibold tracking-tight" style="color: var(--text-primary);">∞</div>
+        <div class="text-[13px] font-medium mt-0.5" style="color: var(--text-muted);">Free forever</div>
+      </div>
+    </div>
+
+    <!-- Search bar -->
+    <a href="/search/" class="anim d4 max-w-[520px] mx-auto relative block group" aria-label="Search lectures">
+      <div class="absolute -inset-0.5 rounded-2xl opacity-0 transition-opacity duration-300 group-focus-within:opacity-100" style="background: linear-gradient(135deg, rgba(99,102,241,.3), rgba(167,139,250,.1)); filter: blur(8px);"></div>
+      <div class="relative flex items-center h-[54px] rounded-[14px] px-4 gap-3" style="
+        background: var(--surface);
+        border: 1.5px solid var(--border);
+        box-shadow: var(--shadow-card);
+      ">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color: var(--text-muted); flex-shrink: 0;">
+          <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <span class="text-[15px]" style="color: var(--text-dim);" data-lang="searchPlaceholder">Search lectures… e.g. "Trigonometry Exercise 6.1"</span>
+        <kbd class="hidden sm:flex ml-auto items-center gap-1 font-mono text-[11px] px-2 py-0.5 rounded" style="background: rgba(255,255,255,.06); border: 1px solid var(--border); color: var(--text-muted);">⌘K</kbd>
+      </div>
+    </a>
   </div>
-
-  <a
-    href="/search/"
-    class="rounded-xl p-4 sm:p-5 flex items-center gap-3 active:scale-[0.97] transition-transform duration-150 bento-search"
-    style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);"
-    aria-label="Search lectures"
-  >
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted); flex-shrink: 0;" aria-hidden="true">
-      <circle cx="11" cy="11" r="8" />
-      <path d="M21 21l-4.35-4.35" />
-    </svg>
-    <span class="text-[14px] sm:text-[15px]" style="color: var(--text-muted);" data-lang="searchPlaceholder">Search lectures...</span>
-  </a>
 </div>
-
-<style is:global>
-  @media (hover: hover) {
-    .bento-search:hover {
-      scale: 1.01;
-      box-shadow: 0 0 20px color-mix(in srgb, var(--accent, #8cb4ff) 20%, transparent), 0 0 40px color-mix(in srgb, var(--accent, #8cb4ff) 8%, transparent) !important;
-      border-color: color-mix(in srgb, var(--accent, #8cb4ff) 40%, transparent) !important;
-    }
-  }
-</style>

@@ -19,6 +19,12 @@ const chNames = chapters.map((ch, i) => ch.title || `Chapter ${ch.number || i + 
 const siteUrl = SITE_URL;
 const pageUrl = siteUrl + '/' + subject.id + '/';
 
+// Count total videos
+let totalVideos = 0;
+for (const ch of chapters) {
+  totalVideos += ch.videoCount || 0;
+}
+
 const subjectDesc = `Free ${subject.id} class 9 lectures for Punjab Board 2026 new book. Watch all ${chapters.length} chapters including ${chNames.slice(0, 3).join(', ')}${chNames.length > 3 ? ' and more' : ''}. Full video course online.`;
 
 const breadcrumbs = [
@@ -26,16 +32,19 @@ const breadcrumbs = [
   { name: subject.title + ' Class 9', url: pageUrl },
 ];
 
-const subjLines = {
-  math: `Math Class 9 – Free online video lectures for Punjab Board 2026. Course covering real numbers, logarithms, sets and functions, factorization, algebra, linear equations, trigonometry, coordinate geometry, logic, graphs, statistics and probability.`,
-  physics: `Physics Class 9 – Free online video lectures for Punjab Board 2026. Course covering physical quantities and measurement, kinematics, dynamics, turning effect of forces, work energy and power, mechanical and thermal properties of matter, magnetism and nature of science.`,
-  chemistry: `Chemistry Class 9 – Free online video lectures for Punjab Board 2026. Course covering structure of atom, chemical bonding, formulae and equations, energetics, equilibrium, acids and bases, periodic table, group properties, hydrocarbons and environmental chemistry.`,
-  urdu: `Urdu Class 9 – Free online video lectures for Punjab Board 2026. Course covering hamd, naat, ikhlaq-e-hasanah, apni madad aap, nazam, ghazal, khatoot, tashreeh, grammar and essays.`,
-  computer: `Computer Class 9 – Free online video lectures for Punjab Board 2026. Course covering computer systems and logic, troubleshooting and security, computer networks, computational thinking, web development and data science.`,
-  biology: `Biology Class 9 – Free online video lectures for Punjab Board 2026. Course covering the science of biology, solving a biological problem, biodiversity, cells and tissues, cell cycle, enzymes, bioenergetics, nutrition, transport and more.`,
-  english: `English Class 9 – Free online video lectures for Punjab Board 2026. Course covering prose, poetry, grammar, translation and comprehension.`,
+const topicRange = chNames.length > 1 ? `${chNames[0]} → ${chNames[chNames.length - 1]}` : chNames[0] || '';
+
+const lucideSvgs: Record<string, string> = {
+  physics: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="1"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"/></svg>`,
+  chemistry: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/></svg>`,
+  math: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>`,
+  computer: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect width="18" height="12" x="3" y="4" rx="2" ry="2"/><line x1="2" x2="22" y1="20" y2="20"/></svg>`,
+  biology: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3"/><path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4"/><path d="M5 21h14"/></svg>`,
+  urdu: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28" transform="scale(-1, 1)"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg>`,
+  english: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>`,
 };
-const visibleLine = subjLines[subject.id] || `Free ${subject.title} class 9 lectures for Punjab Board 2026 new book – ${chapters.length} chapters. Watch full video course online.`;
+
+const svg = lucideSvgs[subject.id] || '';
 ---
 
 <Layout
@@ -47,7 +56,63 @@ const visibleLine = subjLines[subject.id] || `Free ${subject.title} class 9 lect
   canonical={pageUrl}
   breadcrumbs={breadcrumbs}
 >
-  <p class="mb-5 font-body text-[14px] leading-relaxed" style="color: var(--text-secondary);">{visibleLine}</p>
+  <!-- Breadcrumb -->
+  <div class="flex items-center gap-1.5 text-[13px] mb-4 flex-wrap anim">
+    <a href="/" style="color: var(--text-muted); text-decoration: none; font-weight: 500;">Home</a>
+    <span style="color: var(--text-dim); font-size: 11px;">›</span>
+    <span style="color: var(--text-secondary); font-weight: 600;">{subject.title} Class 9</span>
+  </div>
+
+  <!-- Subject Hero -->
+  <div class="relative py-6 sm:py-8 mb-8">
+    <div class="flex items-start gap-4 sm:gap-5">
+      <!-- Icon -->
+      <div
+        class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center flex-shrink-0 text-white anim"
+        style={`background: linear-gradient(135deg, ${subject.accent}90, ${subject.accent}); box-shadow: 0 0 28px ${subject.accent}30, inset 0 1px 0 rgba(255,255,255,.12);`}
+      >
+        <span set:html={svg} />
+      </div>
+
+      <div class="flex-1 min-w-0">
+        <!-- Tag -->
+        <div
+          class="anim d1 inline-flex items-center gap-2 text-[12px] font-semibold px-3 py-1 rounded-full mb-3"
+          style={`background: ${subject.accent}12; color: ${subject.accent}; border: 1px solid ${subject.accent}20;`}
+        >
+          <span class="w-1.5 h-1.5 rounded-full" style={`background: ${subject.accent}; box-shadow: 0 0 6px ${subject.accent};`}></span>
+          {subject.title} · {chapters.length} chapters
+        </div>
+
+        <!-- Title -->
+        <h1 class="anim d2 text-[26px] sm:text-[32px] font-extrabold tracking-tight leading-tight mb-2" style="color: var(--text-primary);">
+          {subject.title}
+        </h1>
+
+        {topicRange && (
+          <p class="anim d3 text-[14px] sm:text-[15px] leading-relaxed mb-4" style="color: var(--text-secondary);">
+            {topicRange}
+          </p>
+        )}
+
+        <!-- Stats -->
+        <div class="anim d4 flex flex-wrap gap-4 sm:gap-6">
+          <div class="flex items-center gap-2 text-[14px]" style="color: var(--text-muted);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            <span class="font-mono font-semibold" style="color: var(--text-primary);">{totalVideos}</span>
+            <span>videos</span>
+          </div>
+          <div class="flex items-center gap-2 text-[14px]" style="color: var(--text-muted);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 016.5 2H19a1 1 0 011 1v18a1 1 0 01-1 1H6.5a1 1 0 010-5H20"/></svg>
+            <span class="font-mono font-semibold" style="color: var(--text-primary);">{chapters.length}</span>
+            <span>chapters</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapters -->
   <div class="flex flex-col gap-3">
     {chapters.map((ch, i) => {
       const num = ch.number || ch.chapterNumber || i + 1;
@@ -57,7 +122,7 @@ const visibleLine = subjLines[subject.id] || `Free ${subject.title} class 9 lect
         : (ch.videos ? ch.videos.length : 0);
       const label = isExercises ? 'sections' : 'videos';
       return (
-        <div>
+        <div class={`anim d${Math.min(i + 1, 9)}`}>
           <ChapterRow
             number={num}
             title={chTitle}
@@ -70,4 +135,19 @@ const visibleLine = subjLines[subject.id] || `Free ${subject.title} class 9 lect
       );
     })}
   </div>
+
+  <!-- IntersectionObserver -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.anim').forEach(function(el) { observer.observe(el); });
+    });
+  </script>
 </Layout>
