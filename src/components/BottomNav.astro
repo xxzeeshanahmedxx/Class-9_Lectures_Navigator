@@ -1,0 +1,97 @@
+---
+import subjects from '../data/subjects.json';
+---
+
+<nav
+  class="sm:hidden fixed bottom-0 left-0 right-0 z-50"
+  style="background: var(--header-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid var(--border); padding-bottom: env(safe-area-inset-bottom, 0px);"
+>
+  <div class="flex items-center justify-around h-14 px-2">
+    <!-- Home -->
+    <a
+      href="/"
+      class="flex items-center justify-center w-11 h-11 rounded-xl active:opacity-50 touch-min min-w-[44px]"
+      aria-label="Home"
+    >
+      <span
+        class="text-[24px] font-bold leading-none gradient-brand"
+        style="-webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"
+      >9</span>
+    </a>
+
+    <!-- Search -->
+    <a
+      href="/search/"
+      class="flex items-center justify-center w-11 h-11 rounded-xl active:opacity-50 touch-min min-w-[44px]"
+      aria-label="Search lectures"
+      style="color: var(--text-muted);"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </a>
+
+    <!-- Subject Switcher -->
+    <button
+      id="subject-toggle"
+      class="flex items-center justify-center w-11 h-11 rounded-xl active:opacity-50 touch-min min-w-[44px]"
+      aria-label="Switch subject"
+      style="color: var(--text-muted);"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    </button>
+  </div>
+
+  <!-- Subject Panel -->
+  <div
+    id="subject-panel"
+    class="hidden overflow-hidden transition-all duration-200"
+    style="background: var(--header-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);"
+  >
+    <div class="flex gap-2 overflow-x-auto no-scrollbar px-3 pb-3 pt-1">
+      {subjects.map((subject) => (
+        <a
+          href={`/${subject.id}/`}
+          class="flex items-center gap-2 px-3 h-10 rounded-xl whitespace-nowrap text-[13px] font-medium touch-min active:scale-95 transition-transform duration-150 flex-shrink-0"
+          style="background: var(--card-bg); border: 1px solid var(--border); color: var(--text-primary);"
+        >
+          <span
+            class="w-6 h-6 rounded-md flex items-center justify-center text-[11px] font-bold flex-shrink-0"
+            style="background: {subject.accent}20; color: {subject.accent};"
+          >{subject.emoji}</span>
+          {subject.title}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<script>
+  (function () {
+    const toggle = document.getElementById('subject-toggle');
+    const panel = document.getElementById('subject-panel');
+    if (!toggle || !panel) return;
+
+    function openPanel() {
+      panel.classList.remove('hidden');
+    }
+
+    function closePanel() {
+      panel.classList.add('hidden');
+    }
+
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (panel.classList.contains('hidden')) {
+        openPanel();
+      } else {
+        closePanel();
+      }
+    });
+
+    document.addEventListener('click', function (e) {
+      if (panel.classList.contains('hidden')) return;
+      if (panel.contains(e.target)) return;
+      if (e.target === toggle || toggle.contains(e.target)) return;
+      closePanel();
+    });
+  })();
+</script>
