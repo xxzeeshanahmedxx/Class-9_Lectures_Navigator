@@ -57,7 +57,7 @@ const visibleLine = subjLines[subject.id] || `Free ${subject.title} class 9 lect
         : (ch.videos ? ch.videos.length : 0);
       const label = isExercises ? 'sections' : 'videos';
       return (
-        <div class="animate-fade-in-up" style={`animation-delay: ${i * 50}ms`}>
+        <div>
           <ChapterRow
             number={num}
             title={chTitle}
