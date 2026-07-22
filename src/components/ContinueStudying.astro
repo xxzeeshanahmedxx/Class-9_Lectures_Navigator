@@ -33,6 +33,7 @@ if (recent.length === 0) {
       'flex-shrink-0 rounded-xl border overflow-hidden active:scale-[0.97] touch-min transition-transform';
     card.style.cssText =
       'width:176px;background:var(--card-bg);border-color:var(--card-border)';
+    card.setAttribute('aria-label', `Continue studying: ${item.title}`);
     card.innerHTML = `<div class="p-3 flex flex-col gap-1.5"><span class="font-mono text-[11px] font-medium" style="color:${info.accent}">${info.title}</span><span class="font-body text-[13px] leading-snug line-clamp-2" style="color:var(--color-title)">${item.title}</span></div>`;
     fragment.appendChild(card);
   }

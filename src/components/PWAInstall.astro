@@ -13,7 +13,7 @@ const { show } = Astro.props;
       <div class="font-body text-[13px] font-medium" style="color: var(--text-primary);" data-lang="installApp">Install App</div>
       <div class="font-body text-[11px]" style="color: var(--text-secondary);" data-lang="installDesc">Open lectures faster from your home screen</div>
     </div>
-    <button id="pwa-install" class="touch-min px-4 h-8 rounded-lg font-body text-[12px] font-medium flex-shrink-0" style="background: linear-gradient(135deg, var(--accent, #8cb4ff), var(--accent2, #a78bfa)); color: white;" data-lang="install">Install</button>
+    <button id="pwa-install" class="touch-min px-4 h-8 rounded-lg font-body text-[12px] font-medium flex-shrink-0" style="background: linear-gradient(135deg, var(--accent, #8cb4ff), var(--accent2, #a78bfa)); color: white;" data-lang="install" aria-label="Install app">Install</button>
     <button id="pwa-dismiss" class="touch-min w-7 h-7 flex items-center justify-center flex-shrink-0 active:opacity-50" style="color: var(--text-muted);" aria-label="Dismiss">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
     </button>

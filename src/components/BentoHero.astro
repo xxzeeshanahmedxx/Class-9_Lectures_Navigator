@@ -51,8 +51,9 @@ const totalSubjects = subjects.length;
     href="/search/"
     class="col-span-3 rounded-xl p-4 sm:p-5 flex items-center gap-3 active:scale-[0.99] transition-transform"
     style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);"
+    aria-label="Search lectures"
   >
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted); flex-shrink: 0;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted); flex-shrink: 0;" aria-hidden="true">
       <circle cx="11" cy="11" r="8" />
       <path d="M21 21l-4.35-4.35" />
     </svg>
@@ -66,6 +67,7 @@ const totalSubjects = subjects.length;
         href={`/${s.id}/`}
         class="inline-flex items-center px-3 py-1.5 rounded-lg text-[13px] font-medium transition-all active:scale-95"
         style="background: {s.accent}15; color: {s.accent};"
+        aria-label={`${s.title} – class 9 full course`}
       >
         {s.title}
       </a>

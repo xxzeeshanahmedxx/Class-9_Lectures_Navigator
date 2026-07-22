@@ -2,7 +2,7 @@
 import subjects from '../data/subjects.json';
 ---
 
-<nav
+<nav id="bottom-nav"
   class="sm:hidden fixed bottom-0 left-0 right-0 z-50"
   style="background: var(--header-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid var(--border); padding-bottom: env(safe-area-inset-bottom, 0px);"
 >
@@ -52,10 +52,12 @@ import subjects from '../data/subjects.json';
           href={`/${subject.id}/`}
           class="flex items-center gap-2 px-3 h-10 rounded-xl whitespace-nowrap text-[13px] font-medium touch-min active:scale-95 transition-transform duration-150 flex-shrink-0"
           style="background: var(--card-bg); border: 1px solid var(--border); color: var(--text-primary);"
+          aria-label={`${subject.title} – class 9 lectures`}
         >
           <span
             class="w-6 h-6 rounded-md flex items-center justify-center text-[11px] font-bold flex-shrink-0"
             style="background: {subject.accent}20; color: {subject.accent};"
+            aria-hidden="true"
           >{subject.emoji}</span>
           {subject.title}
         </a>
@@ -64,8 +66,18 @@ import subjects from '../data/subjects.json';
   </div>
 </nav>
 
+<!-- TODO: Set aria-current="page" client-side via JS on page load -->
 <script>
   (function () {
+    // Set aria-current="page" on nav links matching current path
+    var currentPath = window.location.pathname;
+    document.querySelectorAll('#bottom-nav a[href]').forEach(function(link) {
+      var href = link.getAttribute('href');
+      if (href === currentPath) {
+        link.setAttribute('aria-current', 'page');
+      }
+    });
+
     const toggle = document.getElementById('subject-toggle');
     const panel = document.getElementById('subject-panel');
     if (!toggle || !panel) return;

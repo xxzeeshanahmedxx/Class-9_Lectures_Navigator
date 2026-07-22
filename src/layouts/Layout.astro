@@ -96,8 +96,11 @@ const themeColor = accent || '#07070d';
     </script>
   </head>
   <body class="min-h-screen flex flex-col">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-lg focus:font-body focus:text-sm focus:font-medium" style="background: var(--card-bg); color: var(--text-primary); border: 2px solid var(--accent, #8cb4ff);">
+      Skip to main content
+    </a>
     {!noHeader && <Header title={title} subtitle={subtitle} backUrl={backUrl} accent={accent} />}
-    <main class="flex-1 max-w-4xl mx-auto w-full px-3 sm:px-4 py-4 sm:py-6 animate-fade-in-up">
+    <main id="main-content" class="flex-1 max-w-4xl mx-auto w-full px-3 sm:px-4 py-4 sm:py-6 animate-fade-in-up">
       <slot />
     </main>
     <Footer showPWA={showPWA} />

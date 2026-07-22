@@ -56,6 +56,11 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+*:focus-visible {
+  outline: 2px solid var(--accent, #8cb4ff);
+  outline-offset: 2px;
+}
+
 body {
   background: var(--page-bg);
   color: var(--text-primary);
