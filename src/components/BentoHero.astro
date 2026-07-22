@@ -7,28 +7,28 @@ const totalSubjects = subjects.length;
 ---
 
 <div class="grid grid-cols-3 gap-3">
-  <!-- Card: Logo 9 + Tagline (col-span-2, row-span-2) -->
   <div
-    class="col-span-2 row-span-2 rounded-xl p-5 sm:p-6 flex flex-col justify-center"
+    class="col-span-2 rounded-xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4"
     style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);"
   >
     <span
-      class="text-[56px] sm:text-[72px] font-bold leading-none gradient-brand"
+      class="text-[32px] sm:text-[36px] font-bold leading-none gradient-brand flex-shrink-0"
       style="-webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"
     >9</span>
-    <h1
-      class="text-[18px] sm:text-[22px] font-bold leading-tight mt-2"
-      style="color: var(--text-primary);"
-      data-lang="siteName"
-    >Class 9 · Punjab Curriculum</h1>
-    <p
-      class="text-[13px] sm:text-[14px] leading-relaxed mt-1"
-      style="color: var(--text-secondary);"
-      data-lang="siteDesc"
-    >Free study lectures for 9th grade Punjab board students — Mathematics, Physics, Chemistry, Computer, Urdu, Biology, English.</p>
+    <div>
+      <h1
+        class="text-[15px] sm:text-[17px] font-bold leading-tight"
+        style="color: var(--text-primary);"
+        data-lang="siteName"
+      >Class 9 · Punjab Curriculum</h1>
+      <p
+        class="text-[12px] sm:text-[13px] leading-relaxed mt-0.5"
+        style="color: var(--text-secondary);"
+        data-lang="siteDesc"
+      >Free study lectures for 9th grade Punjab board — 7 subjects, 512 videos.</p>
+    </div>
   </div>
 
-  <!-- Card: Stats — 512 videos -->
   <div
     class="rounded-xl p-4 sm:p-5 flex flex-col justify-center"
     style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);"
@@ -37,19 +37,9 @@ const totalSubjects = subjects.length;
     <span class="font-body text-[12px] sm:text-[13px] mt-1" style="color: var(--text-secondary);" data-lang="videos">videos</span>
   </div>
 
-  <!-- Card: Stats — 7 subjects -->
-  <div
-    class="rounded-xl p-4 sm:p-5 flex flex-col justify-center"
-    style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);"
-  >
-    <span class="font-mono text-[28px] sm:text-[32px] font-bold leading-none" style="color: var(--text-primary);">{totalSubjects}</span>
-    <span class="font-body text-[12px] sm:text-[13px] mt-1" style="color: var(--text-secondary);">subjects</span>
-  </div>
-
-  <!-- Search bar link (col-span-3) -->
   <a
     href="/search/"
-    class="col-span-3 rounded-xl p-4 sm:p-5 flex items-center gap-3 active:scale-[0.97] transition-transform duration-150 bento-search"
+    class="col-span-2 rounded-xl p-4 sm:p-5 flex items-center gap-3 active:scale-[0.97] transition-transform duration-150 bento-search"
     style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);"
     aria-label="Search lectures"
   >
@@ -59,6 +49,14 @@ const totalSubjects = subjects.length;
     </svg>
     <span class="text-[14px] sm:text-[15px]" style="color: var(--text-muted);" data-lang="searchPlaceholder">Search lectures...</span>
   </a>
+
+  <div
+    class="rounded-xl p-4 sm:p-5 flex flex-col justify-center"
+    style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);"
+  >
+    <span class="font-mono text-[28px] sm:text-[32px] font-bold leading-none" style="color: var(--text-primary);">{totalSubjects}</span>
+    <span class="font-body text-[12px] sm:text-[13px] mt-1" style="color: var(--text-secondary);">subjects</span>
+  </div>
 </div>
 
 <style is:global>

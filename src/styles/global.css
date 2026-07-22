@@ -17,8 +17,9 @@
   --text-primary: #0f0f18;
   --text-secondary: #4a4a60;
   --text-muted: #808098;
-  --border: #111118;
-  --border-hover: #1a1a24;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(0, 0, 0, 0.14);
+  --accent2: #a78bfa;
   --header-bg: rgba(255, 255, 255, 0.85);
   --overlay: rgba(0, 0, 0, 0.7);
 
@@ -35,14 +36,15 @@
 
   --page-bg: #07070d;
   --surface: #0e0e18;
-  --card-bg: #141420;
+  --card-bg: #1a1a2e;
   --text-primary: #efeff5;
   --text-secondary: #8f8fa8;
   --text-muted: #5e5e78;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.14);
+  --border: rgba(255, 255, 255, 0.12);
+  --border-hover: rgba(255, 255, 255, 0.18);
   --header-bg: rgba(14, 14, 24, 0.85);
   --overlay: rgba(0, 0, 0, 0.7);
+  --accent2: #a78bfa;
 
   --radius-sm: 6px;
   --radius-md: 8px;
