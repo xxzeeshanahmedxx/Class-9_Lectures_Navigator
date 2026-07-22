@@ -33,7 +33,7 @@ const { showPWA } = Astro.props;
         <h4 class="text-[11px] font-bold uppercase tracking-[0.8px] mb-3" style="color: var(--text-secondary);">Subjects</h4>
         <div class="space-y-1">
           {subjects.map(s => (
-            <a href={`/${s.id}/`} class="block text-[14px] py-0.5 transition-colors duration-150" style="color: var(--text-muted);">
+            <a href={`/${s.id}/`} class="block text-[14px] py-1 transition-all duration-200 rounded-md px-1 -mx-1" style="color: var(--text-muted);">
               {s.title}
             </a>
           ))}
@@ -44,9 +44,9 @@ const { showPWA } = Astro.props;
       <div>
         <h4 class="text-[11px] font-bold uppercase tracking-[0.8px] mb-3" style="color: var(--text-secondary);">Resources</h4>
         <div class="space-y-1">
-          <a href="/search/" class="block text-[14px] py-0.5 transition-colors duration-150" style="color: var(--text-muted);">Search Lectures</a>
-          <a href="/notes/" class="block text-[14px] py-0.5 transition-colors duration-150" style="color: var(--text-muted);">Subject Notes</a>
-          <a href="/updates/" class="block text-[14px] py-0.5 transition-colors duration-150" style="color: var(--text-muted);">Updates</a>
+          <a href="/search/" class="block text-[14px] py-1 transition-all duration-200 rounded-md px-1 -mx-1" style="color: var(--text-muted);">Search Lectures</a>
+          <a href="/notes/" class="block text-[14px] py-1 transition-all duration-200 rounded-md px-1 -mx-1" style="color: var(--text-muted);">Subject Notes</a>
+          <a href="/updates/" class="block text-[14px] py-1 transition-all duration-200 rounded-md px-1 -mx-1" style="color: var(--text-muted);">Updates</a>
         </div>
       </div>
 
@@ -54,18 +54,28 @@ const { showPWA } = Astro.props;
       <div>
         <h4 class="text-[11px] font-bold uppercase tracking-[0.8px] mb-3" style="color: var(--text-secondary);">About</h4>
         <div class="space-y-1">
-          <a href="mailto:zeeshan@example.com" class="block text-[14px] py-0.5 transition-colors duration-150" style="color: var(--text-muted);">Contact</a>
-          <a href="/notes/" class="block text-[14px] py-0.5 transition-colors duration-150" style="color: var(--text-muted);">Content Partners</a>
+          <a href="mailto:zeeshan@example.com" class="block text-[14px] py-1 transition-all duration-200 rounded-md px-1 -mx-1" style="color: var(--text-muted);">Contact</a>
+          <a href="/notes/" class="block text-[14px] py-1 transition-all duration-200 rounded-md px-1 -mx-1" style="color: var(--text-muted);">Content Partners</a>
         </div>
       </div>
     </div>
 
     <!-- Bottom bar -->
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-2 pt-6" style="border-top: 1px solid var(--border);">
-      <p class="text-[13px]" style="color: var(--text-dim);" data-lang="footer">Lectures belong to their respective teachers.</p>
-      <p class="text-[13px]" style="color: var(--text-dim);">
-        <span data-lang="footerMade">Made by Zeeshan Ahmed</span> · © 2026 Class 9 Hub
-      </p>
-    </div>
+  <div class="flex flex-col sm:flex-row items-center justify-between gap-2 pt-6" style="border-top: 1px solid var(--border);">
+    <p class="text-[13px]" style="color: var(--text-dim);" data-lang="footer">Lectures belong to their respective teachers.</p>
+    <p class="text-[13px]" style="color: var(--text-dim);">
+      <span data-lang="footerMade">Made by Zeeshan Ahmed</span> · © 2026 Class 9 Hub
+    </p>
   </div>
+</div>
+
+<style is:global>
+  footer a:hover {
+    color: var(--text-primary) !important;
+    background: rgba(255,255,255,.04);
+  }
+  .dark footer a:hover {
+    background: rgba(255,255,255,.06);
+  }
+</style>
 </footer>
