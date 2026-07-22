@@ -55,13 +55,13 @@ const typeLabel = { 'new-content': 'New Content', 'holiday': 'Holiday', 'date-sh
   </div>
 
   <div class="mt-6 rounded-xl p-5 sm:p-6 animate-fade-in-up" style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);">
-    <p class="text-[14px] leading-relaxed" style="color: var(--text-secondary);">{item.description}</p>
+    <p class="text-[15px] leading-relaxed" style="color: var(--text-secondary);">{item.description}</p>
 
     {item.content ? (
       <div class="mt-4 prose prose-sm max-w-none" style="color: var(--text-primary);" set:html={item.content} />
     ) : (
-      <div class="mt-6 rounded-xl p-4 text-center" style="background: var(--accent)08; border: 1px dashed var(--accent)30;">
-        <p class="text-[13px]" style="color: var(--text-muted);">Full details coming soon.</p>
+      <div class="mt-6 rounded-xl p-5 text-center" style="background: var(--accent)08; border: 1px dashed var(--accent)30;">
+        <p class="text-[14px]" style="color: var(--text-muted);">Full update details are being prepared. Check back for the latest information.</p>
       </div>
     )}
   </div>

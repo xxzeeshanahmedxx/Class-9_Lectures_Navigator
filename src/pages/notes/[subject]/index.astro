@@ -32,7 +32,7 @@ const accent = subject.accent || '#8cb4ff';
   </a>
 
   <h1 class="text-[22px] sm:text-[26px] font-bold mb-1 animate-fade-in-up" style="color: var(--text-primary);">{subject.title} Notes</h1>
-  <p class="text-[13px] sm:text-[14px] mb-5 animate-fade-in-up" style="color: var(--text-secondary);">
+  <p class="text-[15px] sm:text-[16px] mb-5 animate-fade-in-up" style="color: var(--text-secondary);">
     Chapter-wise study notes for class 9 Punjab board — {subject.title}.
   </p>
 
@@ -40,7 +40,7 @@ const accent = subject.accent || '#8cb4ff';
     {chapterList.map((ch, i) => (
       <a
         href={`/notes/${subject.id}/${ch.chapterId}/`}
-        class="rounded-xl p-4 sm:p-5 flex items-center justify-between animate-fade-in-up group note-card"
+        class="rounded-xl p-4 sm:p-5 flex items-center justify-between animate-fade-in-up group note-card active:scale-[0.98] transition-transform duration-150"
         style={`animation-delay: ${i * 40}ms; background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);`}
       >
         <div class="flex items-center gap-4 min-w-0">
@@ -48,7 +48,7 @@ const accent = subject.accent || '#8cb4ff';
             class="w-9 h-9 rounded-lg flex items-center justify-center text-[13px] font-bold flex-shrink-0"
             style={`background: ${accent}18; color: ${accent};`}
           >{ch.chapterId.replace('ch', '')}</div>
-          <span class="text-[14px] sm:text-[15px] font-medium truncate" style="color: var(--text-primary);">{ch.chapterTitle}</span>
+          <span class="text-[15px] sm:text-[16px] font-medium truncate" style="color: var(--text-primary);">{ch.chapterTitle}</span>
         </div>
         <svg
           class="flex-shrink-0 transition-transform group-hover:translate-x-0.5"

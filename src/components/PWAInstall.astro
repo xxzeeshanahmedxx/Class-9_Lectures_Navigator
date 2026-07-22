@@ -6,7 +6,7 @@ const { show } = Astro.props;
 ---
 
 {show && (
-<div id="pwa-banner" class="fixed bottom-0 left-0 right-0 z-30 translate-y-full transition-transform duration-300" style="background: var(--surface); border-top: 1px solid var(--border);">
+<div id="pwa-banner" class="fixed bottom-0 left-0 right-0 z-[60] translate-y-full transition-transform duration-300" style="background: var(--surface); border-top: 1px solid var(--border);">
   <div class="flex items-center gap-3 px-4 py-3 max-w-4xl mx-auto" style="padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));">
     <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, var(--accent, #8cb4ff), var(--accent2, #a78bfa)); color: white; font-family: var(--font-display); font-weight: 800; font-size: 13px;">9</div>
     <div class="min-w-0 flex-1">
