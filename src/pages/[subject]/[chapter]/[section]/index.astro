@@ -1,23 +1,13 @@
 ---
 import Layout from '../../../../layouts/Layout.astro';
 import VideoCard from '../../../../components/VideoCard.astro';
-import subjects from '../../../../data/subjects.json';
-import mathData from '../../../../data/math.json';
-import physicsData from '../../../../data/physics.json';
-import chemistryData from '../../../../data/chemistry.json';
-import urduData from '../../../../data/urdu.json';
-import computerData from '../../../../data/computer.json';
-import biologyData from '../../../../data/biology.json';
-import englishData from '../../../../data/english.json';
+import { subjects, getData } from '../../../../lib/data';
+import { SITE_URL } from '../../../../lib/constants';
 
 export async function getStaticPaths() {
-  const dataMap = {
-    math: mathData, physics: physicsData, chemistry: chemistryData,
-    urdu: urduData, computer: computerData, biology: biologyData, english: englishData,
-  };
   const paths = [];
   for (const s of subjects) {
-    const data = dataMap[s.id];
+    const data = getData(s.id);
     for (const ch of data.chapters || []) {
       for (const sec of ch.sections || []) {
         paths.push({
@@ -42,7 +32,7 @@ function extractTopics(videos) {
 
 const { subject, chapter, section } = Astro.props;
 const videos = section.videos || [];
-const siteUrl = 'https://class9hub.com';
+const siteUrl = SITE_URL;
 const pageUrl = `${siteUrl}/${subject.id}/${chapter.id}/${section.id}/`;
 const secTitle = section.title || '';
 const chTitle = chapter.title || '';
@@ -70,15 +60,14 @@ const breadcrumbs = [
   title={`${subject.title} Class 9 ${chTitle} – ${secTitle}`}
   subtitle={`${chTitle} · ${videos.length} videos`}
   desc={sectionDesc}
-  colors={subject}
+  accent={subject.accent}
   backUrl={`/${subject.id}/${chapter.id}/`}
   canonical={pageUrl}
   showPWA={true}
   breadcrumbs={breadcrumbs}
-  currentSubject={subject.id}
 >
   {summaryText && (
-    <p class="mb-5 text-[14px] leading-relaxed" style="color: var(--text-secondary);">{visibleLine}</p>
+    <p class="mb-5 font-body text-[14px] leading-relaxed" style="color: var(--text-secondary);">{visibleLine}</p>
   )}
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
     {videos.map((v, i) => (
@@ -88,7 +77,7 @@ const breadcrumbs = [
           title={v.title}
           subtitle={v.subtitle}
           duration={v.duration}
-          thumb={v.thumb}
+          accent={subject.accent}
         />
       </div>
     ))}
