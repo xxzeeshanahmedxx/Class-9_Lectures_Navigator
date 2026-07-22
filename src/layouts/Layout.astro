@@ -1,5 +1,4 @@
 ---
-import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -34,7 +33,6 @@ const themeColor = accent || '#07070d';
     <meta charset="utf-8" />
     <meta name="google-site-verification" content="9wMIiVm55vRQLteCGqw9691RYnVIVzSzlrZRvj8tupQ" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <ClientRouter />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDesc} />
     <meta name="theme-color" content={themeColor} />
@@ -42,6 +40,9 @@ const themeColor = accent || '#07070d';
     <link rel="manifest" href="/manifest.json" />
     <link rel="canonical" href={canonical || Astro.url.href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script is:inline>
+      (function(){var k='c9-theme',h=document.documentElement,s=localStorage.getItem(k),p=window.matchMedia('(prefers-color-scheme:dark)').matches;if(s==='dark'||(!s&&p))h.classList.add('dark');else h.classList.remove('dark')})();
+    </script>
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
