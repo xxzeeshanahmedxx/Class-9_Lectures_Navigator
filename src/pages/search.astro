@@ -1,20 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import subjects from '../data/subjects.json';
-import mathData from '../data/math.json';
-import physicsData from '../data/physics.json';
-import chemistryData from '../data/chemistry.json';
-import urduData from '../data/urdu.json';
-import computerData from '../data/computer.json';
-import biologyData from '../data/biology.json';
-import englishData from '../data/english.json';
+import { subjects, getData } from '../lib/data';
+import { SITE_URL } from '../lib/constants';
 
-const dataMap = {
-  math: mathData, physics: physicsData, chemistry: chemistryData,
-  urdu: urduData, computer: computerData, biology: biologyData, english: englishData,
-};
+const dataMap = {};
+subjects.forEach(s => { dataMap[s.id] = getData(s.id); });
 
-// Build flat search index
 const allVideos = [];
 for (const s of subjects) {
   const data = dataMap[s.id];
@@ -37,7 +28,6 @@ for (const s of subjects) {
         });
       }
     }
-    // Also index section videos (exercises)
     const sections = ch.sections || [];
     for (const sec of sections) {
       for (const v of sec.videos || []) {
@@ -60,7 +50,7 @@ for (const s of subjects) {
   }
 }
 
-const siteUrl = 'https://class9hub.com';
+const siteUrl = SITE_URL;
 const q = Astro.url.searchParams.get('q') || '';
 const initialResults = q
   ? allVideos.filter(v => {
@@ -79,7 +69,7 @@ const initialResults = q
   <div class="animate-fade-in-up pt-4">
     <h1 class="sr-only">Search Lectures – Class 9 Hub</h1>
     <div class="mb-6">
-      <a href="/" class="inline-flex items-center gap-1.5 text-[13px] font-medium mb-4 hover:opacity-70" style="color: var(--text-secondary);">
+      <a href="/" class="inline-flex items-center gap-1.5 font-body text-[13px] font-medium mb-4 hover:opacity-70" style="color: var(--text-secondary);">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
         <span data-lang="home">Home</span>
       </a>
@@ -92,8 +82,8 @@ const initialResults = q
           value={q}
           placeholder="Search lectures..." data-lang="searchPlaceholder"
           autofocus
-          class="w-full h-12 pl-11 pr-4 rounded-xl border text-[15px] outline-none transition-all"
-          style="background: var(--surface); border-color: var(--hairline); color: var(--text);"
+          class="w-full h-12 pl-11 pr-4 rounded-xl border font-body text-[15px] outline-none transition-all"
+          style="background: var(--card-bg); border-color: var(--border); color: var(--text-primary);"
           autocomplete="off"
         />
       </form>
@@ -102,20 +92,20 @@ const initialResults = q
     <div id="results">
       {q && initialResults.length === 0 && (
         <div class="text-center py-12">
-          <p class="text-[15px]" style="color: var(--text-muted);"><span data-lang="noResults">No lectures found for</span> "{q}"</p>
-          <p class="text-[13px] mt-1" style="color: var(--text-muted);" data-lang="tryDiff">Try different keywords like "kinematics", "logarithms", "poetry"</p>
+          <p class="font-body text-[15px]" style="color: var(--text-muted);"><span data-lang="noResults">No lectures found for</span> "{q}"</p>
+          <p class="font-body text-[13px] mt-1" style="color: var(--text-muted);" data-lang="tryDiff">Try different keywords like "kinematics", "logarithms", "poetry"</p>
         </div>
       )}
       {initialResults.length > 0 && (
         <>
-          <p class="text-[13px] mb-3" style="color: var(--text-muted);">{initialResults.length} <span data-lang="lecturesFound">lecture(s) found</span></p>
+          <p class="font-body text-[13px] mb-3" style="color: var(--text-muted);">{initialResults.length} <span data-lang="lecturesFound">lecture(s) found</span></p>
           <div class="flex flex-col gap-2">
             {initialResults.map(v => (
-              <a href={v.url} class="flex items-center gap-3 p-3 rounded-xl transition-colors active:scale-[0.98]" style="background: var(--card); border: 1px solid var(--card-border);">
+              <a href={v.url} class="flex items-center gap-3 p-3 rounded-xl transition-colors active:scale-[0.98]" style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);">
                 <img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt="" class="w-16 h-10 rounded-lg object-cover flex-shrink-0" loading="lazy" />
                 <div class="min-w-0 flex-1">
-                  <div class="text-[14px] font-medium leading-snug truncate" style="color: var(--text);">{v.title}{v.subtitle ? ` — ${v.subtitle}` : ''}</div>
-                  <div class="text-[12px] mt-0.5" style="color: var(--text-muted);">
+                  <div class="font-body text-[14px] font-medium leading-snug truncate" style="color: var(--text-primary);">{v.title}{v.subtitle ? ` — ${v.subtitle}` : ''}</div>
+                  <div class="font-body text-[12px] mt-0.5" style="color: var(--text-muted);">
                     <span class="font-medium" style="color: {subjects.find(s => s.id === v.subject)?.accent || 'var(--text-secondary)'};">{v.subjectTitle}</span>
                     <span class="mx-1">·</span>
                     {v.chapterTitle}
@@ -129,7 +119,7 @@ const initialResults = q
       )}
       {!q && (
         <div class="text-center py-12">
-          <p class="text-[15px]" style="color: var(--text-muted);"><span data-lang="searchAll">Search across {allVideos.length} lectures from {subjects.length} subjects</span></p>
+          <p class="font-body text-[15px]" style="color: var(--text-muted);"><span data-lang="searchAll">Search across {allVideos.length} lectures from {subjects.length} subjects</span></p>
         </div>
       )}
     </div>
@@ -137,21 +127,25 @@ const initialResults = q
 
   <script is:inline>
     (function() {
-      // Instant search via JS (no page reload)
       const searchIndex = JSON.parse(document.getElementById('search-data')?.textContent || '[]');
       const input = document.getElementById('search-input');
       const results = document.getElementById('results');
       const form = document.getElementById('search-form');
       if (!input || !results || !form) return;
 
-      // Build subject color map
       const subjectColors = {};
       {subjects.forEach(s => { subjectColors[s.id] = s.accent; })}
+
+      function escHtml(s) {
+        const d = document.createElement('div');
+        d.textContent = s;
+        return d.innerHTML;
+      }
 
       function renderResults(query, items) {
         const q = query.toLowerCase().trim();
         if (!q) {
-          results.innerHTML = `<div class="text-center py-12"><p class="text-[15px]" style="color: var(--text-muted);">Search across ${searchIndex.length} lectures from ${Object.keys(subjectColors).length} subjects</p></div>`;
+          results.innerHTML = `<div class="text-center py-12"><p class="font-body text-[15px]" style="color: var(--text-muted);">Search across ${searchIndex.length} lectures from ${Object.keys(subjectColors).length} subjects</p></div>`;
           return;
         }
         const filtered = items.filter(v => {
@@ -160,17 +154,17 @@ const initialResults = q
         }).slice(0, 50);
 
         if (filtered.length === 0) {
-          results.innerHTML = `<div class="text-center py-12"><p class="text-[15px]" style="color: var(--text-muted);">No lectures found for "${escHtml(query)}"</p><p class="text-[13px] mt-1" style="color: var(--text-muted);">Try different keywords like "kinematics", "logarithms", "poetry"</p></div>`;
+          results.innerHTML = `<div class="text-center py-12"><p class="font-body text-[15px]" style="color: var(--text-muted);">No lectures found for "${escHtml(query)}"</p><p class="font-body text-[13px] mt-1" style="color: var(--text-muted);">Try different keywords like "kinematics", "logarithms", "poetry"</p></div>`;
           return;
         }
 
-        let html = `<p class="text-[13px] mb-3" style="color: var(--text-muted);">${filtered.length} lecture${filtered.length !== 1 ? 's' : ''} found</p><div class="flex flex-col gap-2">`;
+        let html = `<p class="font-body text-[13px] mb-3" style="color: var(--text-muted);">${filtered.length} lecture${filtered.length !== 1 ? 's' : ''} found</p><div class="flex flex-col gap-2">`;
         for (const v of filtered) {
           const accent = subjectColors[v.subject] || 'var(--text-secondary)';
-          html += `<a href="${v.url}" class="flex items-center gap-3 p-3 rounded-xl transition-colors active:scale-[0.98]" style="background: var(--card); border: 1px solid var(--card-border);">`;
+          html += `<a href="${v.url}" class="flex items-center gap-3 p-3 rounded-xl transition-colors active:scale-[0.98]" style="background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-card);">`;
           html += `<img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt="" class="w-16 h-10 rounded-lg object-cover flex-shrink-0" loading="lazy" />`;
-          html += `<div class="min-w-0 flex-1"><div class="text-[14px] font-medium leading-snug truncate" style="color: var(--text);">${escHtml(v.title)}${v.subtitle ? ' — ' + escHtml(v.subtitle) : ''}</div>`;
-          html += `<div class="text-[12px] mt-0.5" style="color: var(--text-muted);"><span class="font-medium" style="color: ${accent};">${escHtml(v.subjectTitle)}</span><span class="mx-1">·</span>${escHtml(v.chapterTitle)}</div></div>`;
+          html += `<div class="min-w-0 flex-1"><div class="font-body text-[14px] font-medium leading-snug truncate" style="color: var(--text-primary);">${escHtml(v.title)}${v.subtitle ? ' — ' + escHtml(v.subtitle) : ''}</div>`;
+          html += `<div class="font-body text-[12px] mt-0.5" style="color: var(--text-muted);"><span class="font-medium" style="color: ${accent};">${escHtml(v.subjectTitle)}</span><span class="mx-1">·</span>${escHtml(v.chapterTitle)}</div></div>`;
           html += `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted); flex-shrink: 0;"><path d="M9 18l6-6-6-6"/></svg></a>`;
         }
         html += '</div>';
@@ -178,23 +172,15 @@ const initialResults = q
         history.replaceState(null, '', '?q=' + encodeURIComponent(query));
       }
 
-      function escHtml(s) {
-        const d = document.createElement('div');
-        d.textContent = s;
-        return d.innerHTML;
-      }
-
       input.addEventListener('input', () => {
         renderResults(input.value, searchIndex);
       });
 
-      // Intercept form submit for instant search
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         renderResults(input.value, searchIndex);
       });
 
-      // If initial query from URL, update URL without reload
       const urlParams = new URLSearchParams(window.location.search);
       const initialQ = urlParams.get('q');
       if (initialQ && input.value === initialQ && searchIndex.length > 0) {
