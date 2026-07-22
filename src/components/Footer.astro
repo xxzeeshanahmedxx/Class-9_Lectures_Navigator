@@ -1,0 +1,23 @@
+---
+export interface Props {
+  showPWA?: boolean;
+}
+
+const { showPWA } = Astro.props;
+---
+
+<footer
+  class={`font-body text-[11px] text-center leading-relaxed py-4 px-4 space-y-0.5${showPWA ? ' pb-20' : ''}`}
+  style="color: var(--text-secondary);"
+>
+  <p data-lang="footer">Lectures belong to their respective teachers.</p>
+  <p>
+    <span data-lang="footerMade">Made by Zeeshan Ahmed</span>
+    ·
+    <a
+      href="https://class9hub.com"
+      class="underline underline-offset-2 hover:opacity-80"
+      style="color: var(--text-secondary);"
+    >Class 9 Hub</a>
+  </p>
+</footer>
