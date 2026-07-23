@@ -1,0 +1,53 @@
+{
+  "total_records": 386,
+  "counts": {
+    "created": 375,
+    "no_hi_caption": 11
+  },
+  "failures": [
+    {
+      "videoId": "nKh7ZJH_A8M",
+      "status": "no_hi_caption"
+    },
+    {
+      "videoId": "IZH3Mzfhtsk",
+      "status": "no_hi_caption"
+    },
+    {
+      "videoId": "jt8FaAqaDas",
+      "status": "no_hi_caption"
+    },
+    {
+      "videoId": "BtwODkS8J5E",
+      "status": "no_hi_caption"
+    },
+    {
+      "videoId": "cjtj66KnE0o",
+      "status": "no_hi_caption"
+    },
+    {
+      "videoId": "7eBL3YL4bKY",
+      "status": "no_hi_caption"
+    },
+    {
+      "videoId": "8MmXUaB8UrY",
+      "status": "no_hi_caption"
+    },
+    {
+      "videoId": "pQOO-BN490k",
+      "status": "no_hi_caption"
+    },
+    {
+      "videoId": "8llpccWcYSQ",
+      "status": "no_hi_caption"
+    },
+    {
+      "videoId": "zMZi8XK8Nso",
+      "status": "no_hi_caption"
+    },
+    {
+      "videoId": "DqtPN5zCiRU",
+      "status": "no_hi_caption"
+    }
+  ]
+}
