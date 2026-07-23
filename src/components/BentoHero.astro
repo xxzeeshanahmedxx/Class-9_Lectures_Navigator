@@ -8,31 +8,41 @@ for (const s of subjects) {
   const d = getData(s.id);
   totalChapters += d.chapters.length;
   for (const ch of d.chapters) {
-    totalVideos += ch.videoCount || 0;
+    if (ch.videoCount) {
+      totalVideos += ch.videoCount;
+    } else if (ch.sections) {
+      for (const sec of ch.sections) {
+        totalVideos += (sec.videos || []).length;
+      }
+    } else if (ch.videos) {
+      totalVideos += ch.videos.length;
+    }
   }
 }
 const totalSubjects = subjects.length;
 ---
 
-<div class="relative py-10 sm:py-16 text-center">
-  <!-- Ambient glow -->
-  <div class="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[900px] h-[600px] pointer-events-none" style="
+<!-- Full-width wrapper for glow -->
+<div class="relative" style="margin-left: -50vw; margin-right: -50vw; left: 50%; right: 50%; width: 100vw;">
+  <div class="absolute top-[-200px] left-0 right-0 h-[600px] pointer-events-none" style="
     background:
-      radial-gradient(ellipse 60% 50% at 50% 40%, rgba(99,102,241,.15) 0%, transparent 100%),
-      radial-gradient(ellipse 40% 40% at 35% 55%, rgba(167,139,250,.08) 0%, transparent 100%),
-      radial-gradient(ellipse 40% 40% at 65% 55%, rgba(124,58,237,.08) 0%, transparent 100%);
+      radial-gradient(ellipse 80% 60% at 50% 40%, rgba(99,102,241,.18) 0%, transparent 100%),
+      radial-gradient(ellipse 50% 50% at 30% 55%, rgba(167,139,250,.1) 0%, transparent 100%),
+      radial-gradient(ellipse 50% 50% at 70% 55%, rgba(124,58,237,.1) 0%, transparent 100%);
   "></div>
 
   <!-- Grid lines -->
-  <div class="absolute inset-0 pointer-events-none opacity-[.04]" style="
+  <div class="absolute inset-0 pointer-events-none opacity-[.03]" style="
     background-image:
       linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px);
     background-size: 80px 80px;
-    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent);
-    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent);
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black, transparent);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black, transparent);
   "></div>
+</div>
 
+<div class="relative py-10 sm:py-16 text-center">
   <div class="relative">
     <!-- Badge -->
     <div class="anim inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-5 text-[13px] font-semibold" style="
