@@ -55,7 +55,7 @@ const allVideos = isExercises
   : (chapter.videos || []);
 const topics = extractTopics(allVideos);
 const summaryText = topics.length > 0
-  ? `This chapter covers: ${topics.join(', ')}.`
+  ? `This chapter covers: ${topics.slice(0, 3).join(', ')}.`
   : `Video lectures for ${subject.title} class 9 chapter ${num}.`;
 
 const chapterDesc = `${subject.title} class 9 chapter ${num} – ${chTitle}. ${summaryText} Free video lectures for Punjab Board 2026.`;

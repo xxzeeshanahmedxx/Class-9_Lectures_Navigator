@@ -46,7 +46,7 @@ const secTitle = section.title || '';
 const chTitle = chapter.title || '';
 const topics = extractTopics(videos);
 const summaryText = topics.length > 0
-  ? `This section covers: ${topics.join(', ')}.`
+  ? `This section covers: ${topics.slice(0, 3).join(', ')}.`
   : '';
 
 const sectionDesc = `${subject.title} class 9 ${chTitle} – ${secTitle}. ${summaryText} Free video lectures for Punjab Board online.`;

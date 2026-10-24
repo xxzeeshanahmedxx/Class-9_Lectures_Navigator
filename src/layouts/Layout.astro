@@ -24,19 +24,44 @@ export interface Props {
   /** Extra schema.org nodes merged into this page's JSON-LD graph. */
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   currentSubject?: string;
+  /** Short text shown in the page header (defaults to the SEO title). */
+  heading?: string;
+  /** Set false when the page body already renders its own <h1>. */
+  headerHeading?: boolean;
 }
 
 const {
   title, subtitle, colors, backUrl, canonical, showPWA, noHeader,
   breadcrumbs, currentSubject, noindex, ogImage, ogType = 'website', jsonLd,
+  heading, headerHeading = true,
 } = Astro.props;
 
 const accentColor = colors?.accent || '#8cb4ff';
 const siteName = 'Class 9 \u00b7 Punjab Curriculum';
 const siteUrl = 'https://class9hub.com';
 const defaultDesc = 'Free study lectures for 9th grade Punjab board students \u2014 Mathematics, Physics, Chemistry, Computer, Urdu.';
-const desc = Astro.props.desc || defaultDesc;
-const pageTitle = title === siteName ? title : `${title} \u00b7 ${siteName}`;
+const rawDesc = Astro.props.desc || defaultDesc;
+
+/** Trim to a length Google will actually show, cutting on a word boundary. */
+function clampDescription(text: string, max = 158): string {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max - 1);
+  const at = cut.lastIndexOf(' ');
+  return (at > 60 ? cut.slice(0, at) : cut).replace(/[\s,;:.\u2013-]+$/, '') + '\u2026';
+}
+const desc = clampDescription(rawDesc);
+
+// Page titles already name the subject, so only append the brand when it fits
+// inside the ~60 characters search engines render.
+const BRAND_SUFFIX = ' | Class 9 Hub';
+const pageTitle =
+  title === siteName
+    ? title
+    : title.length + BRAND_SUFFIX.length <= 60
+      ? title + BRAND_SUFFIX
+      : title;
+
+const visibleHeading = heading || title;
 
 // Canonical URLs always carry a trailing slash so they match the sitemap exactly.
 let canonicalUrl = canonical || Astro.url.href;
@@ -242,7 +267,11 @@ if (jsonLd) {
           </div>
         )}
         <div class="min-w-0 flex-1">
-          <h1 class="text-[18px] sm:text-[20px] font-semibold truncate leading-tight" style="color: #e8e8f0;">{title}</h1>
+          {headerHeading ? (
+            <h1 class="text-[18px] sm:text-[20px] font-semibold truncate leading-tight" style="color: #e8e8f0;">{visibleHeading}</h1>
+          ) : (
+            <div class="text-[18px] sm:text-[20px] font-semibold truncate leading-tight" style="color: #e8e8f0;">{visibleHeading}</div>
+          )}
           {subtitle && <p class="text-[13px] sm:text-[14px] leading-tight truncate" style="color: #9e9eb8;">{subtitle}</p>}
         </div>
       </div>
