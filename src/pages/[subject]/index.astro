@@ -54,6 +54,20 @@ const visibleLine = subjLines[subject.id] || `Free ${subject.title} class 9 lect
   canonical={pageUrl}
   breadcrumbs={breadcrumbs}
   currentSubject={subject.id}
+  jsonLd={{
+    '@type': 'Course',
+    name: `${subject.title} Class 9 \u2014 Punjab Board`,
+    description: subjectDesc,
+    inLanguage: ['en', 'ur'],
+    educationalLevel: 'Grade 9',
+    isAccessibleForFree: true,
+    provider: { '@type': 'EducationalOrganization', name: 'Class 9 Hub', url: siteUrl + '/' },
+    hasCourseInstance: {
+      '@type': 'CourseInstance',
+      courseMode: 'online',
+      courseWorkload: 'PT1H',
+    },
+  }}
 >
   <p class="mb-5 text-[14px] leading-relaxed" style="color: var(--text-secondary);">{visibleLine}</p>
   <div class="flex flex-col gap-3">

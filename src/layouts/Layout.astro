@@ -16,15 +16,100 @@ export interface Props {
   showPWA?: boolean;
   noHeader?: boolean;
   breadcrumbs?: { name: string; url: string }[];
+  /** Keep this page out of search results (used by the 404 page). */
+  noindex?: boolean;
+  /** Absolute or root-relative social share image. */
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  /** Extra schema.org nodes merged into this page's JSON-LD graph. */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  currentSubject?: string;
 }
 
-const { title, subtitle, colors, backUrl, canonical, showPWA, noHeader, breadcrumbs, currentSubject } = Astro.props;
+const {
+  title, subtitle, colors, backUrl, canonical, showPWA, noHeader,
+  breadcrumbs, currentSubject, noindex, ogImage, ogType = 'website', jsonLd,
+} = Astro.props;
+
 const accentColor = colors?.accent || '#8cb4ff';
-const siteName = 'Class 9 · Punjab Curriculum';
+const siteName = 'Class 9 \u00b7 Punjab Curriculum';
 const siteUrl = 'https://class9hub.com';
-const defaultDesc = 'Free study lectures for 9th grade Punjab board students — Mathematics, Physics, Chemistry, Computer, Urdu.';
+const defaultDesc = 'Free study lectures for 9th grade Punjab board students \u2014 Mathematics, Physics, Chemistry, Computer, Urdu.';
 const desc = Astro.props.desc || defaultDesc;
-const ogImage = siteUrl + '/apple-touch-icon.png';
+const pageTitle = title === siteName ? title : `${title} \u00b7 ${siteName}`;
+
+// Canonical URLs always carry a trailing slash so they match the sitemap exactly.
+let canonicalUrl = canonical || Astro.url.href;
+if (!canonicalUrl.endsWith('/')) canonicalUrl += '/';
+
+const shareImage = ogImage
+  ? (ogImage.startsWith('http') ? ogImage : siteUrl + ogImage)
+  : siteUrl + '/og-image.png';
+const shareImageAlt = 'Class 9 Hub \u2014 free Punjab Board video lectures for Physics, Math, Chemistry, Urdu and Computer';
+
+const orgId = siteUrl + '/#organization';
+const websiteId = siteUrl + '/#website';
+
+const graph: Record<string, unknown>[] = [
+  {
+    '@type': 'EducationalOrganization',
+    '@id': orgId,
+    name: 'Class 9 Hub',
+    url: siteUrl + '/',
+    logo: {
+      '@type': 'ImageObject',
+      url: siteUrl + '/web-app-manifest-512x512.png',
+      width: 512,
+      height: 512,
+    },
+    founder: { '@type': 'Person', name: 'Zeeshan Ahmed' },
+  },
+  {
+    '@type': 'WebSite',
+    '@id': websiteId,
+    name: siteName,
+    url: siteUrl + '/',
+    description: defaultDesc,
+    inLanguage: 'en',
+    publisher: { '@id': orgId },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: siteUrl + '/?q={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  },
+  {
+    '@type': 'WebPage',
+    '@id': canonicalUrl + '#webpage',
+    url: canonicalUrl,
+    name: pageTitle,
+    description: desc,
+    isPartOf: { '@id': websiteId },
+    about: { '@id': orgId },
+    inLanguage: 'en',
+    primaryImageOfPage: { '@type': 'ImageObject', url: shareImage },
+  },
+];
+
+if (breadcrumbs && breadcrumbs.length > 0) {
+  graph.push({
+    '@type': 'BreadcrumbList',
+    '@id': canonicalUrl + '#breadcrumb',
+    itemListElement: breadcrumbs.map((b, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: b.name,
+      item: b.url.startsWith('http') ? b.url : siteUrl + b.url,
+    })),
+  });
+}
+
+if (jsonLd) {
+  graph.push(...(Array.isArray(jsonLd) ? jsonLd : [jsonLd]));
+}
 ---
 
 <!doctype html>
@@ -34,57 +119,59 @@ const ogImage = siteUrl + '/apple-touch-icon.png';
     <meta name="google-site-verification" content="9wMIiVm55vRQLteCGqw9691RYnVIVzSzlrZRvj8tupQ" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <ClientRouter />
-    <title>{title === siteName ? title : `${title} · ${siteName}`}</title>
+
+    <title>{pageTitle}</title>
     <meta name="description" content={desc} />
-    <meta name="theme-color" content="#f8f9fc" />
+    <meta
+      name="robots"
+      content={noindex
+        ? 'noindex, nofollow'
+        : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}
+    />
+    <meta name="author" content="Zeeshan Ahmed" />
     <meta name="application-name" content={siteName} />
+    <meta name="apple-mobile-web-app-title" content="Class 9 Hub" />
+    <meta name="theme-color" content="#f8f9fc" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="canonical" href={canonical || Astro.url.href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
+    <!-- Warm up the video CDNs used by the player overlay -->
+    <link rel="preconnect" href="https://i.ytimg.com" crossorigin />
+    <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={siteName} />
-    <meta property="og:title" content={title === siteName ? title : `${title} · ${siteName}`} />
+    <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={desc} />
-    <meta property="og:url" content={canonical || Astro.url.href} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={shareImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={shareImageAlt} />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title === siteName ? title : `${title} · ${siteName}`} />
+    <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={desc} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={shareImage} />
+    <meta name="twitter:image:alt" content={shareImageAlt} />
 
     <!-- Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": siteName,
-      "url": siteUrl,
-      "description": desc,
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": { "@type": "EntryPoint", "urlTemplate": siteUrl + "/?q={search_term_string}" },
-        "query-input": "required name=search_term_string"
-      }
-    })}></script>
-
-    {breadcrumbs && breadcrumbs.length > 0 && (
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": breadcrumbs.map((b, i) => ({
-        "@type": "ListItem",
-        "position": i + 1,
-        "name": b.name,
-        "item": b.url.startsWith('http') ? b.url : siteUrl + b.url
-      }))
-    })}></script>
-    )}
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })}
+    ></script>
 
     <ThemeStyles colors={colors} />
     <script>
