@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   class9hub.com - XML sitemap
-  Generated 2026-10-24 | 125 URLs | every URL verified HTTP 200
+  Generated 2026-11-07 | 126 URLs | every URL verified HTTP 200
   Canonical host: https://class9hub.com
   www.class9hub.com and *.pages.dev are intentionally excluded.
 -->
@@ -58,6 +58,14 @@
     <loc>https://class9hub.com/notes/physics/</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Smart Syllabus (1) -->
+  <url>
+    <loc>https://class9hub.com/smart/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
